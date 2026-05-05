@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Véganisme & Science — Les Critiques Répondues</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --surface2: #1c2330;
+    --border: #30363d;
+    --green: #3fb950;
+    --green-dim: #238636;
+    --green-glow: rgba(63,185,80,0.15);
+    --amber: #d29922;
+    --amber-dim: rgba(210,153,34,0.15);
+    --red: #f85149;
+    --red-dim: rgba(248,81,73,0.12);
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --text-subtle: #484f58;
+    --accent: #58a6ff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(63,185,80,0.08) 0%, transparent 70%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 80%, rgba(88,166,255,0.04) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(63,185,80,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green);
+  }
+
+  .hero-sub {
+    max-width: 560px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .scroll-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    animation: fadeUp 0.8s 0.4s ease both;
+    transition: color 0.2s;
+  }
+  .scroll-cta:hover { color: var(--green); }
+  .scroll-cta svg { animation: bounce 1.5s infinite; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(13,17,23,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .filter-btn:hover { border-color: var(--green); color: var(--green); }
+  .filter-btn.active {
+    background: var(--green-dim);
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  /* MAIN */
+  main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    color: var(--text-subtle);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .card:hover { border-color: #3d444d; transform: translateY(-1px); }
+
+  .card-header {
+    padding: 1.5rem 1.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    user-select: none;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .icon-amber { background: var(--amber-dim); }
+  .icon-red { background: var(--red-dim); }
+  .icon-green { background: var(--green-glow); }
+
+  .card-meta { flex: 1; }
+
+  .critique-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .tag-partial { background: var(--amber-dim); color: var(--amber); }
+  .tag-false { background: var(--red-dim); color: var(--red); }
+  .tag-nuance { background: var(--green-glow); color: var(--green); }
+
+  .card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
+  }
+
+  .card-header .critique-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .toggle-icon {
+    color: var(--text-subtle);
+    transition: transform 0.3s;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+  .card.open .toggle-icon { transform: rotate(180deg); }
+
+  /* CARD BODY */
+  .card-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .card.open .card-body { max-height: 2000px; }
+
+  .card-content {
+    padding: 0 1.75rem 1.75rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+  }
+
+  /* VERDICT */
+  .verdict {
+    background: var(--surface2);
+    border-left: 3px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+  .verdict strong { color: var(--green); }
+
+  /* STUDIES */
+  .studies-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-subtle);
+    margin-bottom: 0.75rem;
+  }
+
+  .study {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .study-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+  .study-title a { color: inherit; text-decoration: none; }
+  .study-title a:hover { text-decoration: underline; }
+
+  .study-meta {
+    font-size: 0.75rem;
+    color: var(--text-subtle);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .study-finding {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    line-height: 1.6;
+  }
+
+  .nuance-box {
+    background: var(--amber-dim);
+    border: 1px solid rgba(210,153,34,0.3);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 0.875rem;
+    color: #c9a227;
+  }
+  .nuance-box strong { color: var(--amber); display: block; margin-bottom: 0.25rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-subtle);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--text-muted); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  .card { opacity: 0; transform: translateY(16px); }
+  .card.visible { animation: fadeUp 0.5s ease forwards; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Véganisme & Science</p>
+  <h1>Les critiques du véganisme<br>face à la <em>littérature scientifique</em></h1>
+  <p class="hero-sub">Chaque argument populaire contre le véganisme confronté aux méta-analyses, revues systématiques et consensus d'institutions reconnues.</p>
+  <a href="#content" class="scroll-cta">
+    Explorer les données
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</section>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">Toutes les critiques</button>
+  <button class="filter-btn" data-filter="nutrition">🥗 Nutrition</button>
+  <button class="filter-btn" data-filter="sante">❤️ Santé</button>
+  <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
+  <button class="filter-btn" data-filter="social">🌿 Social</button>
+  <button class="filter-btn" data-filter="diet" id="dietTabBtn" style="border-color: var(--green); color: var(--green);">🥦 Quoi manger ?</button>
+</div>
+
+<!-- MAIN -->
+<main id="content">
+
+  <div class="section-label">Nutrition & Carences</div>
+
+  <!-- PROTÉINES -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">🥩</div>
+      <div class="card-meta">
+        <h2>"Les végans ne peuvent pas avoir assez de protéines complètes"</h2>
+        <p class="critique-text">« Les plantes ne contiennent pas tous les acides aminés essentiels. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La notion de protéine "incomplète" est considérée comme trompeuse par les chercheurs. Les légumineuses, noix, graines et céréales consommées sur une journée fournissent tous les acides aminés essentiels en quantité suffisante.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.jandonline.org/article/S2212-2672(25)00042-5/fulltext" target="_blank">
+              Vegetarian Dietary Patterns for Adults — Position Paper
+            </a>
+          </div>
+          <div class="study-meta">Academy of Nutrition and Dietetics · Journal of the Academy of Nutrition and Dietetics · 2025</div>
+          <div class="study-finding">La plus grande organisation de diététiciens au monde affirme qu'un régime végétalien bien planifié assure un apport adéquat en acides aminés essentiels pour soutenir la synthèse des protéines, la réparation musculaire et la fonction immunitaire.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6893534/" target="_blank">
+              Dietary Protein and Amino Acids in Vegetarian Diets — A Review
+            </a>
+          </div>
+          <div class="study-meta">Mariotti & Gardner · Nutrients (MDPI) · 2019 · DOI: 10.3390/nu11112661</div>
+          <div class="study-finding">Cette revue de la littérature, menée par des chercheurs d'AgroParisTech et Stanford, conclut que "la question d'une déficience en acides aminés a été substantiellement surestimée" et que les aliments végétaux riches en protéines sont suffisants pour assurer une adéquation protéique complète chez l'adulte.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Nuance importante</strong>
+          La biodisponibilité des protéines végétales est légèrement inférieure à celle des protéines animales. Les personnes âgées (>65 ans) et les sportifs de haut niveau doivent être vigilants sur leurs apports totaux et privilégier légumineuses + céréales à chaque repas.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VITAMINE B12 -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">💊</div>
+      <div class="card-meta">
+        <h2>"Les végans manquent forcément de vitamine B12"</h2>
+        <p class="critique-text">« Sans produits animaux, la carence en B12 est inévitable. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La carence en B12 est un risque <em>réel</em> pour les végans non supplémentés — c'est le seul nutriment qu'un régime vegan ne peut pas fournir de façon fiable. Cependant, la supplémentation (50–250 µg/jour) résout complètement ce problème, et les végans supplémentés affichent un statut B12 comparable aux omnivores.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://onlinelibrary.wiley.com/doi/10.1111/nbu.12712" target="_blank">
+              Functional Vitamin B12 Status Among Adult Vegans — Systematic Review & Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Niklewicz et al. · Nutrition Bulletin (Wiley) · 2024</div>
+          <div class="study-finding">Cette méta-analyse confirme que les végans non supplémentés présentent des niveaux de B12 significativement plus bas. Cependant, les sous-analyses montrent que la supplémentation chez les végans leur confère un statut B12 supérieur à celui des végétariens. Une prise totale de 250 µg/jour suffit à normaliser tous les biomarqueurs.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11124153/" target="_blank">
+              Vitamin B12 Supplementation in the Vegan Population — Scoping Review (70 études)
+            </a>
+          </div>
+          <div class="study-meta">PMC · Nutrients · 2024 · PMID: 38794680</div>
+          <div class="study-finding">Revue de 70 études (2010–2023) : la carence B12 est prévalente chez les végans non supplémentés, mais la supplémentation à 50–100 µg/jour est un moyen efficace de traiter et prévenir toute déficience. La supplémentation est la solution, pas l'abandon du véganisme.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Point clé</strong>
+          La B12 est produite par des bactéries, pas par les animaux eux-mêmes. Les animaux d'élevage sont d'ailleurs souvent supplémentés en B12. La supplémentation directe est donc plus efficiente et sans intermédiaire. C'est <em>le seul</em> supplément obligatoire dans un régime vegan.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OS & CALCIUM -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🦴</div>
+      <div class="card-meta">
+        <h2>"Le véganisme fragilise les os — manque de calcium"</h2>
+        <p class="critique-text">« Sans produits laitiers, la densité osseuse chute. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La densité osseuse est légèrement inférieure chez les végans mal planifiés. Cependant, cet effet est atténué par un apport adéquat en calcium végétal (tofu, brocoli, choux, légumineuses, amandes) et en vitamine D. La corrélation entre consommation de laitages et santé osseuse est d'ailleurs plus faible que supposé.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://ajcn.nutrition.org/article/S0002-9165(23)23285-2/fulltext" target="_blank">
+              Effect of Vegetarian Diets on Bone Mineral Density — Bayesian Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Ho-Pham et al. · American Journal of Clinical Nutrition · 2009</div>
+          <div class="study-finding">La méta-analyse révèle une DMO légèrement inférieure chez les végans, mais conclut qu'une méta-analyse de 33 études trouvait une corrélation de seulement 0,13 entre apport en calcium alimentaire et densité osseuse — suggérant que le calcium seul n'explique pas l'essentiel de la variance. La planification du régime peut minimiser ce risque.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.sciencedirect.com/science/article/pii/S0261561425001517" target="_blank">
+              Plant-Based Diet and Risk of Osteoporosis — Systematic Review & Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">ScienceDirect · Nutrition Research · 2025</div>
+          <div class="study-finding">Une planification méticuleuse du régime végétalien, ciblant les carences en nutriments essentiels, peut minimiser ses impacts négatifs potentiels sur la santé osseuse. Le risque est lié à la mauvaise planification, pas au véganisme en soi.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Nuance</strong>
+          La vitamine D (soleil ou supplément) et un apport suffisant en calcium végétal (≥700 mg/j via tofu ferme, chou kale, boissons végétales enrichies) permettent de maintenir une santé osseuse optimale sans produits laitiers.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Santé & Maladies Chroniques</div>
+
+  <!-- MALADIES CHRONIQUES -->
+  <div class="card" data-category="sante">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">❤️</div>
+      <div class="card-meta">
+        <h2>"Le véganisme n'a pas de bénéfices prouvés pour la santé"</h2>
+        <p class="critique-text">« C'est juste un choix de mode de vie sans intérêt médical. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Les régimes végétaux sont associés à une réduction significative du risque de maladies cardiovasculaires, de diabète de type 2, de certains cancers, et d'une meilleure longévité. Ce consensus est établi par des dizaines de méta-analyses publiées dans les plus grandes revues médicales.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10548756/" target="_blank">
+              Plant-Based Diets and T2D, CVD, Cancer, Mortality — Systematic Review & Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Wang, Liu et al. · Harvard T.H. Chan School of Public Health · Nutrition Journal (Springer) · 2023 · DOI: 10.1186/s12937-023-00877-2</div>
+          <div class="study-finding">Cette méta-analyse de Harvard conclut qu'une meilleure adhérence aux régimes végétaux, en particulier ceux mettant l'accent sur des aliments végétaux sains, réduit significativement le risque de diabète de type 2, maladies cardiovasculaires, cancer et mortalité prématurée.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0300711" target="_blank">
+              Cardiovascular Health and Cancer Risk with Plant-Based Diets — Umbrella Review
+            </a>
+          </div>
+          <div class="study-meta">PLOS ONE · 2024 — Revue de méta-analyses (PubMed + Scopus, 2000–2023)</div>
+          <div class="study-finding">Cette "umbrella review" (méta-analyse de méta-analyses) confirme que les régimes végétariens et végétaliens sont significativement associés à un meilleur profil lipidique, un meilleur contrôle glycémique, un poids corporel réduit, moins d'inflammation, et un risque plus faible de maladies coronariennes et de cancer.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pubmed.ncbi.nlm.nih.gov/26853923/" target="_blank">
+              Vegetarian & Vegan Diets and Multiple Health Outcomes — Meta-analysis (86 études)
+            </a>
+          </div>
+          <div class="study-meta">Dinu et al. · Critical Reviews in Food Science and Nutrition · 2017 · PubMed PMID: 26853923</div>
+          <div class="study-finding">Méta-analyse de 86 études transversales et 10 études de cohorte : réduction de 25% du risque de mortalité par maladies coronariennes chez les végétariens. Le régime vegan spécifiquement est associé à une réduction de 15% du risque de cancer total (RR 0,85 ; IC 95% : 0,75–0,95).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-label">Environnement & Durabilité</div>
+
+  <!-- TERRES AGRICOLES -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">🌾</div>
+      <div class="card-meta">
+        <h2>"Un monde vegan nécessiterait plus de terres agricoles"</h2>
+        <p class="critique-text">« Il faudrait défricher énormément pour nourrir tout le monde en végétal. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> C'est l'inverse. Un monde vegan réduirait les terres agricoles mondiales de 75%, libérant une surface équivalente à l'Amérique du Nord + le Brésil pour la reforestation et la restauration des écosystèmes.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Reducing Food's Environmental Impacts Through Producers and Consumers
+            </a>
+          </div>
+          <div class="study-meta">Poore & Nemecek · Science, 360(6392), 987–992 · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">La plus grande méta-analyse sur les systèmes alimentaires (38 700 fermes, 119 pays, 570 études) : un régime mondial sans produits animaux réduirait les GES alimentaires de ~49% et les terres agricoles de ~76%. 80% des terres agricoles actuelles servent à l'élevage, pour seulement 20% des calories mondiales.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.nature.com/articles/s41893-019-0453-4" target="_blank">
+              The Carbon Opportunity Cost of Animal-Sourced Food Production on Land
+            </a>
+          </div>
+          <div class="study-meta">Hayek, Harwatt, Ripple & Mueller · Nature Sustainability · 2020</div>
+          <div class="study-finding">Si les terres d'élevage étaient restaurées en forêts et prairies naturelles, elles séquestreraient suffisamment de carbone pour compenser 15 ans d'émissions mondiales de CO₂ — confirmant que l'élevage représente un coût d'opportunité carbone massif.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOJA & DÉFORESTATION -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌳</div>
+      <div class="card-meta">
+        <h2>"Le soja vegan détruit la forêt amazonienne"</h2>
+        <p class="critique-text">« La culture du soja pour les végans cause la déforestation. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> 70 à 80% du soja mondial est cultivé pour nourrir les animaux d'élevage, pas les humains végans. La déforestation liée au soja est donc principalement une conséquence de l'élevage, non du véganisme.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Analyse de la chaîne d'approvisionnement alimentaire mondiale
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018</div>
+          <div class="study-finding">Si les besoins en protéines étaient couverts par le soja directement consommé plutôt que via des animaux, la déforestation chuterait de 94%. L'alimentation animale est le principal moteur de l'expansion agricole dans les zones forestières tropicales. 136 millions d'acres de forêt tropicale ont été défrichés pour l'agriculture animale.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>📊 Données clés</strong>
+          Seulement ~6% du soja est consommé directement par les humains (tofu, edamame, lait de soja). ~70–75% va à l'alimentation du bétail (porcs, poulets, bovins). Manger du tofu ne détruit pas la forêt — manger des animaux nourris au soja, si.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Arguments Sociaux & Pratiques</div>
+
+  <!-- COÛT / ACCÈS -->
+  <div class="card" data-category="social">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">💰</div>
+      <div class="card-meta">
+        <h2>"Le véganisme est un luxe de riches"</h2>
+        <p class="critique-text">« Les aliments végans sont chers et inaccessibles aux personnes modestes. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Les produits de base d'un régime vegan (lentilles, pois chiches, haricots, riz, avoine, chou) sont parmi les aliments les moins chers par gramme de protéine. Le coût élevé s'applique aux substituts transformés (steak végétal, fromage vegan), non aux aliments de base.
+        </div>
+        <p class="studies-title">Données de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9823774/" target="_blank">
+              Five U.S. Dietary Patterns and Their Relationship to Land Use, Water Use, and GHG Emissions
+            </a>
+          </div>
+          <div class="study-meta">Nutrients (PMC) · 2023 · DOI: 10.3390/nu15010127</div>
+          <div class="study-finding">Le régime vegan score le plus bas sur tous les indicateurs environnementaux. Sur le plan économique, les protéines végétales de base (légumineuses) sont systématiquement moins coûteuses par calorie et par gramme de protéine que les protéines animales dans les pays à revenu élevé.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Nuance géographique & culturelle</strong>
+          Dans certaines régions (zones semi-arides, communautés rurales dépendantes de l'élevage), le véganisme strict peut être économiquement et culturellement difficile. La science encourage une réduction de la consommation de produits animaux plutôt qu'une abstinence totale pour l'ensemble de la population mondiale.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OMNIVORES NATURELS -->
+  <div class="card" data-category="social">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">🦷</div>
+      <div class="card-meta">
+        <h2>"L'humain est naturellement omnivore, le véganisme est contre-nature"</h2>
+        <p class="critique-text">« Nos ancêtres mangeaient de la viande, notre anatomie l'exige. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Oui, l'humain est biologiquement omnivore. Mais "naturel" n'est pas synonyme de "sain" ou de "obligatoire". La médecine et la nutrition modernes permettent de compenser l'absence de produits animaux. Le consensus des institutions de santé est qu'un régime vegan bien planifié est parfaitement compatible avec la santé humaine à tous les stades de la vie.
+        </div>
+        <p class="studies-title">Positions institutionnelles</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S2212267216311923" target="_blank">
+              Position of the Academy of Nutrition and Dietetics: Vegetarian Diets
+            </a>
+          </div>
+          <div class="study-meta">Academy of Nutrition and Dietetics · Journal of the AND · 2016 (réaffirmé 2025)</div>
+          <div class="study-finding">"Les régimes végétaliens bien planifiés sont sains, nutritionnellement adéquats et peuvent fournir des bénéfices de santé pour la prévention et le traitement de certaines maladies." Cette position est soutenue par la Diététique britannique (BDA), Santé Canada, et la Société de nutrition française.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>📌 Note épistémologique</strong>
+          L'argument "contre-nature" est un sophisme naturaliste (appel à la nature). De nombreuses pratiques naturelles sont nuisibles, et de nombreuses innovations non-naturelles (médicaments, chirurgie) sauvent des vies. Ce n'est pas un argument scientifique valide en soi.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- DIET PANEL -->
+<div id="dietPanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+
+  <!-- FORM -->
+  <div id="dietForm">
+    <div style="text-align:center; margin-bottom:2rem;">
+      <p style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--text); margin-bottom:0.5rem;">Votre diète vegan personnalisée</p>
+      <p style="color:var(--text-muted); font-size:0.9rem;">Quantités calculées selon vos besoins réels — plan simple, efficace, tenable toute l'année.</p>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:2rem; display:flex; flex-direction:column; gap:1.25rem;">
+
+      <div>
+        <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Sexe biologique</label>
+        <div style="display:flex; gap:0.75rem;">
+          <button id="btnH" onclick="selectSex('homme')" style="flex:1; padding:0.7rem; border-radius:8px; border:1px solid var(--green); background:var(--green-glow); color:var(--green); cursor:pointer; font-size:0.9rem; font-family:'DM Sans',sans-serif; transition:all .15s;">♂ Homme</button>
+          <button id="btnF" onclick="selectSex('femme')" style="flex:1; padding:0.7rem; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.9rem; font-family:'DM Sans',sans-serif; transition:all .15s;">♀ Femme</button>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;">
+        <div>
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Âge</label>
+          <input id="inputAge" type="number" min="15" max="90" placeholder="ex : 28" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+        </div>
+        <div>
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Taille (cm)</label>
+          <input id="inputTaille" type="number" min="140" max="220" placeholder="ex : 170" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+        </div>
+        <div>
+          <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Poids (kg)</label>
+          <input id="inputPoids" type="number" min="30" max="200" placeholder="ex : 65" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+        </div>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Niveau d'activité</label>
+        <select id="inputActivite" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.9rem; font-family:'DM Sans',sans-serif; outline:none; cursor:pointer;">
+          <option value="1.2">🪑 Sédentaire (bureau, très peu de sport)</option>
+          <option value="1.375">🚶 Légèrement actif (1–2 séances / semaine)</option>
+          <option value="1.55" selected>🏃 Modérément actif (3–4 séances / semaine)</option>
+          <option value="1.725">💪 Très actif (5+ séances / semaine)</option>
+          <option value="1.9">🏋️ Sportif intensif / travail physique quotidien</option>
+        </select>
+      </div>
+
+      <div>
+        <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Objectif</label>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.6rem;">
+          <button id="objE" onclick="selectObj('equilibre')" style="padding:0.65rem 0.4rem; border-radius:8px; border:1px solid var(--green); background:var(--green-glow); color:var(--green); cursor:pointer; font-size:0.82rem; font-family:'DM Sans',sans-serif; transition:all .15s;">⚖️ Maintien</button>
+          <button id="objP" onclick="selectObj('perte')" style="padding:0.65rem 0.4rem; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.82rem; font-family:'DM Sans',sans-serif; transition:all .15s;">📉 Perte de poids</button>
+          <button id="objM" onclick="selectObj('muscle')" style="padding:0.65rem 0.4rem; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.82rem; font-family:'DM Sans',sans-serif; transition:all .15s;">💪 Prise de masse</button>
+        </div>
+      </div>
+
+      <div id="formError" style="display:none; color:#f85149; font-size:0.85rem; font-family:'DM Sans',sans-serif; text-align:center;"></div>
+
+      <button onclick="generateDiet()" style="margin-top:0.25rem; padding:0.9rem; background:var(--green); color:#0d1117; border:none; border-radius:10px; font-size:1rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; letter-spacing:0.02em; transition:opacity 0.2s;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        Calculer mon plan →
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="dietResult" style="display:none;"></div>
+
+</div>
+
+<footer>
+  <p>Sources primaires : méta-analyses et revues systématiques publiées dans <em>Science</em>, <em>Nature</em>, <em>Nutrition Journal</em>, <em>PLOS ONE</em>, <em>American Journal of Clinical Nutrition</em> et <em>PubMed</em>.</p>
+  <p style="margin-top:0.5rem">Ce document est à visée informative et ne remplace pas l'avis d'un professionnel de santé.</p>
+</footer>
+
+<script>
+// ── STATE ──────────────────────────────────────────────
+let currentSex = 'homme';
+let currentObj = 'equilibre';
+
+function selectSex(s) {
+  currentSex = s;
+  const on = 'border:1px solid var(--green); background:var(--green-glow); color:var(--green);';
+  const off = 'border:1px solid var(--border); background:transparent; color:var(--text-muted);';
+  document.getElementById('btnH').style.cssText += s === 'homme' ? on : off;
+  document.getElementById('btnF').style.cssText += s === 'femme' ? on : off;
+}
+
+function selectObj(o) {
+  currentObj = o;
+  ['objE','objP','objM'].forEach(id => {
+    const btn = document.getElementById(id);
+    btn.style.borderColor = 'var(--border)';
+    btn.style.background = 'transparent';
+    btn.style.color = 'var(--text-muted)';
+  });
+  const map = { equilibre: 'objE', perte: 'objP', muscle: 'objM' };
+  const active = document.getElementById(map[o]);
+  active.style.borderColor = 'var(--green)';
+  active.style.background = 'var(--green-glow)';
+  active.style.color = 'var(--green)';
+}
+
+// ── CALCULATION ENGINE ─────────────────────────────────
+function calcTDEE(sexe, age, taille, poids, pal) {
+  // Mifflin-St Jeor BMR
+  let bmr;
+  if (sexe === 'homme') bmr = 10 * poids + 6.25 * taille - 5 * age + 5;
+  else                  bmr = 10 * poids + 6.25 * taille - 5 * age - 161;
+  return Math.round(bmr * pal);
+}
+
+function calcTargetKcal(tdee, obj) {
+  if (obj === 'perte')    return Math.round(tdee * 0.82);  // déficit ~18%
+  if (obj === 'muscle')   return Math.round(tdee * 1.12);  // surplus ~12%
+  return tdee;
+}
+
+function calcProtein(poids, obj, sexe) {
+  // 1.6g/kg maintien, 2g/kg prise masse, 1.8g/kg perte
+  const mult = obj === 'muscle' ? 2.0 : obj === 'perte' ? 1.8 : 1.6;
+  return Math.round(poids * mult);
+}
+
+// Scale a quantity string by a factor
+function scale(baseQty, factor) {
+  // handles "Xg", "Xml", "X c.s.", "X noix", "X tranche(s)", plain number, ranges
+  return baseQty.replace(/(\d+(?:[.,]\d+)?)/g, (m) => {
+    const v = parseFloat(m.replace(',', '.')) * factor;
+    return v < 10 ? v.toFixed(1).replace('.0','') : Math.round(v).toString();
+  });
+}
+
+function buildMeals(kcalTarget, protTarget, poids, sexe, obj) {
+  // Reference profile: homme 80kg, 2500kcal, 120g prot
+  const refKcal = 2500;
+  const refProt = 120;
+  const kFactor = kcalTarget / refKcal;
+  const pFactor = protTarget / refProt;
+  // Use average for quantity scaling (food serves both energy & protein)
+  const f = (kFactor + pFactor) / 2;
+
+  const meals = [
+    {
+      time: 'Petit-déjeuner', emoji: '🌅',
+      items: [
+        { name: 'Flocons d\'avoine',        qty: scale('80g',   f), kcal: Math.round(296*kFactor), prot: Math.round(10*pFactor), note: 'Fibres, bêta-glucane, fer, zinc' },
+        { name: 'Lait de soja fortifié',    qty: scale('300ml', f), kcal: Math.round(120*kFactor), prot: Math.round(10*pFactor), note: 'Protéines complètes · Ca · B12 · D' },
+        { name: 'Graines de lin moulues',   qty: scale('15g',   f), kcal: Math.round(67*kFactor),  prot: Math.round(2*pFactor),  note: 'ALA oméga-3 — moudre avant utilisation' },
+        { name: 'Beurre d\'amande',         qty: scale('15g',   f), kcal: Math.round(90*kFactor),  prot: Math.round(3*pFactor),  note: 'Zinc, vit E, graisses saines' },
+        { name: 'Banane',                   qty: '1',               kcal: Math.round(90*kFactor),  prot: 1,                      note: 'Potassium, magnésium, glucides rapides' },
+        { name: 'Graines de courge',        qty: scale('20g',   f), kcal: Math.round(110*kFactor), prot: Math.round(5*pFactor),  note: 'Zinc +++, magnésium, fer' },
+      ],
+      tip: 'Moudre le lin libère les oméga-3. Les graines de courge = meilleure source végétale de zinc. Ne pas boire de thé ou café dans les 30 min (bloque le fer).'
+    },
+    {
+      time: 'Déjeuner', emoji: '☀️',
+      items: [
+        { name: 'Lentilles vertes cuites',  qty: scale('200g',  f), kcal: Math.round(184*kFactor), prot: Math.round(14*pFactor), note: 'Fer, folates, zinc, protéines' },
+        { name: 'Riz complet cuit',         qty: scale('180g',  f), kcal: Math.round(234*kFactor), prot: Math.round(5*pFactor),  note: 'Acides aminés complémentaires, fibres' },
+        { name: 'Tofu ferme',               qty: scale('100g',  f), kcal: Math.round(120*kFactor), prot: Math.round(10*pFactor), note: 'Protéines complètes, calcium' },
+        { name: 'Épinards + brocoli sautés',qty: scale('300g',  f), kcal: Math.round(80*kFactor),  prot: Math.round(6*pFactor),  note: 'K1, calcium, vitamine C, folates' },
+        { name: 'Huile d\'olive',           qty: scale('1 c.s.',f), kcal: Math.round(120*kFactor), prot: 0,                      note: 'Absorption vitamines liposolubles A/D/E/K' },
+        { name: 'Jus de citron + curcuma + poivre', qty: 'à goût', kcal: 5, prot: 0, note: 'Vitamine C → absorption du fer ×3' },
+      ],
+      tip: 'Lentilles + riz = acides aminés complets. Le citron triple l\'absorption du fer non-héminique. Faire tremper les lentilles la veille réduit les anti-nutriments.'
+    },
+    {
+      time: 'Collation', emoji: '🌿',
+      items: [
+        { name: 'Pois chiches rôtis',       qty: scale('80g',   f), kcal: Math.round(128*kFactor), prot: Math.round(7*pFactor),  note: 'Zinc, fer, fibres' },
+        { name: 'Noix du Brésil',           qty: '2 noix',          kcal: 65,                      prot: 1,                      note: '⚠️ Exactement 2 = 100% sélénium/jour' },
+        { name: 'Noix de cajou ou amandes', qty: scale('25g',   f), kcal: Math.round(140*kFactor), prot: Math.round(4*pFactor),  note: 'Zinc, magnésium, vitamine E' },
+        { name: 'Orange ou pomme',          qty: '1',               kcal: 70,                      prot: 0,                      note: 'Vitamine C, fibres, antioxydants' },
+      ],
+      tip: 'Les noix du Brésil sont à dose fixe : exactement 2/jour. Au-delà de 4, risque de toxicité au sélénium.'
+    },
+    {
+      time: 'Dîner', emoji: '🌙',
+      items: [
+        { name: 'Tempeh (ou tofu ferme)',   qty: scale('150g',  f), kcal: Math.round(185*kFactor), prot: Math.round(17*pFactor), note: 'Protéines complètes, K2 MK-7, probiotiques' },
+        { name: 'Patate douce',             qty: scale('200g',  f), kcal: Math.round(172*kFactor), prot: Math.round(3*pFactor),  note: 'Bêta-carotène (pro-vit A), potassium, fibres' },
+        { name: 'Chou kale ou bok choy',    qty: scale('200g',  f), kcal: Math.round(70*kFactor),  prot: Math.round(5*pFactor),  note: 'Calcium très biodisponible, K1, vit C' },
+        { name: 'Tahini (sésame)',          qty: scale('20g',   f), kcal: Math.round(116*kFactor), prot: Math.round(3*pFactor),  note: 'Calcium, zinc, cuivre' },
+        { name: 'Quinoa (si + de glucides)', qty: scale('80g cuit', f), kcal: Math.round(96*kFactor), prot: Math.round(3*pFactor), note: 'Protéine complète, optionnel' },
+      ],
+      tip: 'Préférer le tempeh fermenté au tofu au dîner : sa K2 naturelle (MK-7) dirige le calcium vers les os. Cuisiner en grande quantité et congeler.'
+    },
+  ];
+
+  // Encas soir uniquement si objectif muscle ou besoins élevés
+  if (obj === 'muscle' || kcalTarget > 2800) {
+    meals.push({
+      time: 'Encas soir', emoji: '🌛',
+      items: [
+        { name: 'Pain complet',  qty: scale('2 tranches', f), kcal: Math.round(140*kFactor), prot: Math.round(6*pFactor), note: 'Fibres, fer, zinc' },
+        { name: 'Houmous maison', qty: scale('60g', f),       kcal: Math.round(130*kFactor), prot: Math.round(5*pFactor), note: 'Légumineuses + tahini = calcium + zinc' },
+      ],
+      tip: 'Cet encas est particulièrement utile après le sport pour la récupération musculaire.'
+    });
+  }
+
+  return meals;
+}
+
+// ── RENDER ─────────────────────────────────────────────
+function renderDiet(sexe, age, taille, poids, pal, obj) {
+  const tdee = calcTDEE(sexe, age, taille, poids, pal);
+  const kcal = calcTargetKcal(tdee, obj);
+  const prot = calcProtein(poids, obj, sexe);
+  const meals = buildMeals(kcal, prot, poids, sexe, obj);
+
+  const totalKcal = meals.reduce((s, m) => s + m.items.reduce((a, i) => a + i.kcal, 0), 0);
+  const totalProt = meals.reduce((s, m) => s + m.items.reduce((a, i) => a + i.prot, 0), 0);
+
+  const objLabel = { equilibre: 'Maintien du poids', perte: 'Perte de poids', muscle: 'Prise de masse' }[obj];
+  const objColor = { equilibre: 'var(--green)', perte: 'var(--accent)', muscle: 'var(--amber)' }[obj];
+
+  const suppNote = sexe === 'femme'
+    ? 'Femmes en âge de procréer : vérifier aussi l\'apport en fer et iode avec un médecin.'
+    : 'Bilan sanguin annuel recommandé : B12 (holotranscobalamine), 25-OH-D3, ferritine, zinc.';
+
+  let html = `
+  <div style="text-align:center; margin-bottom:2rem;">
+    <p style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--text); margin-bottom:0.4rem;">Votre plan alimentaire</p>
+    <p style="color:var(--text-muted); font-size:0.85rem;">${sexe === 'homme' ? '♂' : '♀'} ${age} ans · ${taille} cm · ${poids} kg · ${objLabel}</p>
+  </div>
+
+  <!-- MACROS SUMMARY -->
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.75rem; margin-bottom:2rem;">
+    ${[
+      { label: 'Objectif calories', val: kcal + ' kcal', color: 'var(--amber)' },
+      { label: 'Objectif protéines', val: prot + 'g / jour', color: 'var(--green)' },
+      { label: 'Objectif', val: objLabel, color: objColor },
+    ].map(s => `
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1rem; text-align:center;">
+        <div style="font-size:1.15rem; font-weight:700; color:${s.color}; margin-bottom:0.25rem;">${s.val}</div>
+        <div style="font-size:0.7rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">${s.label}</div>
+      </div>`).join('')}
+  </div>
+
+  <!-- MEALS -->
+  <div style="display:flex; flex-direction:column; gap:1rem; margin-bottom:2rem;">
+  `;
+
+  meals.forEach((meal, i) => {
+    const mKcal = meal.items.reduce((a, it) => a + it.kcal, 0);
+    const mProt = meal.items.reduce((a, it) => a + it.prot, 0);
+    html += `
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden;">
+      <div onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display==='none' ? 'block' : 'none'"
+           style="padding:1rem 1.25rem; cursor:pointer; display:flex; align-items:center; gap:1rem; user-select:none;">
+        <span style="font-size:1.5rem;">${meal.emoji}</span>
+        <div style="flex:1;">
+          <div style="font-weight:600; color:var(--green); font-size:1rem; margin-bottom:0.3rem;">${meal.time}</div>
+          <div style="display:flex; gap:1rem;">
+            <div style="flex:1;">
+              <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:3px;">${mKcal} kcal</div>
+              <div style="height:3px; background:var(--border); border-radius:2px;"><div style="width:${Math.min(100,mKcal/40)}%; height:100%; background:var(--amber); border-radius:2px;"></div></div>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:0.7rem; color:var(--text-muted); margin-bottom:3px;">${mProt}g protéines</div>
+              <div style="height:3px; background:var(--border); border-radius:2px;"><div style="width:${Math.min(100,mProt/0.4)}%; height:100%; background:var(--green); border-radius:2px;"></div></div>
+            </div>
+          </div>
+        </div>
+        <span style="color:var(--text-subtle); font-size:1.2rem;">+</span>
+      </div>
+      <div style="display:none; border-top:1px solid var(--border); padding:1rem 1.25rem;">
+        ${meal.items.map(it => `
+        <div style="display:grid; grid-template-columns:1fr auto; gap:0.5rem 1rem; padding:0.6rem 0; border-bottom:1px solid rgba(48,54,61,0.5); align-items:start;">
+          <div>
+            <div style="font-size:0.88rem; color:var(--text);">${it.name}</div>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">${it.note}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:0.8rem; color:var(--amber); font-weight:600; white-space:nowrap;">${it.qty}</div>
+            <div style="font-size:0.7rem; color:var(--text-subtle);">${it.kcal} kcal · ${it.prot}g prot</div>
+          </div>
+        </div>`).join('')}
+        <div style="margin-top:0.9rem; background:rgba(63,185,80,0.07); border:1px solid rgba(63,185,80,0.18); border-radius:8px; padding:0.75rem 1rem; font-size:0.8rem; color:var(--text-muted); font-style:italic; line-height:1.6;">
+          💡 ${meal.tip}
+        </div>
+      </div>
+    </div>`;
+  });
+
+  html += `</div>
+
+  <!-- SUPPLEMENTS -->
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+    <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:1rem;">💊 Suppléments obligatoires</div>
+    ${[
+      { name: 'Vitamine B12', dose: '250 µg/jour', note: 'Cyanocobalamine ou méthylcobalamine — seul supplément strictement obligatoire', budget: '~8€ / 3 mois' },
+      { name: 'Vitamine D3 + K2 MK-7', dose: '2000 UI D3 + 100 µg K2', note: 'Prendre ensemble — D3 végane (lichen). K2 dirige le calcium vers les os', budget: '~15€ / 3 mois' },
+      { name: 'Oméga-3 DHA/EPA (algues)', dose: '500 mg DHA+EPA/jour', note: 'La conversion ALA→DHA est trop faible (<5%). Chercher "algae omega-3 vegan"', budget: '~20€ / 2 mois' },
+      { name: 'Iode', dose: '150 µg/jour', note: 'Via sel iodé (½ c.c./jour) — solution la plus simple et moins chère', budget: '~0€ (sel iodé)' },
+    ].map(s => `
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:0.7rem 0; border-bottom:1px solid rgba(48,54,61,0.5); gap:1rem;">
+        <div>
+          <div style="font-size:0.88rem; color:var(--text); font-weight:500;">${s.name}</div>
+          <div style="font-size:0.75rem; color:var(--amber); margin:2px 0;">${s.dose}</div>
+          <div style="font-size:0.75rem; color:var(--text-muted);">${s.note}</div>
+        </div>
+        <div style="font-size:0.75rem; color:var(--green); white-space:nowrap; padding-top:2px;">${s.budget}</div>
+      </div>`).join('')}
+    <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.9rem; padding:0.75rem; background:rgba(88,166,255,0.06); border:1px solid rgba(88,166,255,0.15); border-radius:8px;">
+      🩺 ${suppNote}
+    </div>
+  </div>
+
+  <!-- RESET -->
+  <div style="text-align:center;">
+    <button onclick="resetDiet()" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-size:0.85rem; font-family:'DM Sans',sans-serif; transition:all .15s;" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+      ← Modifier mon profil
+    </button>
+  </div>
+  `;
+
+  return html;
+}
+
+function generateDiet() {
+  const age    = parseInt(document.getElementById('inputAge').value);
+  const taille = parseInt(document.getElementById('inputTaille').value);
+  const poids  = parseInt(document.getElementById('inputPoids').value);
+  const pal    = parseFloat(document.getElementById('inputActivite').value);
+  const err    = document.getElementById('formError');
+
+  if (!age || age < 15 || age > 90)        { err.textContent = 'Âge invalide (15–90 ans).'; err.style.display='block'; return; }
+  if (!taille || taille < 140 || taille > 220) { err.textContent = 'Taille invalide (140–220 cm).'; err.style.display='block'; return; }
+  if (!poids || poids < 30 || poids > 200) { err.textContent = 'Poids invalide (30–200 kg).'; err.style.display='block'; return; }
+  err.style.display = 'none';
+
+  document.getElementById('dietForm').style.display = 'none';
+  const result = document.getElementById('dietResult');
+  result.innerHTML = renderDiet(currentSex, age, taille, poids, pal, currentObj);
+  result.style.display = 'block';
+}
+
+function resetDiet() {
+  document.getElementById('dietResult').style.display = 'none';
+  document.getElementById('dietResult').innerHTML = '';
+  document.getElementById('dietForm').style.display = 'block';
+}
+
+// ── TABS & CARDS ───────────────────────────────────────
+function toggleCard(header) {
+  const card = header.closest('.card');
+  card.classList.toggle('open');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.card').forEach(card => observer.observe(card));
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+
+    if (filter === 'diet') {
+      document.getElementById('content').style.display = 'none';
+      document.getElementById('dietPanel').style.display = 'block';
+    } else {
+      document.getElementById('content').style.display = 'block';
+      document.getElementById('dietPanel').style.display = 'none';
+      document.querySelectorAll('.card').forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
