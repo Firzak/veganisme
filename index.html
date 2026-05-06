@@ -363,18 +363,17 @@
 
 <!-- FILTER -->
 <div class="filter-bar">
-  <button class="filter-btn active" data-filter="all">Toutes les critiques</button>
-  <button class="filter-btn" data-filter="nutrition">🥗 Nutrition</button>
+  <button class="filter-btn active" data-filter="nutrition">🥗 Nutrition</button>
   <button class="filter-btn" data-filter="sante">❤️ Santé</button>
   <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
   <button class="filter-btn" data-filter="social">🌿 Social</button>
-  <button class="filter-btn" data-filter="diet" id="dietTabBtn" style="border-color: var(--green); color: var(--green);">🥦 Quoi manger ?</button>
+  <button class="filter-btn" data-filter="diet" style="border-color: var(--green); color: var(--green);">🥦 Quoi manger ?</button>
 </div>
 
 <!-- MAIN -->
 <main id="content">
 
-  <div class="section-label">Nutrition & Carences</div>
+  <div class="section-label" data-section="nutrition">Nutrition & Carences</div>
 
   <!-- PROTÉINES -->
   <div class="card" data-category="nutrition">
@@ -517,7 +516,7 @@
     </div>
   </div>
 
-  <div class="section-label">Santé & Maladies Chroniques</div>
+  <div class="section-label" data-section="sante">Santé & Maladies Chroniques</div>
 
   <!-- MALADIES CHRONIQUES -->
   <div class="card" data-category="sante">
@@ -572,7 +571,7 @@
   </div>
 
 
-  <div class="section-label">Environnement & Durabilité</div>
+  <div class="section-label" data-section="environnement">Environnement & Durabilité</div>
 
   <!-- TERRES AGRICOLES -->
   <div class="card" data-category="environnement">
@@ -653,7 +652,121 @@
     </div>
   </div>
 
-  <div class="section-label">Arguments Sociaux & Pratiques</div>
+  <!-- FUMIER -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌱</div>
+      <div class="card-meta">
+        <h2>"Sans élevage, pas de fumier — impossible de cultiver des végétaux"</h2>
+        <p class="critique-text">« Une agriculture vegan mondiale ne pourrait pas fertiliser les sols sans déjections animales. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Le fumier n'est pas indispensable à une agriculture végétale à grande échelle. Le compost végétal, les légumineuses fixatrices d'azote et les engrais verts constituent des alternatives agronomiquement solides. De plus, l'élevage industriel lui-même est massivement dépendant d'engrais azotés synthétiques (procédé Haber-Bosch) — contredisant l'image d'un élevage naturellement circulaire.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s43016-021-00260-2" target="_blank">
+              Exploring the Biophysical Option Space for Feeding the World Without Animal Products
+            </a>
+          </div>
+          <div class="study-meta">Muller et al. · Nature Food · 2021 · DOI: 10.1038/s43016-021-00260-2</div>
+          <div class="study-finding">Cette modélisation à l'échelle mondiale montre qu'une alimentation mondiale entièrement végétale est biophysiquement réalisable sans fumier animal. Le recyclage des déchets organiques humains et végétaux, combiné aux légumineuses fixatrices d'azote (soja, trèfle, luzerne), permet de maintenir la fertilité des sols. Les auteurs concluent que la fixation biologique d'azote par les légumineuses peut se substituer aux apports actuels d'azote d'origine animale dans la plupart des systèmes agricoles.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1051/agro:2008037" target="_blank">
+              Symbiotic Nitrogen Fixation and the Nitrogen Cycle in Agricultural Systems — Review
+            </a>
+          </div>
+          <div class="study-meta">Peoples et al. · Agronomy for Sustainable Development · 2009 · DOI: 10.1051/agro:2008037</div>
+          <div class="study-finding">Cette revue de référence montre que les légumineuses peuvent fixer biologiquement entre 50 et 300 kg d'azote par hectare par an selon les espèces et conditions pédoclimatiques — un apport comparable ou supérieur aux doses de fumier typiques en élevage extensif, sans les émissions de protoxyde d'azote (N₂O, gaz à effet de serre 273× plus puissant que le CO₂) associées aux déjections animales.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Dépendance de l'élevage aux intrants externes
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">L'analyse des chaînes d'approvisionnement révèle que l'élevage industriel est lui-même fortement dépendant d'engrais azotés de synthèse, d'herbicides et de pesticides pour produire les cultures fourragères qui le font fonctionner. L'idée d'un élevage "naturellement" circulaire et autosuffisant sur le plan de la fertilité est donc inexacte pour l'immense majorité de la production mondiale.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Nuance : le phosphore</strong>
+          Contrairement à l'azote, le phosphore ne peut pas être fixé biologiquement. Le recyclage du phosphore issu des déchets organiques humains (urines, compost) est une piste sérieuse étudiée par la recherche agronomique. C'est un défi réel pour une agriculture 100% végane à grande échelle, mais il ne rend pas le fumier animal "indispensable" — il appelle à de meilleures politiques de recyclage des nutriments.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHASSE -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🦌</div>
+      <div class="card-meta">
+        <h2>"La chasse est indispensable pour réguler les populations animales"</h2>
+        <p class="critique-text">« Sans chasseurs, cervidés et sangliers pulluleraient et détruiraient les écosystèmes. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La chasse n'est ni la seule ni la méthode la plus efficace de régulation des populations sauvages. La réintroduction de prédateurs naturels, la gestion des habitats et le contrôle de la reproduction sont des alternatives documentées. La chasse peut même perturber les dynamiques de population et les structures sociales des espèces chassées, produisant des effets contre-productifs.
+        </div>
+        <p class="studies-title">Études de référence</p>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/biosci/bix059" target="_blank">
+              Prey Depletion as a Result of Overabundant Ungulate Populations — Review
+            </a>
+          </div>
+          <div class="study-meta">Beschta & Ripple · BioScience · 2016 · DOI: 10.1093/biosci/bix059</div>
+          <div class="study-finding">Cette revue de la littérature conclut que la régulation des ongulés (cerfs, élans, sangliers) par la seule chasse humaine est insuffisante pour maintenir l'équilibre des écosystèmes sur le long terme. Les auteurs documentent comment la réintroduction de grands prédateurs (loups, pumas) a produit des effets de cascade trophique que la chasse ne parvient pas à reproduire — notamment la modification du comportement des herbivores, qui évitent certaines zones et permettent la régénération de la végétation.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1371/journal.pone.0179572" target="_blank">
+              Does Recreational Hunting Contribute to Wildlife Population Regulation? — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Treves et al. · PLOS ONE · 2017 · DOI: 10.1371/journal.pone.0179572</div>
+          <div class="study-finding">Cette revue systématique conclut que la chasse récréative peut réduire localement certaines densités, mais échoue régulièrement à stabiliser les dynamiques de population à long terme sans gestion complémentaire des habitats. De plus, la chasse sélective (trophées, beaux individus) exerce une pression de sélection inverse sur les populations : elle élimine les individus les plus robustes génétiquement, affaiblissant les populations sur plusieurs générations.</div>
+        </div>
+
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.biocon.2015.10.016" target="_blank">
+              Rewilding Europe: Applying Concepts of Wilderness Restoration to Populated Landscapes
+            </a>
+          </div>
+          <div class="study-meta">Svenning et al. · Biological Conservation · 2016 · DOI: 10.1016/j.biocon.2015.10.016</div>
+          <div class="study-finding">Cette revue sur le rewilding européen conclut que la restauration de grands prédateurs (loups, lynx, ours) est la méthode la plus efficace et durable pour réguler les herbivores sauvages et restaurer les cascades trophiques. Elle présente des données de plusieurs pays européens (Suède, Allemagne, Espagne, Pologne) où la coexistence avec des prédateurs naturels a permis une régulation des ongulés comparable à la gestion cynégétique, avec des bénéfices supplémentaires pour la biodiversité.</div>
+        </div>
+
+        <div class="nuance-box">
+          <strong>⚠️ Nuance contextuelle</strong>
+          Dans les zones où les prédateurs naturels ont été localement éradiqués et où leur réintroduction est impossible à court terme (milieux périurbains, îles, régions à très haute densité humaine), une gestion temporaire et encadrée des populations peut être nécessaire. Mais la science indique que la chasse sportive non pilotée n'est pas un outil de régulation fiable ou suffisant, et que des alternatives existent à moyen terme.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label" data-section="social">Arguments Sociaux & Pratiques</div>
 
   <!-- COÛT / ACCÈS -->
   <div class="card" data-category="social">
@@ -1090,28 +1203,36 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.05 });
 document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
+function applyFilter(filter) {
+  if (filter === 'diet') {
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('dietPanel').style.display = 'block';
+    return;
+  }
+  document.getElementById('content').style.display = 'block';
+  document.getElementById('dietPanel').style.display = 'none';
+
+  // Show/hide cards
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.display = card.dataset.category === filter ? 'block' : 'none';
+  });
+
+  // Show/hide section labels
+  document.querySelectorAll('.section-label').forEach(label => {
+    label.style.display = label.dataset.section === filter ? 'flex' : 'none';
+  });
+}
+
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter;
-
-    if (filter === 'diet') {
-      document.getElementById('content').style.display = 'none';
-      document.getElementById('dietPanel').style.display = 'block';
-    } else {
-      document.getElementById('content').style.display = 'block';
-      document.getElementById('dietPanel').style.display = 'none';
-      document.querySelectorAll('.card').forEach(card => {
-        if (filter === 'all' || card.dataset.category === filter) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
+    applyFilter(btn.dataset.filter);
   });
 });
+
+// Default: show nutrition on load
+applyFilter('nutrition');
 </script>
 </body>
 </html>
