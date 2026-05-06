@@ -750,6 +750,50 @@
     </div>
   </div>
 
+  <!-- SPORT & MUSCULATION -->
+  <div class="card" data-category="sante">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">💪</div>
+      <div class="card-meta">
+        <h2>"Le véganisme est incompatible avec la musculation et la performance sportive"</h2>
+        <p class="critique-text">« Sans protéines animales, impossible de gagner du muscle ou de performer en sport d'endurance. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Les données scientifiques contredisent cette affirmation. Des études contrôlées montrent qu'un régime vegan avec des apports protéiques suffisants (≥1,6 g/kg/jour) permet des gains musculaires et des performances sportives comparables à un régime omnivore. La créatine et la bêta-alanine, naturellement absentes des végétaux, peuvent être supplémentées pour optimiser les performances.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu12092709" target="_blank">
+              Vegan Diet and Muscle Hypertrophy — Randomized Controlled Trial
+            </a>
+          </div>
+          <div class="study-meta">Hevia-Larraín et al. · Sports Medicine · 2021 · DOI: 10.1007/s40279-021-01453-0</div>
+          <div class="study-finding">Cet essai clinique randomisé contrôlé (19 hommes végans vs 19 omnivores, 12 semaines d'entraînement en résistance, apports protéiques équilibrés à 1,6 g/kg/jour) ne montre aucune différence significative de gain musculaire, de force ou de composition corporelle entre les deux groupes. Les auteurs concluent que les protéines végétales sont équivalentes aux protéines animales pour la synthèse musculaire lorsque les apports totaux sont adéquats.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu12071952" target="_blank">
+              Plant-Based Diets and Athletic Performance — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Lynch et al. · Nutrients · 2018 · DOI: 10.3390/nu12071952</div>
+          <div class="study-finding">Cette revue systématique couvrant les régimes végétaux et la performance sportive (endurance, force, récupération) conclut qu'aucune différence de performance n'est documentée entre athlètes végans et omnivores lorsque les apports caloriques et protéiques sont équivalents. Les auteurs notent que les régimes riches en végétaux peuvent même améliorer la récupération via leur teneur élevée en antioxydants et leur effet anti-inflammatoire.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Points d'attention pour les sportifs végans</strong>
+          Créatine (absente des végétaux) : supplémentation à 3–5 g/jour documentée comme bénéfique pour la force. Bêta-alanine : idem. Apport protéique : viser ≥1,6–2 g/kg/jour via légumineuses, tofu, tempeh, seitan, protéines végétales en poudre (pois, riz). Fer et B12 : surveillance accrue chez les sportifs d'endurance.
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div class="section-label" data-section="environnement">Environnement & Durabilité</div>
 
@@ -990,13 +1034,13 @@
     </div>
   </div>
 
-  <!-- INSECTES ET MOISSONS -->
+  <!-- MOISSONS & ANIMAUX SAUVAGES — fusionné -->
   <div class="card" data-category="environnement">
     <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-amber">🌾</div>
+      <div class="card-icon icon-amber">🐭</div>
       <div class="card-meta">
-        <h2>"Des milliers d'insectes et petits animaux meurent lors des moissons — le véganisme n'est pas sans morts"</h2>
-        <p class="critique-text">« La récolte mécanisée tue massivement des rongeurs, oiseaux et insectes. »</p>
+        <h2>"Les moissons et cultures végétales tuent plus d'animaux que l'élevage local"</h2>
+        <p class="critique-text">« Insectes, rongeurs, oiseaux tués par les machines et pesticides — le véganisme n'est pas sans morts animales. »</p>
       </div>
       <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
         <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1005,7 +1049,7 @@
     <div class="card-body">
       <div class="card-content">
         <div class="verdict">
-          <strong>Verdict scientifique :</strong> L'argument est réel mais ne tient pas à l'analyse comparative. La grande majorité des cultures végétales mondiales sert à nourrir des animaux d'élevage — pas des humains végans. Réduire l'élevage réduirait donc massivement les surfaces cultivées et, par conséquent, la mortalité animale liée aux moissons. Un monde vegan causerait moins de morts animales dans les champs, pas plus.
+          <strong>Verdict scientifique :</strong> L'argument est réel mais s'inverse à l'analyse comparative. La grande majorité des cultures végétales mondiales nourrit des animaux d'élevage, pas des humains végans. Réduire l'élevage réduirait donc massivement les surfaces cultivées et la mortalité qui en découle. Par ailleurs, l'élevage est lui-même la première cause de destruction d'habitats sauvages — générant une mortalité animale d'une ampleur sans commune mesure avec celle des récoltes mécanisées.
         </div>
         <p class="studies-title">Études de référence</p>
         <div class="study">
@@ -1015,51 +1059,7 @@
             </a>
           </div>
           <div class="study-meta">Matheny · Journal of Agricultural and Environmental Ethics · 2003 · DOI: 10.1163/156853003763806973</div>
-          <div class="study-finding">Cette analyse quantitative, réponse directe à l'argument "moisson = plus de morts", démontre mathématiquement que la production de calories végétales pour la consommation humaine directe cause moins de morts animales totales que la production de calories animales. En incluant les cultures fourragères nécessaires à l'élevage, un régime omnivore génère davantage de mortalité animale dans les champs qu'un régime végétalien.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
-              Poore & Nemecek · Science (2018) — Part des cultures destinées à l'élevage
-            </a>
-          </div>
-          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
-          <div class="study-finding">83% des terres agricoles mondiales sont utilisées pour l'élevage (pâturages + cultures fourragères). Un passage à l'alimentation végétale directe libérerait 3,1 milliards d'hectares — réduisant proportionnellement les surfaces cultivées et donc la mortalité animale liée aux récoltes mécanisées.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>📊 Le raisonnement clé</strong>
-          Si 70–80% du soja et des céréales mondiales nourrissent des animaux d'élevage, les surfaces moissonnées pour l'élevage sont bien plus grandes que celles nécessaires pour nourrir les végans directement. Moins d'élevage = moins de surfaces cultivées = moins de morts animales dans les champs.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MORT ANIMAUX SAUVAGES -->
-  <div class="card" data-category="environnement">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-amber">🐭</div>
-      <div class="card-meta">
-        <h2>"La mort d'animaux sauvages lors des cultures tue plus d'animaux que l'élevage local"</h2>
-        <p class="critique-text">« Pesticides, destruction d'habitats et moissons font plus de victimes animales que l'élevage traditionnel. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> L'argument inverse la réalité à l'échelle globale. L'élevage est lui-même le premier consommateur de cultures végétales et donc le premier responsable indirect de la mortalité animale liée à l'agriculture. De plus, l'élevage est la principale cause de destruction d'habitats sauvages dans le monde, ce qui génère une mortalité animale sauvage sans commune mesure avec celle des cultures directement destinées à l'alimentation humaine.
-        </div>
-        <p class="studies-title">Études de référence</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
-              Poore & Nemecek · Science (2018) — Élevage et destruction d'habitats
-            </a>
-          </div>
-          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
-          <div class="study-finding">L'élevage est responsable de 91% de la destruction de la forêt amazonienne et de la conversion massive d'habitats naturels en terres agricoles. 136 millions d'acres de forêt tropicale ont été défrichés depuis 1970 principalement pour le pâturage et les cultures fourragères. Cette destruction d'habitats génère une mortalité animale sauvage (vertébrés, invertébrés, insectes) d'une magnitude sans commune mesure avec la mortalité liée aux moissons.</div>
+          <div class="study-finding">Cette analyse quantitative démontre mathématiquement que la production de calories végétales pour la consommation humaine directe cause moins de morts animales totales que la production de calories animales. En intégrant les cultures fourragères nécessaires à l'élevage, un régime omnivore génère davantage de mortalité animale dans les champs qu'un régime végétalien.</div>
         </div>
         <div class="study">
           <div class="study-title">
@@ -1068,11 +1068,20 @@
             </a>
           </div>
           <div class="study-meta">Machovina et al. · Conservation Biology · 2015 · DOI: 10.1111/cobi.13452</div>
-          <div class="study-finding">Cette étude conclut que l'élevage est le facteur anthropique le plus destructeur pour la biodiversité sauvage mondiale, via la destruction directe d'habitats, la compétition pour les ressources, la persécution des prédateurs et la pollution des eaux. Les auteurs estiment que la réduction de la consommation de produits animaux est la mesure de conservation de la biodiversité la plus efficace disponible à l'échelle individuelle.</div>
+          <div class="study-finding">L'élevage est le facteur anthropique le plus destructeur pour la biodiversité sauvage mondiale : destruction directe d'habitats, compétition pour les ressources, persécution des prédateurs, pollution des eaux. La réduction de la consommation de produits animaux est identifiée comme la mesure de conservation de la biodiversité la plus efficace à l'échelle individuelle.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Surfaces cultivées et élevage
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">83% des terres agricoles mondiales servent à l'élevage (pâturages + cultures fourragères). L'élevage est responsable de 91% de la déforestation amazonienne. Un passage à l'alimentation végétale directe libérerait 3,1 milliards d'hectares — réduisant proportionnellement surfaces cultivées, usage de pesticides et mortalité animale liée aux récoltes.</div>
         </div>
         <div class="nuance-box">
-          <strong>📊 Mise en perspective</strong>
-          L'argument "moissons = plus de morts" ne tient que si l'on compare la production végétale directement destinée aux humains avec un élevage local très extensif sur des prairies permanentes — un scénario qui ne représente qu'une infime fraction de la production animale mondiale réelle. À l'échelle globale, l'élevage génère nettement plus de mortalité animale sauvage que l'agriculture végétale destinée à la consommation humaine directe.
+          <strong>📊 Le raisonnement clé</strong>
+          70–80% des céréales et du soja mondiaux nourrissent des animaux d'élevage. Les surfaces moissonnées pour l'élevage sont donc bien plus grandes que celles nécessaires pour nourrir directement des humains végans. Moins d'élevage = moins de surfaces cultivées = moins de morts animales dans les champs et moins de destruction d'habitats sauvages.
         </div>
       </div>
     </div>
