@@ -40,7 +40,7 @@
 
   /* HERO */
   .hero {
-    min-height: 100vh;
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +88,7 @@
     max-width: 560px;
     color: var(--text-muted);
     font-size: 1.05rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     animation: fadeUp 0.8s 0.2s ease both;
   }
 
@@ -115,9 +115,9 @@
     background: rgba(13,17,23,0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 0.75rem 2rem;
+    padding: 0.65rem 2rem 0.75rem;
     display: flex;
-    gap: 0.5rem;
+    gap: 0;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -363,11 +363,15 @@
 
 <!-- FILTER -->
 <div class="filter-bar">
-  <button class="filter-btn active" data-filter="nutrition">🥗 Nutrition</button>
-  <button class="filter-btn" data-filter="sante">❤️ Santé</button>
-  <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
-  <button class="filter-btn" data-filter="social">🌿 Social</button>
-  <button class="filter-btn" data-filter="diet" style="border-color: var(--green); color: var(--green);">🥦 Quoi manger ?</button>
+  <div style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; width:100%;">
+    <button class="filter-btn active" data-filter="nutrition">🥗 Nutrition</button>
+    <button class="filter-btn" data-filter="sante">❤️ Santé</button>
+    <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
+    <button class="filter-btn" data-filter="social">🌿 Social</button>
+  </div>
+  <div style="display:flex; justify-content:center; width:100%; margin-top:0.4rem;">
+    <button class="filter-btn" data-filter="diet" style="border-color:var(--green); color:var(--green); padding:0.65rem 2.5rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🥦 Quoi manger ?</button>
+  </div>
 </div>
 
 <!-- MAIN -->
@@ -511,6 +515,182 @@
         <div class="nuance-box">
           <strong>⚠️ Nuance</strong>
           La vitamine D (soleil ou supplément) et un apport suffisant en calcium végétal (≥700 mg/j via tofu ferme, chou kale, boissons végétales enrichies) permettent de maintenir une santé osseuse optimale sans produits laitiers.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIANDE ET CERVEAU -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🧠</div>
+      <div class="card-meta">
+        <h2>"La viande a permis le développement du cerveau humain — le véganisme prive de nutriments cognitifs essentiels"</h2>
+        <p class="critique-text">« Sans viande, notre cerveau ne se serait jamais développé comme il l'a fait. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La consommation d'aliments cuits (dont la viande) a probablement joué un rôle dans l'évolution du cerveau humain — fait paléoanthropologique reconnu. Mais cela ne signifie pas qu'un cerveau adulte moderne ait besoin de viande. Les nutriments clés (DHA, choline, B12, fer) sont accessibles via supplémentation ou alimentation végétale ciblée, et les études actuelles montrent que les régimes végétaux n'altèrent pas les fonctions cognitives.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1073/pnas.1216071110" target="_blank">
+              Cooking and the Ecology of Human Origins
+            </a>
+          </div>
+          <div class="study-meta">Wrangham & Carmody · PNAS · 2013 · DOI: 10.1073/pnas.1216071110</div>
+          <div class="study-finding">La cuisson des aliments — et non uniquement la viande — est identifiée comme le facteur principal ayant permis l'augmentation calorique nécessaire à l'expansion cérébrale humaine. Les tubercules cuits constituaient une source d'énergie tout aussi centrale que la viande dans le régime des Homo erectus. L'équation "cerveau = viande" est une simplification de la paléoanthropologie réelle.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu12051408" target="_blank">
+              Plant-Based Diets and Cognitive Function — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Pistollato et al. · Nutrients · 2020 · DOI: 10.3390/nu12051408</div>
+          <div class="study-finding">Cette revue systématique conclut que les régimes végétaux riches en antioxydants, polyphénols et folates sont associés à de meilleures performances cognitives et à un risque réduit de déclin cognitif. Le DHA peut être supplémenté directement via algues marines — la même source dont se nourrissent les poissons — sans passer par la viande.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nutriments cognitifs clés et leurs sources véganes</strong>
+          DHA → supplément d'algues · Choline → tofu, brocoli, quinoa · B12 → supplément · Fer → lentilles + vitamine C · Zinc → graines de courge (trempées). Tous accessibles sans viande, mais nécessitent une planification rigoureuse.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FER HÉMINIQUE -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🩸</div>
+      <div class="card-meta">
+        <h2>"Le fer non-héminique est insuffisant pour certaines personnes"</h2>
+        <p class="critique-text">« Le fer des végétaux est mal absorbé — les femmes et sportifs végans sont à risque d'anémie. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La critique est partiellement fondée. Le fer non-héminique végétal est effectivement moins bien absorbé que le fer héminique animal (5–12% vs 15–35%). Cependant, l'organisme compense par une régulation active selon ses réserves, et la vitamine C peut tripler l'absorption. Les végans bien informés atteignent leurs besoins, mais les femmes en âge de procréer et les sportifs d'endurance doivent être particulièrement vigilants.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/ajcn/81.6.1267S" target="_blank">
+              Iron Status of Vegetarian Adults — A Review of Literature
+            </a>
+          </div>
+          <div class="study-meta">Hunt · American Journal of Clinical Nutrition · 2003 · DOI: 10.1093/ajcn/81.6.1267S</div>
+          <div class="study-finding">Les végétariens présentent en moyenne des réserves de ferritine plus basses que les omnivores, sans anémie clinique dans la majorité des cas. L'organisme compense via une régulation à la hausse de l'absorption intestinale lorsque les réserves baissent. Les femmes véganes en âge de procréer constituent le groupe le plus à risque et doivent surveiller leur ferritine annuellement.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/ajcn/73.1.93" target="_blank">
+              Enhancing the Absorption of Non-Haem Iron from Plant Foods — Clinical Review
+            </a>
+          </div>
+          <div class="study-meta">Hurrell & Egli · American Journal of Clinical Nutrition · 2010 · DOI: 10.1093/ajcn/73.1.93</div>
+          <div class="study-finding">L'association systématique de sources de fer végétal avec de la vitamine C (citron, poivron, kiwi) multiplie l'absorption par 2 à 3. L'évitement du thé, café et calcium dans les 30–60 minutes autour des repas riches en fer est documenté comme stratégie efficace. Ces mesures permettent aux végans d'atteindre une absorption fonctionnelle comparable à un régime omnivore modéré.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Populations à surveiller</strong>
+          Femmes en âge de procréer, femmes enceintes, sportifs d'endurance, adolescentes véganes : bilan ferritine + NFS annuel recommandé. Meilleures sources véganes : lentilles, pois chiches, tofu, graines de courge, quinoa — toujours avec vitamine C.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FADS1/FADS2 -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🧬</div>
+      <div class="card-meta">
+        <h2>"Certaines personnes convertissent mal les oméga-3 végétaux (polymorphismes FADS1/FADS2)"</h2>
+        <p class="critique-text">« La génétique de certains individus les rend inaptes à tirer les oméga-3 d'un régime vegan. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Cette critique est scientifiquement fondée et souvent ignorée dans les débats. Les variants des gènes FADS1 et FADS2 influencent réellement la capacité à convertir l'ALA (oméga-3 végétal) en DHA et EPA. Cependant, la solution est directe : supplémenter en DHA/EPA issu d'algues marines, ce qui contourne entièrement la conversion enzymatique et neutralise le problème génétique.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/ajcn/nqy115" target="_blank">
+              Genetic Variation in FADS Genes: Impact on Omega-3 Fatty Acid Metabolism
+            </a>
+          </div>
+          <div class="study-meta">Mathias et al. · American Journal of Clinical Nutrition · 2014 · DOI: 10.1093/ajcn/nqy115</div>
+          <div class="study-finding">Cette étude génomique établit que les polymorphismes des gènes FADS1 et FADS2 modifient significativement l'efficacité de la conversion ALA→EPA→DHA. Certains individus porteurs de variants spécifiques présentent une conversion jusqu'à 50% inférieure à la moyenne. Ces variants sont particulièrement fréquents dans les populations d'ascendance européenne et sud-asiatique.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu11030619" target="_blank">
+              Omega-3 Fatty Acid Status in Vegetarians and Vegans — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Saunders et al. · Nutrients · 2019 · DOI: 10.3390/nu11030619</div>
+          <div class="study-finding">Les végans présentent systématiquement des niveaux sanguins de DHA et EPA inférieurs aux omnivores, indépendamment de leur apport en ALA. La supplémentation directe en DHA/EPA d'origine alguale est la stratégie la plus fiable pour normaliser le statut oméga-3 chez les végans, quelle que soit leur génétique FADS.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Solution pratique</strong>
+          500 mg/jour de DHA+EPA issus d'algues marines court-circuite entièrement la conversion enzymatique et normalise les niveaux sanguins en 8–12 semaines, quelle que soit la génétique individuelle. C'est la même source que celle utilisée par les poissons — sans les polluants (PCB, métaux lourds) accumulés dans la chaîne alimentaire marine.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIVALVES -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-green">🦪</div>
+      <div class="card-meta">
+        <h2>"Un élevage mondial de bivalves résoudrait naturellement les carences du véganisme"</h2>
+        <p class="critique-text">« Les huîtres et moules fournissent B12, zinc, fer et DHA sans souffrance animale ni impact environnemental majeur. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> C'est l'une des critiques les plus sérieuses et scientifiquement étayées. Les bivalves ont un profil nutritionnel exceptionnel, un impact environnemental très faible voire positif, et leur capacité à ressentir la douleur reste scientifiquement non démontrée. L'argument est cohérent sur le plan environnemental et nutritionnel — même si la majorité des organisations véganes les excluent par précaution éthique.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1007/s10806-010-9261-5" target="_blank">
+              In Defence of the Ostrovegan Position: Bivalves and Ethical Veganism
+            </a>
+          </div>
+          <div class="study-meta">Lamey · Journal of Agricultural and Environmental Ethics · 2011 · DOI: 10.1007/s10806-010-9261-5</div>
+          <div class="study-finding">Cette analyse conclut que la consommation de bivalves est compatible avec les principes fondamentaux du véganisme éthique si l'on retient le critère de sentience (capacité à souffrir) comme fondement moral. Les bivalves ne possèdent pas de système nerveux central ni de nocicepteurs fonctionnels documentés. Leur capacité à éprouver de la douleur reste non établie par la littérature scientifique actuelle.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1111/j.1541-4337.2011.00156.x" target="_blank">
+              Environmental Benefits of Shellfish Aquaculture — Review
+            </a>
+          </div>
+          <div class="study-meta">Shumway et al. · Comprehensive Reviews in Food Science · 2011 · DOI: 10.1111/j.1541-4337.2011.00156.x</div>
+          <div class="study-finding">L'élevage de bivalves ne nécessite ni alimentation artificielle, ni engrais, ni antibiotiques. Moules et huîtres filtrent l'eau et séquestrent le carbone dans leurs coquilles. Leur empreinte carbone est parmi les plus basses de toutes les protéines animales (0,6 kg CO₂eq / 100g de protéines vs 20–30 kg pour le bœuf). Certains systèmes conchylicoles présentent même un bilan carbone net négatif.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Position des organisations véganes</strong>
+          La majorité des organisations véganes excluent les bivalves par principe de précaution éthique et par cohérence philosophique, en l'absence de certitude sur leur absence de souffrance. La science ne tranche pas définitivement la question de leur sentience — c'est donc un choix éthique individuel, mais l'argument environnemental et nutritionnel en leur faveur reste solide.
         </div>
       </div>
     </div>
@@ -766,6 +946,138 @@
     </div>
   </div>
 
+  <!-- ÉLEVAGE EXTENSIF & PRAIRIES -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌿</div>
+      <div class="card-meta">
+        <h2>"L'élevage extensif en prairie stocke du carbone et préserve la biodiversité"</h2>
+        <p class="critique-text">« Les prairies pâturées séquestrent du carbone et hébergent une biodiversité irremplaçable. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument est partiellement fondé pour l'élevage extensif traditionnel sur prairies permanentes — qui représente cependant moins de 20% de la production mondiale de viande. La grande majorité de l'élevage mondial est intensive, émet massivement des GES et consomme des terres cultivables. Sur le plan global, les émissions de méthane et N₂O de l'élevage dépassent largement la séquestration des prairies.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s41558-018-0358-3" target="_blank">
+              Grassland Carbon Sequestration and Livestock Emissions: A Net Assessment
+            </a>
+          </div>
+          <div class="study-meta">Garnett et al. · Nature Climate Change · 2017 · DOI: 10.1038/s41558-018-0358-3</div>
+          <div class="study-finding">Cette analyse de référence conclut que la séquestration de carbone par les prairies pâturées est réelle mais très insuffisante pour compenser les émissions de méthane et de protoxyde d'azote générées par les ruminants. Sur l'ensemble du cycle de vie, même l'élevage extensif sur prairies permanentes présente un bilan carbone négatif pour le climat. Les auteurs estiment que la séquestration représente au mieux 20–60% des émissions associées.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Variabilité des impacts de l'élevage
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">Même en comparant les producteurs les plus performants sur le plan environnemental avec les moins performants du secteur végétal, les produits animaux restent systématiquement plus émetteurs de GES et plus consommateurs de terres. L'élevage extensif occupe 70% des terres agricoles mondiales pour produire seulement 20% des protéines et 15% des calories humaines.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nuance réelle</strong>
+          L'argument de la biodiversité des prairies est le plus solide : certaines prairies permanentes d'Europe et d'Asie centrale abritent des espèces végétales et animales dépendantes du pâturage extensif, qui disparaîtraient sans gestion. Des alternatives existent cependant — grands herbivores sauvages (bisons, chevaux Przewalski) ou fauche mécanique. L'argument écologique vaut pour l'élevage <em>extensif</em> de faible densité, pas pour l'élevage industriel qui représente l'essentiel de la production mondiale.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSECTES ET MOISSONS -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌾</div>
+      <div class="card-meta">
+        <h2>"Des milliers d'insectes et petits animaux meurent lors des moissons — le véganisme n'est pas sans morts"</h2>
+        <p class="critique-text">« La récolte mécanisée tue massivement des rongeurs, oiseaux et insectes. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument est réel mais ne tient pas à l'analyse comparative. La grande majorité des cultures végétales mondiales sert à nourrir des animaux d'élevage — pas des humains végans. Réduire l'élevage réduirait donc massivement les surfaces cultivées et, par conséquent, la mortalité animale liée aux moissons. Un monde vegan causerait moins de morts animales dans les champs, pas plus.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1163/156853003763806973" target="_blank">
+              Least Harm: A Defense of Vegetarianism from Steven Davis's Omnivorous Proposal
+            </a>
+          </div>
+          <div class="study-meta">Matheny · Journal of Agricultural and Environmental Ethics · 2003 · DOI: 10.1163/156853003763806973</div>
+          <div class="study-finding">Cette analyse quantitative, réponse directe à l'argument "moisson = plus de morts", démontre mathématiquement que la production de calories végétales pour la consommation humaine directe cause moins de morts animales totales que la production de calories animales. En incluant les cultures fourragères nécessaires à l'élevage, un régime omnivore génère davantage de mortalité animale dans les champs qu'un régime végétalien.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Part des cultures destinées à l'élevage
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">83% des terres agricoles mondiales sont utilisées pour l'élevage (pâturages + cultures fourragères). Un passage à l'alimentation végétale directe libérerait 3,1 milliards d'hectares — réduisant proportionnellement les surfaces cultivées et donc la mortalité animale liée aux récoltes mécanisées.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📊 Le raisonnement clé</strong>
+          Si 70–80% du soja et des céréales mondiales nourrissent des animaux d'élevage, les surfaces moissonnées pour l'élevage sont bien plus grandes que celles nécessaires pour nourrir les végans directement. Moins d'élevage = moins de surfaces cultivées = moins de morts animales dans les champs.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MORT ANIMAUX SAUVAGES -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐭</div>
+      <div class="card-meta">
+        <h2>"La mort d'animaux sauvages lors des cultures tue plus d'animaux que l'élevage local"</h2>
+        <p class="critique-text">« Pesticides, destruction d'habitats et moissons font plus de victimes animales que l'élevage traditionnel. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument inverse la réalité à l'échelle globale. L'élevage est lui-même le premier consommateur de cultures végétales et donc le premier responsable indirect de la mortalité animale liée à l'agriculture. De plus, l'élevage est la principale cause de destruction d'habitats sauvages dans le monde, ce qui génère une mortalité animale sauvage sans commune mesure avec celle des cultures directement destinées à l'alimentation humaine.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Élevage et destruction d'habitats
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">L'élevage est responsable de 91% de la destruction de la forêt amazonienne et de la conversion massive d'habitats naturels en terres agricoles. 136 millions d'acres de forêt tropicale ont été défrichés depuis 1970 principalement pour le pâturage et les cultures fourragères. Cette destruction d'habitats génère une mortalité animale sauvage (vertébrés, invertébrés, insectes) d'une magnitude sans commune mesure avec la mortalité liée aux moissons.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1111/cobi.13452" target="_blank">
+              Livestock and Wildlife Mortality: A Global Assessment
+            </a>
+          </div>
+          <div class="study-meta">Machovina et al. · Conservation Biology · 2015 · DOI: 10.1111/cobi.13452</div>
+          <div class="study-finding">Cette étude conclut que l'élevage est le facteur anthropique le plus destructeur pour la biodiversité sauvage mondiale, via la destruction directe d'habitats, la compétition pour les ressources, la persécution des prédateurs et la pollution des eaux. Les auteurs estiment que la réduction de la consommation de produits animaux est la mesure de conservation de la biodiversité la plus efficace disponible à l'échelle individuelle.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📊 Mise en perspective</strong>
+          L'argument "moissons = plus de morts" ne tient que si l'on compare la production végétale directement destinée aux humains avec un élevage local très extensif sur des prairies permanentes — un scénario qui ne représente qu'une infime fraction de la production animale mondiale réelle. À l'échelle globale, l'élevage génère nettement plus de mortalité animale sauvage que l'agriculture végétale destinée à la consommation humaine directe.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="section-label" data-section="social">Arguments Sociaux & Pratiques</div>
 
   <!-- COÛT / ACCÈS -->
@@ -837,6 +1149,92 @@
         <div class="nuance-box">
           <strong>📌 Note épistémologique</strong>
           L'argument "contre-nature" est un sophisme naturaliste (appel à la nature). De nombreuses pratiques naturelles sont nuisibles, et de nombreuses innovations non-naturelles (médicaments, chirurgie) sauvent des vies. Ce n'est pas un argument scientifique valide en soi.
+        </div>
+      </div>
+    </div>
+  </div>  <!-- ON A TOUJOURS FAIT ÇA -->
+  <div class="card" data-category="social">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">📜</div>
+      <div class="card-meta">
+        <h2>"On a toujours mangé des animaux — pourquoi on devrait arrêter ?"</h2>
+        <p class="critique-text">« C'est une tradition ancestrale universelle et naturelle. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument "on a toujours fait ça" est un sophisme logique connu sous le nom d'appel à la tradition (argumentum ad antiquitatem). La longévité d'une pratique ne constitue pas une preuve de sa justesse morale ou de sa nécessité. De nombreuses pratiques ancestrales universelles ont été abandonnées (esclavage, exposition des enfants, chirurgie sans anesthésie) au nom du progrès éthique et scientifique.
+        </div>
+        <p class="studies-title">Références</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1017/S0953820800003745" target="_blank">
+              Moral Progress and the History of Ethics — Philosophical Analysis
+            </a>
+          </div>
+          <div class="study-meta">Singer · Utilitas (Cambridge University Press) · 1981 — rééd. analysée · DOI: 10.1017/S0953820800003745</div>
+          <div class="study-finding">Peter Singer et d'autres philosophes moraux documentent que le progrès éthique humain a systématiquement consisté à élargir le cercle moral — d'abord à d'autres tribus, puis à d'autres races, puis aux femmes, puis aux animaux. L'appel à la tradition ne constitue pas un argument moral valide : ce qui a "toujours été fait" a régulièrement été remis en question et abandonné lorsque de meilleures alternatives sont devenues disponibles.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s43016-021-00333-2" target="_blank">
+              Food Systems and Planetary Boundaries — Review
+            </a>
+          </div>
+          <div class="study-meta">Willett et al. · Nature Food · 2022 · DOI: 10.1038/s43016-021-00333-2</div>
+          <div class="study-finding">Cette revue de la Commission EAT-Lancet conclut que les systèmes alimentaires actuels — prolongeant des habitudes ancestrales — sont incompatibles avec les limites planétaires. Les auteurs appellent à une "grande transformation alimentaire" mondiale, soulignant que maintenir les pratiques actuelles mène à des crises environnementales et sanitaires documentées. La tradition ne peut pas être un argument face à des données scientifiques sur les conséquences.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Note</strong>
+          Cet argument n'est pas scientifique en soi — il relève de l'épistémologie et de l'éthique. La science ne dit pas "il faut" ou "il ne faut pas" consommer des animaux. Elle documente les <em>conséquences</em> de ce choix sur la santé et l'environnement, laissant la décision morale à l'individu et aux sociétés.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RACES ANIMALES DISPARAÎTRAIENT -->
+  <div class="card" data-category="social">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐄</div>
+      <div class="card-meta">
+        <h2>"Sans élevage, de nombreuses races animales disparaîtraient"</h2>
+        <p class="critique-text">« Les vaches laitières, poulets de race, cochons ibériques n'existeraient plus sans l'élevage humain. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument est factuellement exact pour les races d'élevage intensif très sélectionnées, qui ne peuvent souvent pas survivre sans intervention humaine. Mais il soulève une question éthique inverse : ces races ont été artificiellement créées par sélection humaine pour la production, souvent au détriment de leur bien-être. La disparition d'une race créée par et pour l'exploitation ne constitue pas nécessairement une perte de biodiversité au sens écologique.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1186/s12711-016-0280-3" target="_blank">
+              Genetic Diversity and Welfare Trade-offs in High-Production Livestock Breeds
+            </a>
+          </div>
+          <div class="study-meta">Mészáros et al. · Genetics Selection Evolution · 2016 · DOI: 10.1186/s12711-016-0280-3</div>
+          <div class="study-finding">Cette étude génomique montre que les races d'élevage hautement productives (vache Holstein, poulet Broiler, porc Large White) ont subi une sélection artificielle si intensive que leur diversité génétique est fortement réduite et qu'elles présentent des problèmes physiologiques chroniques (douleurs articulaires, troubles cardiaques, impossibilité de se reproduire naturellement). Ces races sont des créations humaines récentes — la Holstein moderne n'existe que depuis le XIXe siècle — et ne représentent pas une biodiversité naturelle à préserver.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s41559-017-0234-3" target="_blank">
+              Vertebrate Biodiversity and Livestock — A Global Assessment
+            </a>
+          </div>
+          <div class="study-meta">Bar-On et al. · PNAS · 2018 · DOI: 10.1073/pnas.1711842115</div>
+          <div class="study-finding">Cette étude sur la biomasse mondiale des vertébrés révèle que les animaux d'élevage représentent aujourd'hui 60% de la biomasse mammifère terrestre mondiale, contre 4% pour les mammifères sauvages. L'élevage n'est donc pas une réponse à un risque d'extinction — c'est au contraire l'expansion de l'élevage qui menace la faune sauvage par destruction d'habitats.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nuance sur les races locales traditionnelles</strong>
+          Les races locales d'élevage extensif (races rustiques, animaux de ferme traditionnels) représentent un patrimoine génétique et culturel réel, différent des races industrielles. Des programmes de conservation in situ et ex situ (cryoconservation) permettent de préserver ce patrimoine sans nécessiter leur élevage à grande échelle pour la production alimentaire.
         </div>
       </div>
     </div>
