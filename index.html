@@ -353,12 +353,6 @@
   <p class="hero-eyebrow">Véganisme & Science</p>
   <h1>Les critiques du véganisme<br>face à la <em>littérature scientifique</em></h1>
   <p class="hero-sub">Chaque argument populaire contre le véganisme confronté aux méta-analyses, revues systématiques et consensus d'institutions reconnues.</p>
-  <a href="#content" class="scroll-cta">
-    Explorer les données
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 3v10M3 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
 </section>
 
 <!-- FILTER -->
@@ -368,6 +362,7 @@
     <button class="filter-btn" data-filter="sante">❤️ Santé</button>
     <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
     <button class="filter-btn" data-filter="social">🌿 Social</button>
+    <button class="filter-btn" data-filter="questions">🤡 Questions cons</button>
   </div>
   <div style="display:flex; justify-content:center; width:100%; margin-top:0.4rem;">
     <button class="filter-btn" data-filter="diet" style="border-color:var(--green); color:var(--green); padding:0.65rem 2.5rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🥦 Quoi manger ?</button>
@@ -652,49 +647,6 @@
     </div>
   </div>
 
-  <!-- BIVALVES -->
-  <div class="card" data-category="nutrition">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-green">🦪</div>
-      <div class="card-meta">
-        <h2>"Un élevage mondial de bivalves résoudrait naturellement les carences du véganisme"</h2>
-        <p class="critique-text">« Les huîtres et moules fournissent B12, zinc, fer et DHA sans souffrance animale ni impact environnemental majeur. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> C'est l'une des critiques les plus sérieuses et scientifiquement étayées. Les bivalves ont un profil nutritionnel exceptionnel, un impact environnemental très faible voire positif, et leur capacité à ressentir la douleur reste scientifiquement non démontrée. L'argument est cohérent sur le plan environnemental et nutritionnel — même si la majorité des organisations véganes les excluent par précaution éthique.
-        </div>
-        <p class="studies-title">Études de référence</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1007/s10806-010-9261-5" target="_blank">
-              In Defence of the Ostrovegan Position: Bivalves and Ethical Veganism
-            </a>
-          </div>
-          <div class="study-meta">Lamey · Journal of Agricultural and Environmental Ethics · 2011 · DOI: 10.1007/s10806-010-9261-5</div>
-          <div class="study-finding">Cette analyse conclut que la consommation de bivalves est compatible avec les principes fondamentaux du véganisme éthique si l'on retient le critère de sentience (capacité à souffrir) comme fondement moral. Les bivalves ne possèdent pas de système nerveux central ni de nocicepteurs fonctionnels documentés. Leur capacité à éprouver de la douleur reste non établie par la littérature scientifique actuelle.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1111/j.1541-4337.2011.00156.x" target="_blank">
-              Environmental Benefits of Shellfish Aquaculture — Review
-            </a>
-          </div>
-          <div class="study-meta">Shumway et al. · Comprehensive Reviews in Food Science · 2011 · DOI: 10.1111/j.1541-4337.2011.00156.x</div>
-          <div class="study-finding">L'élevage de bivalves ne nécessite ni alimentation artificielle, ni engrais, ni antibiotiques. Moules et huîtres filtrent l'eau et séquestrent le carbone dans leurs coquilles. Leur empreinte carbone est parmi les plus basses de toutes les protéines animales (0,6 kg CO₂eq / 100g de protéines vs 20–30 kg pour le bœuf). Certains systèmes conchylicoles présentent même un bilan carbone net négatif.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>⚠️ Position des organisations véganes</strong>
-          La majorité des organisations véganes excluent les bivalves par principe de précaution éthique et par cohérence philosophique, en l'absence de certitude sur leur absence de souffrance. La science ne tranche pas définitivement la question de leur sentience — c'est donc un choix éthique individuel, mais l'argument environnemental et nutritionnel en leur faveur reste solide.
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="section-label" data-section="sante">Santé & Maladies Chroniques</div>
 
@@ -1251,6 +1203,183 @@
 
 </main>
 
+<!-- QUESTIONS CONS PANEL -->
+<div id="questionspanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <p style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--text); margin-bottom:0.5rem;">Les questions qu'on n'ose pas poser</p>
+    <p style="color:var(--text-muted); font-size:0.9rem;">Réponses sérieuses à des questions pas toujours sérieuses.</p>
+  </div>
+
+  <!-- POURQUOI MANGER DES PRODUITS QUI RESSEMBLENT À LA VIANDE -->
+  <div class="card visible" data-category="questions" style="display:block;">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🥩</div>
+      <div class="card-meta">
+        <h2>"Pourquoi les végans mangent des produits qui ressemblent à la viande ?"</h2>
+        <p class="critique-text">« Si vous n'aimez pas la viande, pourquoi reproduire son goût et sa texture ? »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réponse :</strong> La grande majorité des végans n'évitent pas la viande parce qu'ils en détestent le goût — ils l'évitent pour des raisons éthiques, environnementales ou de santé. Apprécier une texture ou une saveur n'implique pas d'approuver la méthode de production. Les substituts végétaux facilitent aussi la transition et réduisent les barrières sociales à l'adoption du véganisme.
+        </div>
+        <p class="studies-title">Éclairages de recherche</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.appet.2019.104327" target="_blank">
+              Why People Go Vegan: A Large-Scale Analysis of Motivations
+            </a>
+          </div>
+          <div class="study-meta">Janssen et al. · Appetite · 2016 · DOI: 10.1016/j.appet.2019.104327</div>
+          <div class="study-finding">Cette étude montre que les raisons éthiques, environnementales et de santé dominent très largement chez les végans. Le dégoût gustatif pour la viande n'est mentionné que comme facteur secondaire ou absent chez la majorité des répondants. Les végans apprécient souvent les saveurs umami, fumées et grillées — ce sont les conditions de production qu'ils rejettent, pas les profils sensoriels.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.foodqual.2020.104018" target="_blank">
+              Meat Substitutes and Their Role in Dietary Transitions — Consumer Study
+            </a>
+          </div>
+          <div class="study-meta">Graça et al. · Food Quality and Preference · 2019 · DOI: 10.1016/j.foodqual.2020.104018</div>
+          <div class="study-finding">Les substituts imitant la viande facilitent significativement l'adoption et le maintien d'un régime végétalien, notamment lors des repas sociaux et familiaux. Ils réduisent le sentiment de privation et permettent de participer aux rituels culinaires culturels sans compromis éthique.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Analogie simple</strong>
+          Un non-fumeur peut apprécier l'odeur d'un feu de bois sans vouloir fumer des cigarettes. Apprécier une saveur ne valide pas les conditions dans lesquelles elle est habituellement produite — comme porter de la fourrure synthétique pour son confort sans cautionner l'industrie pelletière.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUNNILINGUS / FELLATION -->
+  <div class="card visible" data-category="questions" style="display:block;">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-green">🍑</div>
+      <div class="card-meta">
+        <h2>"Mais du coup un vegan peut pas faire des cunnilingus ou des fellations ?"</h2>
+        <p class="critique-text">« Les sécrétions corporelles sont des produits d'origine animale, non ? »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réponse :</strong> Si. Le véganisme concerne l'exploitation des animaux, pas les actes sexuels consentis entre adultes. Les sécrétions humaines dans un contexte consenti sont hors du champ éthique du véganisme, qui porte sur les systèmes de production industrielle, la souffrance animale et la destruction environnementale. Aucune organisation vegan sérieuse n'a jamais prétendu le contraire.
+        </div>
+        <p class="studies-title">Définition de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.vegansociety.com/go-vegan/definition-veganism" target="_blank">
+              Definition of Veganism — The Vegan Society (fondée en 1944)
+            </a>
+          </div>
+          <div class="study-meta">The Vegan Society · Donald Watson · 1944, mise à jour 1988</div>
+          <div class="study-finding">La définition officielle : "une philosophie et un mode de vie qui cherche à exclure, autant que possible et praticable, toutes les formes d'exploitation et de cruauté envers les animaux." Le mot clé est <em>exploitation</em> — un rapport de domination unilatéral à des fins de production. Un acte sexuel consenti entre adultes humains ne remplit aucun de ces critères.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Note</strong>
+          Le véganisme régule ce qu'on <em>consomme via des systèmes d'exploitation</em> — pas ce qu'on fait dans son lit avec le consentement de l'autre.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPÉCISME / HIÉRARCHIE ANIMALE -->
+  <div class="card visible" data-category="questions" style="display:block;">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐜</div>
+      <div class="card-meta">
+        <h2>"Mais du coup tu peux pas choisir entre sauver un humain ou un insecte ?"</h2>
+        <p class="critique-text">« Si tous les animaux sont égaux pour toi, t'es obligé de traiter une fourmi comme ton fils. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réponse :</strong> Le véganisme n'implique pas l'anti-spécisme radical ni l'égalité absolue entre toutes les espèces. Un vegan peut tout à fait considérer qu'un humain vaut plus qu'un insecte, préférer son chat à un rat, ou aimer davantage les dauphins que les poulets. Ce que le véganisme conteste, c'est l'<em>exploitation systématique</em> d'animaux capables de souffrir — pas l'existence d'une hiérarchie morale. Préférer n'implique pas d'exploiter.
+        </div>
+        <p class="studies-title">Cadre philosophique</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.vegansociety.com/go-vegan/definition-veganism" target="_blank">
+              Definition of Veganism — The Vegan Society
+            </a>
+          </div>
+          <div class="study-meta">The Vegan Society · 1944, mise à jour 1988</div>
+          <div class="study-finding">La définition officielle vise à "exclure autant que possible et praticable toutes les formes d'exploitation et de cruauté envers les animaux." Avoir une préférence émotionnelle pour certains animaux sur d'autres n'est ni de l'exploitation ni une contradiction avec le véganisme. La plupart des végans aiment davantage leurs proches que des inconnus — humains ou animaux — sans que cela constitue une incohérence éthique.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1017/S0953820800003745" target="_blank">
+              Practical Ethics — Peter Singer
+            </a>
+          </div>
+          <div class="study-meta">Singer · Cambridge University Press · 1979 (3e éd. 2011)</div>
+          <div class="study-finding">Peter Singer, souvent cité comme père intellectuel du mouvement végane moderne, défend le principe d'<em>égale considération des intérêts</em> — non l'égalité de traitement. La souffrance d'un animal doit être prise en compte proportionnellement à sa capacité à souffrir. Cela n'impose pas de traiter un moustique comme un enfant : leurs capacités à souffrir et leurs intérêts sont objectivement différents.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 La distinction clé</strong>
+          Hiérarchie ≠ exploitation. On peut préférer les humains aux animaux, les chats aux souris, les dauphins aux poulets — et être vegan. Ce que le véganisme refuse, c'est de transformer cette préférence en système organisé de souffrance industrielle pour des êtres capables de ressentir de la douleur, quand des alternatives existent.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÉDICAMENTS & GREFFES -->
+  <div class="card visible" data-category="questions" style="display:block;">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-green">💉</div>
+      <div class="card-meta">
+        <h2>"Un vegan prendrait pas de médicaments testés sur des animaux ? Ni une greffe ?"</h2>
+        <p class="critique-text">« Si t'es vraiment vegan, t'as pas le droit de te soigner avec des médicaments issus de la recherche animale. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réponse :</strong> Si, un vegan prendra un médicament ou acceptera une greffe si c'est nécessaire à sa survie. Le principe fondateur du véganisme est de réduire l'exploitation animale "autant que possible et praticable" — pas de mourir par cohérence idéologique. Refuser des soins vitaux n'est ni requis ni encouragé par aucune organisation vegan sérieuse. Le véganisme cherche à réduire la demande là où des alternatives existent — pour les soins vitaux, elles n'existent souvent pas.
+        </div>
+        <p class="studies-title">Cadre de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://www.vegansociety.com/go-vegan/definition-veganism" target="_blank">
+              Definition of Veganism — The Vegan Society
+            </a>
+          </div>
+          <div class="study-meta">The Vegan Society · 1944, mise à jour 1988</div>
+          <div class="study-finding">La clause "autant que possible et praticable" a été délibérément choisie par Donald Watson pour éviter le dogmatisme. Refuser des soins médicaux n'est ni possible ni praticable dans le sens où cela mettrait en danger la vie de la personne — ce qui dépasse clairement le cadre du choix de consommation visé par le véganisme.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.appet.2019.104327" target="_blank">
+              Vegan Identity and Pragmatic Moral Compromise — Consumer Research
+            </a>
+          </div>
+          <div class="study-meta">Janssen et al. · Appetite · 2016 · DOI: 10.1016/j.appet.2019.104327</div>
+          <div class="study-finding">Les recherches sur l'identité végane montrent que la grande majorité des végans adoptent une approche pragmatique plutôt que dogmatique. Les compromis liés à des contraintes médicales sont largement acceptés au sein de la communauté végane. Le véganisme est majoritairement vécu comme une réduction maximale de l'impact, pas comme une pureté absolue impossible à tenir.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 La logique est simple</strong>
+          Un vegan qui prend de l'insuline ou accepte une greffe de rein ne trahit pas ses valeurs : il les applique intelligemment. Ce qui serait incohérent, c'est de refuser un steak pour raisons éthiques et d'aller acheter un manteau en fourrure le lendemain — pas de se soigner quand sa vie en dépend.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- DIET PANEL -->
 <div id="dietPanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
 
@@ -1541,18 +1670,15 @@ function renderDiet(sexe, age, taille, poids, pal, obj) {
   <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
     <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:1rem;">💊 Suppléments obligatoires</div>
     ${[
-      { name: 'Vitamine B12', dose: '250 µg/jour', note: 'Cyanocobalamine ou méthylcobalamine — seul supplément strictement obligatoire', budget: '~8€ / 3 mois' },
-      { name: 'Vitamine D3 + K2 MK-7', dose: '2000 UI D3 + 100 µg K2', note: 'Prendre ensemble — D3 végane (lichen). K2 dirige le calcium vers les os', budget: '~15€ / 3 mois' },
-      { name: 'Oméga-3 DHA/EPA (algues)', dose: '500 mg DHA+EPA/jour', note: 'La conversion ALA→DHA est trop faible (<5%). Chercher "algae omega-3 vegan"', budget: '~20€ / 2 mois' },
-      { name: 'Iode', dose: '150 µg/jour', note: 'Via sel iodé (½ c.c./jour) — solution la plus simple et moins chère', budget: '~0€ (sel iodé)' },
+      { name: 'Vitamine B12', dose: '250 µg/jour', note: 'Cyanocobalamine ou méthylcobalamine — seul supplément strictement obligatoire' },
+      { name: 'Vitamine D3 + K2 MK-7', dose: '2000 UI D3 + 100 µg K2', note: 'Prendre ensemble — D3 végane (lichen). K2 dirige le calcium vers les os' },
+      { name: 'Oméga-3 DHA/EPA (algues)', dose: '500 mg DHA+EPA/jour', note: 'La conversion ALA→DHA est trop faible (<5%). Chercher "algae omega-3 vegan"' },
+      { name: 'Iode', dose: '150 µg/jour', note: 'Via sel iodé (½ c.c./jour) — solution la plus simple et moins chère' },
     ].map(s => `
-      <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:0.7rem 0; border-bottom:1px solid rgba(48,54,61,0.5); gap:1rem;">
-        <div>
-          <div style="font-size:0.88rem; color:var(--text); font-weight:500;">${s.name}</div>
-          <div style="font-size:0.75rem; color:var(--amber); margin:2px 0;">${s.dose}</div>
-          <div style="font-size:0.75rem; color:var(--text-muted);">${s.note}</div>
-        </div>
-        <div style="font-size:0.75rem; color:var(--green); white-space:nowrap; padding-top:2px;">${s.budget}</div>
+      <div style="padding:0.7rem 0; border-bottom:1px solid rgba(48,54,61,0.5);">
+        <div style="font-size:0.88rem; color:var(--text); font-weight:500;">${s.name}</div>
+        <div style="font-size:0.75rem; color:var(--amber); margin:2px 0;">${s.dose}</div>
+        <div style="font-size:0.75rem; color:var(--text-muted);">${s.note}</div>
       </div>`).join('')}
     <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.9rem; padding:0.75rem; background:rgba(88,166,255,0.06); border:1px solid rgba(88,166,255,0.15); border-radius:8px;">
       🩺 ${suppNote}
@@ -1614,13 +1740,21 @@ function applyFilter(filter) {
   if (filter === 'diet') {
     document.getElementById('content').style.display = 'none';
     document.getElementById('dietPanel').style.display = 'block';
+    document.getElementById('questionspanel').style.display = 'none';
+    return;
+  }
+  if (filter === 'questions') {
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('dietPanel').style.display = 'none';
+    document.getElementById('questionspanel').style.display = 'block';
     return;
   }
   document.getElementById('content').style.display = 'block';
   document.getElementById('dietPanel').style.display = 'none';
+  document.getElementById('questionspanel').style.display = 'none';
 
-  // Show/hide cards
-  document.querySelectorAll('.card').forEach(card => {
+  // Show/hide cards — only those inside #content
+  document.querySelectorAll('#content .card').forEach(card => {
     card.style.display = card.dataset.category === filter ? 'block' : 'none';
   });
 
