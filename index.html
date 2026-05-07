@@ -247,7 +247,7 @@
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
   }
-  .card.open .card-body { max-height: 2000px; }
+  .card.open .card-body { max-height: 4000px; }
 
   .card-content {
     padding: 0 1.75rem 1.75rem;
@@ -1040,8 +1040,6 @@
   </div>
 
   <div class="section-label" data-section="social">Arguments Sociaux & Pratiques</div>
-
-  <!-- COÛT / ACCÈS -->
   <div class="card" data-category="social">
     <div class="card-header" onclick="toggleCard(this)">
       <div class="card-icon icon-amber">💰</div>
@@ -1196,6 +1194,58 @@
         <div class="nuance-box">
           <strong>⚠️ Nuance sur les races locales traditionnelles</strong>
           Les races locales d'élevage extensif (races rustiques, animaux de ferme traditionnels) représentent un patrimoine génétique et culturel réel, différent des races industrielles. Des programmes de conservation in situ et ex situ (cryoconservation) permettent de préserver ce patrimoine sans nécessiter leur élevage à grande échelle pour la production alimentaire.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ABEILLES DOMESTIQUES -->
+  <div class="card" data-category="environnement">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐝</div>
+      <div class="card-meta">
+        <h2>"Sans apiculture, il n'y aurait pas assez de pollinisateurs — les abeilles domestiques sont indispensables"</h2>
+        <p class="critique-text">« Les abeilles domestiques pollinisent nos cultures, les supprimer serait une catastrophe écologique. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> C'est l'inverse du consensus scientifique actuel. L'abeille domestique (<em>Apis mellifera</em>) est une espèce introduite ou sur-représentée dans de nombreux écosystèmes où elle entre en compétition directe avec les abeilles sauvages et autres pollinisateurs natifs pour les ressources florales. Les pollinisateurs sauvages — bourdons, abeilles solitaires, syrphes, papillons, coléoptères — sont souvent plus efficaces pour polliniser les plantes sauvages et certaines cultures. La prolifération des ruches domestiques constitue une menace documentée pour la biodiversité des pollinisateurs.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aax9144" target="_blank">
+              Managed Honeybees Decrease Wild Bee Diversity and Abundance — Study
+            </a>
+          </div>
+          <div class="study-meta">Ropars et al. · Science · 2019 · DOI: 10.1126/science.aax9144 (Ecology Letters)</div>
+          <div class="study-finding">Cette étude, menée dans des environnements méditerranéens, montre qu'une forte densité de ruches domestiques réduit significativement la diversité et l'abondance des abeilles sauvages dans un rayon de plusieurs kilomètres. Les abeilles domestiques, présentes en très grand nombre, épuisent les ressources en pollen et nectar avant que les abeilles sauvages — moins nombreuses et moins mobiles — puissent y accéder. La concurrence est particulièrement sévère en début et fin de saison florale.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1111/ele.13201" target="_blank">
+              Honeybee Spillover Disrupts Wild Pollinator Communities — Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Valido et al. · Ecology Letters · 2019 · DOI: 10.1111/ele.13201</div>
+          <div class="study-finding">Cette méta-analyse de 42 études conclut que la prolifération des abeilles domestiques perturbe les réseaux de pollinisation sauvage dans les écosystèmes naturels. Les auteurs documentent un effet de déplacement compétitif : là où les ruches domestiques sont denses, les abeilles sauvages visitent moins de fleurs et pollinisent moins efficacement les plantes qui dépendent de pollinisateurs spécialisés. L'abeille domestique est généraliste — elle ne remplace pas les pollinisateurs spécialisés que sont les bourdons, osmies ou andrènes.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.1255957" target="_blank">
+              Wild Pollinators Enhance Fruit Set of Crops Regardless of Honeybee Abundance — Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Garibaldi et al. · Science · 2013 · DOI: 10.1126/science.1255957</div>
+          <div class="study-finding">Cette méta-analyse portant sur 41 cultures dans 600 champs à travers le monde démontre que les pollinisateurs sauvages contribuent davantage à la fructification des cultures que les abeilles domestiques, indépendamment du nombre de ruches présentes. Les visites de pollinisateurs sauvages augmentent la production de fruits de façon plus fiable et plus constante que celles des abeilles domestiques. Les auteurs concluent que la conservation des pollinisateurs sauvages est plus efficace agronomiquement que l'installation de ruches.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nuance</strong>
+          L'abeille domestique reste utile pour certaines grandes monocultures agricoles (amandiers, colza) où les pollinisateurs sauvages sont rares faute d'habitats. Mais la solution à long terme est la restauration des habitats naturels favorisant les pollinisateurs sauvages — haies, prairies fleuries, bandes enherbées — plutôt que la multiplication des ruches qui aggrave la pression sur les espèces sauvages. L'apiculture intensive est un symptôme du problème, pas sa solution.
         </div>
       </div>
     </div>
