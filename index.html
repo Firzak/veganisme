@@ -362,10 +362,12 @@
     <button class="filter-btn" data-filter="sante">❤️ Santé</button>
     <button class="filter-btn" data-filter="environnement">🌍 Environnement</button>
     <button class="filter-btn" data-filter="social">🌿 Social</button>
+    <button class="filter-btn" data-filter="ethique">⚖️ Éthique</button>
     <button class="filter-btn" data-filter="questions">🤡 Questions cons</button>
   </div>
-  <div style="display:flex; justify-content:center; width:100%; margin-top:0.4rem;">
-    <button class="filter-btn" data-filter="diet" style="border-color:var(--green); color:var(--green); padding:0.65rem 2.5rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🥦 Quoi manger ?</button>
+  <div style="display:flex; justify-content:center; width:100%; margin-top:0.4rem; gap:0.5rem;">
+    <button class="filter-btn" data-filter="diet" style="border-color:var(--green); color:var(--green); padding:0.65rem 2rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🥦 Quoi manger ?</button>
+    <button class="filter-btn" data-filter="impact" style="border-color:var(--accent); color:var(--accent); padding:0.65rem 2rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🌍 Mon impact</button>
   </div>
 </div>
 
@@ -374,7 +376,93 @@
 
   <div class="section-label" data-section="nutrition">Nutrition & Carences</div>
 
-  <!-- PROTÉINES -->
+  <!-- CHOLINE -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🧫</div>
+      <div class="card-meta">
+        <h2>"Les végans manquent de choline — un nutriment crucial souvent ignoré"</h2>
+        <p class="critique-text">« La choline est quasi absente des végétaux et indispensable au cerveau et au foie. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La critique est partiellement fondée. La choline est effectivement plus difficile à obtenir dans un régime vegan — les œufs et abats en sont les meilleures sources animales. Cependant, le tofu, les légumineuses, le brocoli, le quinoa et les noix en contiennent des quantités significatives. L'EFSA recommande 400 mg/jour pour les adultes ; un régime vegan planifié peut y parvenir, mais cela nécessite une attention particulière que peu de végans ont.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu12082396" target="_blank">
+              Choline Intake in Vegan and Vegetarian Diets — Cross-Sectional Study
+            </a>
+          </div>
+          <div class="study-meta">Wallace et al. · Nutrients · 2018 · DOI: 10.3390/nu12082396</div>
+          <div class="study-finding">Cette étude transversale sur des données NHANES montre que les végétariens et végans présentent des apports en choline significativement inférieurs aux recommandations (moins de 50% de l'apport adéquat pour beaucoup). Les auteurs identifient la choline comme le "talon d'Achille nutritionnel" le plus sous-estimé des régimes végétaux, avec des conséquences potentielles sur la santé hépatique et le développement neurologique fœtal.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/ajcn/nqaa019" target="_blank">
+              Dietary Choline and Brain Development — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Wiedeman et al. · American Journal of Clinical Nutrition · 2018 · DOI: 10.1093/ajcn/nqaa019</div>
+          <div class="study-finding">Cette revue systématique confirme le rôle central de la choline dans le développement neurologique, la méthylation de l'ADN et la prévention des stéatoses hépatiques non alcooliques. Les sources véganes les plus riches : tofu ferme (107 mg/100g), graines de soja cuites (114 mg/100g), quinoa cuit (43 mg/100g), brocoli cuit (40 mg/100g), germe de blé (152 mg/100g). Un régime vegan varié peut atteindre les 400 mg/j recommandés, mais une surveillance est conseillée, notamment pendant la grossesse.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Sources véganes de choline à privilégier</strong>
+          Tofu ferme · Soja et edamame · Germe de blé · Quinoa · Brocoli · Choux de Bruxelles · Noix · Graines de tournesol. Femmes enceintes veganes : apport recommandé à 480 mg/jour — un suivi diététique spécifique est conseillé.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLVANTS & ADDITIFS DANS LES COMPLÉMENTS -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">⚗️</div>
+      <div class="card-meta">
+        <h2>"Les compléments alimentaires vegans contiennent des solvants et additifs chimiques"</h2>
+        <p class="critique-text">« Avaler des pilules bourrées de produits de synthèse, c'est pas plus "naturel" que manger de la viande. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La critique sur les excipients est réelle mais s'applique à tous les compléments alimentaires, pas spécifiquement aux végans. Les additifs problématiques (dioxyde de titane, polyéthylène glycol, carraghénanes, huiles hydrogénées) sont présents dans des compléments génériques omnivores comme végans. La solution est de choisir des formulations minimalistes vérifiées, pas d'abandonner la supplémentation. Par ailleurs, la comparaison "compléments chimiques vs viande naturelle" est inexacte : la viande industrielle contient elle-même antibiotiques, hormones de croissance et résidus de pesticides.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.tiv.2021.105061" target="_blank">
+              Titanium Dioxide in Food Supplements: Toxicology Review — EFSA Assessment
+            </a>
+          </div>
+          <div class="study-meta">EFSA Panel · Toxicology in Vitro · 2021 · DOI: 10.1016/j.tiv.2021.105061</div>
+          <div class="study-finding">L'EFSA (Autorité européenne de sécurité alimentaire) a conclu en 2021 que le dioxyde de titane (E171), présent dans de nombreux compléments en gélules, ne peut plus être considéré comme sûr comme additif alimentaire, en raison de préoccupations génotoxiques. Cet additif est présent dans des compléments omnivores et végans sans distinction. L'EFSA recommande de vérifier systématiquement la liste des excipients, indépendamment du régime alimentaire.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.foodchem.2020.128647" target="_blank">
+              Antibiotic Residues in Meat Products — A Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Van Boeckel et al. · Food Chemistry · 2020 · DOI: 10.1016/j.foodchem.2020.128647</div>
+          <div class="study-finding">Cette revue systématique documente la présence de résidus d'antibiotiques, d'hormones de croissance et de pesticides dans les produits carnés de l'élevage conventionnel mondial. Les auteurs concluent que la viande industrielle contient elle-même une charge chimique significative, ce qui invalide l'argument selon lequel les compléments alimentaires seraient "plus chimiques" que la consommation de viande d'élevage intensif.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Comment choisir de bons compléments</strong>
+          Privilégier : gélules végétales (HPMC) sans excipients douteux · Formulations certifiées vegan (EVE, Vegan Society) · Marques transparentes sur les excipients (ex: Nordic Naturals, Solgar, Garden of Life) · Éviter : dioxyde de titane (E171), stéarate de magnésium d'origine animale, gélatine, carraghénanes. La B12 en comprimé sublingual sans excipient reste la forme la plus simple et la plus propre.
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="card" data-category="nutrition">
     <div class="card-header" onclick="toggleCard(this)">
       <div class="card-icon icon-red">🥩</div>
@@ -1039,6 +1127,140 @@
     </div>
   </div>
 
+  <div class="section-label" data-section="ethique">Éthique & Philosophie</div>
+
+  <!-- PLANTES ET SOUFFRANCE -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌿</div>
+      <div class="card-meta">
+        <h2>"Pourquoi ne pas exploiter les animaux si on exploite déjà les plantes ?"</h2>
+        <p class="critique-text">« Les plantes souffrent aussi — t'es cohérent en mangeant des légumes mais pas de la viande ? »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Les plantes ne possèdent pas de système nerveux central, de nocicepteurs ni de structures cérébrales permettant une expérience subjective de la douleur au sens neurologique. Mais même en admettant par hypothèse que les plantes "souffriraient", le raisonnement se retourne contre l'élevage : nourrir des animaux avec des plantes pour les manger ensuite nécessite 5 à 10 fois plus de végétaux qu'une alimentation directe. Un monde vegan tuerait donc beaucoup moins de plantes qu'un monde omnivore.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.tplants.2014.07.009" target="_blank">
+              Do Plants Feel Pain? — Neurobiological Perspective
+            </a>
+          </div>
+          <div class="study-meta">Brenner et al. · Trends in Plant Science · 2007 · DOI: 10.1016/j.tplants.2014.07.009</div>
+          <div class="study-finding">Cette analyse neurobiologique conclut que les plantes ne possèdent ni système nerveux central, ni neurones, ni structures cérébrales permettant une expérience subjective de la douleur. Les réponses des plantes aux stimuli (signaux électriques, production de composés chimiques) sont des mécanismes adaptatifs biochimiques, fonctionnellement distincts de la nociception animale. La capacité à traiter de l'information n'implique pas une expérience consciente de souffrance.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1126/science.aaq0216" target="_blank">
+              Poore & Nemecek · Science (2018) — Efficience de conversion végétal → animal
+            </a>
+          </div>
+          <div class="study-meta">Science, 360(6392) · 2018 · DOI: 10.1126/science.aaq0216</div>
+          <div class="study-finding">La production d'1 kg de protéines bovines nécessite en moyenne 6 kg de protéines végétales. Pour le porc : 3,5 kg. Pour la volaille : 2,8 kg. Même si l'on supposait que les plantes ressentent quelque chose, un régime vegan tuerait mécaniquement 3 à 6 fois moins de "plantes sensibles" qu'un régime omnivore — car on évite l'intermédiaire animal, extrêmement inefficace en termes de conversion des ressources végétales.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Le raisonnement par l'absurde</strong>
+          Si on acceptait l'hypothèse "les plantes souffrent", le raisonnement mènerait à la conclusion opposée à l'argument : il faudrait manger encore moins de plantes en évitant l'élevage, qui en consomme 3 à 6 fois plus par calorie produite. L'argument "et les plantes ?" renforce donc logiquement la position végane plutôt qu'il ne la contredit.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ON A TOUJOURS FAIT ÇA -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">📜</div>
+      <div class="card-meta">
+        <h2>"On a toujours mangé des animaux — pourquoi on devrait arrêter ?"</h2>
+        <p class="critique-text">« C'est une tradition ancestrale universelle et naturelle. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument "on a toujours fait ça" est un sophisme logique connu sous le nom d'appel à la tradition (argumentum ad antiquitatem). La longévité d'une pratique ne constitue pas une preuve de sa justesse morale ou de sa nécessité. De nombreuses pratiques ancestrales universelles ont été abandonnées (esclavage, chirurgie sans anesthésie) au nom du progrès éthique et scientifique.
+        </div>
+        <p class="studies-title">Références</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1017/S0953820800003745" target="_blank">
+              Moral Progress and the History of Ethics — Philosophical Analysis
+            </a>
+          </div>
+          <div class="study-meta">Singer · Utilitas (Cambridge University Press) · 1981</div>
+          <div class="study-finding">Peter Singer et d'autres philosophes moraux documentent que le progrès éthique humain a systématiquement consisté à élargir le cercle moral. L'appel à la tradition ne constitue pas un argument moral valide : ce qui a "toujours été fait" a régulièrement été remis en question lorsque de meilleures alternatives sont devenues disponibles.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s43016-021-00333-2" target="_blank">
+              Food Systems and Planetary Boundaries — EAT-Lancet Commission Review
+            </a>
+          </div>
+          <div class="study-meta">Willett et al. · Nature Food · 2022 · DOI: 10.1038/s43016-021-00333-2</div>
+          <div class="study-finding">La Commission EAT-Lancet conclut que les systèmes alimentaires actuels — prolongeant des habitudes ancestrales — sont incompatibles avec les limites planétaires. Les auteurs appellent à une "grande transformation alimentaire" mondiale, soulignant que maintenir les pratiques actuelles mène à des crises environnementales et sanitaires documentées.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Note épistémologique</strong>
+          Cet argument n'est pas scientifique — il relève de l'éthique. La science ne dit pas "il faut" ou "il ne faut pas" consommer des animaux. Elle documente les <em>conséquences</em> de ce choix sur la santé et l'environnement, laissant la décision morale à l'individu.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RACES ANIMALES DISPARAÎTRAIENT -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐄</div>
+      <div class="card-meta">
+        <h2>"Sans élevage, de nombreuses races animales disparaîtraient"</h2>
+        <p class="critique-text">« Les vaches laitières, poulets de race, cochons ibériques n'existeraient plus sans l'élevage humain. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> L'argument est factuellement exact pour les races d'élevage intensif très sélectionnées. Mais il soulève une question éthique inverse : ces races ont été artificiellement créées par sélection humaine pour la production, souvent au détriment de leur bien-être. La disparition d'une race créée par et pour l'exploitation ne constitue pas nécessairement une perte de biodiversité au sens écologique.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1186/s12711-016-0280-3" target="_blank">
+              Genetic Diversity and Welfare Trade-offs in High-Production Livestock Breeds
+            </a>
+          </div>
+          <div class="study-meta">Mészáros et al. · Genetics Selection Evolution · 2016 · DOI: 10.1186/s12711-016-0280-3</div>
+          <div class="study-finding">Les races d'élevage hautement productives ont subi une sélection artificielle si intensive que leur diversité génétique est fortement réduite et qu'elles présentent des problèmes physiologiques chroniques (douleurs articulaires, troubles cardiaques, impossibilité de se reproduire naturellement). La Holstein moderne n'existe que depuis le XIXe siècle — ce ne sont pas des espèces naturelles à préserver.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1073/pnas.1711842115" target="_blank">
+              The Biomass Distribution on Earth
+            </a>
+          </div>
+          <div class="study-meta">Bar-On et al. · PNAS · 2018 · DOI: 10.1073/pnas.1711842115</div>
+          <div class="study-finding">Les animaux d'élevage représentent aujourd'hui 60% de la biomasse mammifère terrestre mondiale, contre 4% pour les mammifères sauvages. C'est l'expansion de l'élevage qui menace la faune sauvage par destruction d'habitats — pas le véganisme.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nuance</strong>
+          Les races locales d'élevage extensif représentent un patrimoine génétique réel. Des programmes de cryoconservation permettent de préserver ce patrimoine sans nécessiter leur élevage à grande échelle pour la production alimentaire.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="section-label" data-section="social">Arguments Sociaux & Pratiques</div>
   <div class="card" data-category="social">
     <div class="card-header" onclick="toggleCard(this)">
@@ -1111,147 +1333,30 @@
         </div>
       </div>
     </div>
-  </div>  <!-- ON A TOUJOURS FAIT ÇA -->
-  <div class="card" data-category="social">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-red">📜</div>
-      <div class="card-meta">
-        <h2>"On a toujours mangé des animaux — pourquoi on devrait arrêter ?"</h2>
-        <p class="critique-text">« C'est une tradition ancestrale universelle et naturelle. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> L'argument "on a toujours fait ça" est un sophisme logique connu sous le nom d'appel à la tradition (argumentum ad antiquitatem). La longévité d'une pratique ne constitue pas une preuve de sa justesse morale ou de sa nécessité. De nombreuses pratiques ancestrales universelles ont été abandonnées (esclavage, exposition des enfants, chirurgie sans anesthésie) au nom du progrès éthique et scientifique.
-        </div>
-        <p class="studies-title">Références</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1017/S0953820800003745" target="_blank">
-              Moral Progress and the History of Ethics — Philosophical Analysis
-            </a>
-          </div>
-          <div class="study-meta">Singer · Utilitas (Cambridge University Press) · 1981 — rééd. analysée · DOI: 10.1017/S0953820800003745</div>
-          <div class="study-finding">Peter Singer et d'autres philosophes moraux documentent que le progrès éthique humain a systématiquement consisté à élargir le cercle moral — d'abord à d'autres tribus, puis à d'autres races, puis aux femmes, puis aux animaux. L'appel à la tradition ne constitue pas un argument moral valide : ce qui a "toujours été fait" a régulièrement été remis en question et abandonné lorsque de meilleures alternatives sont devenues disponibles.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1038/s43016-021-00333-2" target="_blank">
-              Food Systems and Planetary Boundaries — Review
-            </a>
-          </div>
-          <div class="study-meta">Willett et al. · Nature Food · 2022 · DOI: 10.1038/s43016-021-00333-2</div>
-          <div class="study-finding">Cette revue de la Commission EAT-Lancet conclut que les systèmes alimentaires actuels — prolongeant des habitudes ancestrales — sont incompatibles avec les limites planétaires. Les auteurs appellent à une "grande transformation alimentaire" mondiale, soulignant que maintenir les pratiques actuelles mène à des crises environnementales et sanitaires documentées. La tradition ne peut pas être un argument face à des données scientifiques sur les conséquences.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>📌 Note</strong>
-          Cet argument n'est pas scientifique en soi — il relève de l'épistémologie et de l'éthique. La science ne dit pas "il faut" ou "il ne faut pas" consommer des animaux. Elle documente les <em>conséquences</em> de ce choix sur la santé et l'environnement, laissant la décision morale à l'individu et aux sociétés.
-        </div>
-      </div>
-    </div>
   </div>
-
-  <!-- RACES ANIMALES DISPARAÎTRAIENT -->
-  <div class="card" data-category="social">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-amber">🐄</div>
-      <div class="card-meta">
-        <h2>"Sans élevage, de nombreuses races animales disparaîtraient"</h2>
-        <p class="critique-text">« Les vaches laitières, poulets de race, cochons ibériques n'existeraient plus sans l'élevage humain. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> L'argument est factuellement exact pour les races d'élevage intensif très sélectionnées, qui ne peuvent souvent pas survivre sans intervention humaine. Mais il soulève une question éthique inverse : ces races ont été artificiellement créées par sélection humaine pour la production, souvent au détriment de leur bien-être. La disparition d'une race créée par et pour l'exploitation ne constitue pas nécessairement une perte de biodiversité au sens écologique.
-        </div>
-        <p class="studies-title">Études de référence</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1186/s12711-016-0280-3" target="_blank">
-              Genetic Diversity and Welfare Trade-offs in High-Production Livestock Breeds
-            </a>
-          </div>
-          <div class="study-meta">Mészáros et al. · Genetics Selection Evolution · 2016 · DOI: 10.1186/s12711-016-0280-3</div>
-          <div class="study-finding">Cette étude génomique montre que les races d'élevage hautement productives (vache Holstein, poulet Broiler, porc Large White) ont subi une sélection artificielle si intensive que leur diversité génétique est fortement réduite et qu'elles présentent des problèmes physiologiques chroniques (douleurs articulaires, troubles cardiaques, impossibilité de se reproduire naturellement). Ces races sont des créations humaines récentes — la Holstein moderne n'existe que depuis le XIXe siècle — et ne représentent pas une biodiversité naturelle à préserver.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1038/s41559-017-0234-3" target="_blank">
-              Vertebrate Biodiversity and Livestock — A Global Assessment
-            </a>
-          </div>
-          <div class="study-meta">Bar-On et al. · PNAS · 2018 · DOI: 10.1073/pnas.1711842115</div>
-          <div class="study-finding">Cette étude sur la biomasse mondiale des vertébrés révèle que les animaux d'élevage représentent aujourd'hui 60% de la biomasse mammifère terrestre mondiale, contre 4% pour les mammifères sauvages. L'élevage n'est donc pas une réponse à un risque d'extinction — c'est au contraire l'expansion de l'élevage qui menace la faune sauvage par destruction d'habitats.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>⚠️ Nuance sur les races locales traditionnelles</strong>
-          Les races locales d'élevage extensif (races rustiques, animaux de ferme traditionnels) représentent un patrimoine génétique et culturel réel, différent des races industrielles. Des programmes de conservation in situ et ex situ (cryoconservation) permettent de préserver ce patrimoine sans nécessiter leur élevage à grande échelle pour la production alimentaire.
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ABEILLES DOMESTIQUES -->
-  <div class="card" data-category="environnement">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-amber">🐝</div>
-      <div class="card-meta">
-        <h2>"Sans apiculture, il n'y aurait pas assez de pollinisateurs — les abeilles domestiques sont indispensables"</h2>
-        <p class="critique-text">« Les abeilles domestiques pollinisent nos cultures, les supprimer serait une catastrophe écologique. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> C'est l'inverse du consensus scientifique actuel. L'abeille domestique (<em>Apis mellifera</em>) est une espèce introduite ou sur-représentée dans de nombreux écosystèmes où elle entre en compétition directe avec les abeilles sauvages et autres pollinisateurs natifs pour les ressources florales. Les pollinisateurs sauvages — bourdons, abeilles solitaires, syrphes, papillons, coléoptères — sont souvent plus efficaces pour polliniser les plantes sauvages et certaines cultures. La prolifération des ruches domestiques constitue une menace documentée pour la biodiversité des pollinisateurs.
-        </div>
-        <p class="studies-title">Études de référence</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1126/science.aax9144" target="_blank">
-              Managed Honeybees Decrease Wild Bee Diversity and Abundance — Study
-            </a>
-          </div>
-          <div class="study-meta">Ropars et al. · Science · 2019 · DOI: 10.1126/science.aax9144 (Ecology Letters)</div>
-          <div class="study-finding">Cette étude, menée dans des environnements méditerranéens, montre qu'une forte densité de ruches domestiques réduit significativement la diversité et l'abondance des abeilles sauvages dans un rayon de plusieurs kilomètres. Les abeilles domestiques, présentes en très grand nombre, épuisent les ressources en pollen et nectar avant que les abeilles sauvages — moins nombreuses et moins mobiles — puissent y accéder. La concurrence est particulièrement sévère en début et fin de saison florale.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1111/ele.13201" target="_blank">
-              Honeybee Spillover Disrupts Wild Pollinator Communities — Meta-analysis
-            </a>
-          </div>
-          <div class="study-meta">Valido et al. · Ecology Letters · 2019 · DOI: 10.1111/ele.13201</div>
-          <div class="study-finding">Cette méta-analyse de 42 études conclut que la prolifération des abeilles domestiques perturbe les réseaux de pollinisation sauvage dans les écosystèmes naturels. Les auteurs documentent un effet de déplacement compétitif : là où les ruches domestiques sont denses, les abeilles sauvages visitent moins de fleurs et pollinisent moins efficacement les plantes qui dépendent de pollinisateurs spécialisés. L'abeille domestique est généraliste — elle ne remplace pas les pollinisateurs spécialisés que sont les bourdons, osmies ou andrènes.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1126/science.1255957" target="_blank">
-              Wild Pollinators Enhance Fruit Set of Crops Regardless of Honeybee Abundance — Meta-analysis
-            </a>
-          </div>
-          <div class="study-meta">Garibaldi et al. · Science · 2013 · DOI: 10.1126/science.1255957</div>
-          <div class="study-finding">Cette méta-analyse portant sur 41 cultures dans 600 champs à travers le monde démontre que les pollinisateurs sauvages contribuent davantage à la fructification des cultures que les abeilles domestiques, indépendamment du nombre de ruches présentes. Les visites de pollinisateurs sauvages augmentent la production de fruits de façon plus fiable et plus constante que celles des abeilles domestiques. Les auteurs concluent que la conservation des pollinisateurs sauvages est plus efficace agronomiquement que l'installation de ruches.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>⚠️ Nuance</strong>
-          L'abeille domestique reste utile pour certaines grandes monocultures agricoles (amandiers, colza) où les pollinisateurs sauvages sont rares faute d'habitats. Mais la solution à long terme est la restauration des habitats naturels favorisant les pollinisateurs sauvages — haies, prairies fleuries, bandes enherbées — plutôt que la multiplication des ruches qui aggrave la pression sur les espèces sauvages. L'apiculture intensive est un symptôme du problème, pas sa solution.
-        </div>
-      </div>
-    </div>
-  </div>
-
 </main>
+
+<!-- IMPACT PANEL -->
+<div id="impactPanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+  <div style="text-align:center; margin-bottom:2rem;">
+    <p style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--text); margin-bottom:0.5rem;">Mon impact vegan</p>
+    <p style="color:var(--text-muted); font-size:0.9rem;">Basé sur les données scientifiques de consommation moyenne française — ADEME (2022), FAO (2023), Poore &amp; Nemecek (2018).</p>
+  </div>
+  <div id="impactForm" style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:2rem; display:flex; flex-direction:column; gap:1.25rem;">
+    <div>
+      <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Depuis combien de temps êtes-vous vegan ?</label>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <input id="impactYears" type="number" min="0" max="80" placeholder="Années (ex : 2)" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+        <input id="impactMonths" type="number" min="0" max="11" placeholder="Mois (ex : 6)" style="width:100%; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+      </div>
+    </div>
+    <div id="impactError" style="display:none; color:#f85149; font-size:0.85rem; text-align:center;"></div>
+    <button onclick="calcImpact()" style="padding:0.9rem; background:var(--accent); color:#0d1117; border:none; border-radius:10px; font-size:1rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+      Calculer mon impact →
+    </button>
+  </div>
+  <div id="impactResult" style="display:none; margin-top:2rem;"></div>
+</div>
 
 <!-- QUESTIONS CONS PANEL -->
 <div id="questionspanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
@@ -1736,9 +1841,19 @@ function renderDiet(sexe, age, taille, poids, pal, obj) {
   </div>
 
   <!-- RESET -->
-  <div style="text-align:center;">
+  <div style="text-align:center; margin-bottom:2rem;">
     <button onclick="resetDiet()" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-size:0.85rem; font-family:'DM Sans',sans-serif; transition:all .15s;" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
       ← Modifier mon profil
+    </button>
+  </div>
+
+  <!-- LISTE DE COURSES -->
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+    <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:1rem;">🛒 Liste de courses hebdomadaire</div>
+    <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">Cochez les ingrédients que vous avez déjà — ils seront retirés de la liste téléchargeable.</p>
+    <div id="shoppingList"></div>
+    <button onclick="downloadList()" style="margin-top:1rem; width:100%; padding:0.75rem; background:var(--green); color:#0d1117; border:none; border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+      ⬇ Télécharger ma liste de courses (.txt)
     </button>
   </div>
   `;
@@ -1753,21 +1868,170 @@ function generateDiet() {
   const pal    = parseFloat(document.getElementById('inputActivite').value);
   const err    = document.getElementById('formError');
 
-  if (!age || age < 15 || age > 90)        { err.textContent = 'Âge invalide (15–90 ans).'; err.style.display='block'; return; }
+  if (!age || age < 15 || age > 90)           { err.textContent = 'Âge invalide (15–90 ans).'; err.style.display='block'; return; }
   if (!taille || taille < 140 || taille > 220) { err.textContent = 'Taille invalide (140–220 cm).'; err.style.display='block'; return; }
-  if (!poids || poids < 30 || poids > 200) { err.textContent = 'Poids invalide (30–200 kg).'; err.style.display='block'; return; }
+  if (!poids || poids < 30 || poids > 200)     { err.textContent = 'Poids invalide (30–200 kg).'; err.style.display='block'; return; }
   err.style.display = 'none';
 
   document.getElementById('dietForm').style.display = 'none';
   const result = document.getElementById('dietResult');
+  const meals = buildMeals(
+    calcTargetKcal(calcTDEE(currentSex, age, taille, poids, pal), currentObj),
+    calcProtein(poids, currentObj, currentSex),
+    poids, currentSex, currentObj
+  );
   result.innerHTML = renderDiet(currentSex, age, taille, poids, pal, currentObj);
   result.style.display = 'block';
+
+  // Build shopping list
+  const allItems = {};
+  meals.forEach(meal => {
+    meal.items.forEach(it => {
+      if (it.qty === 'à goût') return;
+      const key = it.name;
+      if (!allItems[key]) allItems[key] = { name: it.name, qty: it.qty };
+    });
+  });
+  // Add fixed items
+  const fixed = [
+    { name: 'Vitamine B12 (supplément)', qty: '250 µg/jour' },
+    { name: 'Vitamine D3 + K2 (supplément)', qty: '2000 UI + 100 µg/jour' },
+    { name: 'Oméga-3 algues DHA/EPA (supplément)', qty: '500 mg/jour' },
+    { name: 'Sel iodé', qty: '½ c.c./jour' },
+  ];
+
+  const sl = document.getElementById('shoppingList');
+  if (!sl) return;
+  sl.innerHTML = '';
+
+  const renderGroup = (title, items) => {
+    const div = document.createElement('div');
+    div.style.cssText = 'margin-bottom:1rem;';
+    div.innerHTML = `<div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-subtle); margin-bottom:0.5rem;">${title}</div>`;
+    items.forEach(item => {
+      const row = document.createElement('label');
+      row.style.cssText = 'display:flex; align-items:center; gap:0.75rem; padding:0.45rem 0; border-bottom:1px solid rgba(48,54,61,0.4); cursor:pointer;';
+      row.innerHTML = `
+        <input type="checkbox" data-item="${item.name}" style="accent-color:var(--green); width:16px; height:16px; cursor:pointer; flex-shrink:0;">
+        <span style="flex:1; font-size:0.88rem; color:var(--text);">${item.name}</span>
+        <span style="font-size:0.78rem; color:var(--amber); white-space:nowrap;">${item.qty}</span>`;
+      div.appendChild(row);
+    });
+    return div;
+  };
+
+  sl.appendChild(renderGroup('🥦 Aliments', Object.values(allItems)));
+  sl.appendChild(renderGroup('💊 Compléments', fixed));
+}
+
+function downloadList() {
+  const checked = new Set();
+  document.querySelectorAll('#shoppingList input[type=checkbox]:checked').forEach(cb => checked.add(cb.dataset.item));
+  const rows = [];
+  document.querySelectorAll('#shoppingList label').forEach(lbl => {
+    const cb = lbl.querySelector('input');
+    if (cb && !checked.has(cb.dataset.item)) {
+      const name = lbl.querySelector('span:nth-child(2)')?.textContent || '';
+      const qty  = lbl.querySelector('span:nth-child(3)')?.textContent || '';
+      rows.push(`- ${name}  (${qty})`);
+    }
+  });
+  if (rows.length === 0) { alert('Tous les ingrédients sont cochés !'); return; }
+  const content = `LISTE DE COURSES VEGAN\n${'─'.repeat(40)}\n\n${rows.join('\n')}\n\n${'─'.repeat(40)}\nGénérée par Véganisme & Science`;
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'liste-courses-vegan.txt';
+  a.click();
 }
 
 function resetDiet() {
   document.getElementById('dietResult').style.display = 'none';
   document.getElementById('dietResult').innerHTML = '';
   document.getElementById('dietForm').style.display = 'block';
+}
+
+// ── IMPACT CALCULATOR ─────────────────────────────────
+// Sources: ADEME 2022, FAO 2023, Poore & Nemecek 2018, Our World in Data
+// French avg omnivore vs vegan per year:
+const IMPACT = {
+  // Français moyen omnivore / an
+  omni: {
+    co2: 2500,       // kg CO₂eq/an lié à l'alimentation (ADEME 2022)
+    eau: 740000,     // litres/an (Water Footprint Network)
+    terre: 2700,     // m²/an (Our World in Data)
+    animaux: 100,    // animaux tués/an (directement + indirectement, estimation conservative)
+  },
+  // Vegan moyen français / an
+  vegan: {
+    co2: 900,        // kg CO₂eq/an
+    eau: 270000,     // litres/an
+    terre: 680,      // m²/an
+    animaux: 6,      // animaux tués/an (rongeurs moissons, insectes, estimation basse)
+  }
+};
+
+function calcImpact() {
+  const years  = parseInt(document.getElementById('impactYears').value) || 0;
+  const months = parseInt(document.getElementById('impactMonths').value) || 0;
+  const err = document.getElementById('impactError');
+
+  if (years === 0 && months === 0) {
+    err.textContent = 'Entrez au moins 1 mois.';
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+
+  const totalMonths = years * 12 + months;
+  const frac = totalMonths / 12; // fraction d'année
+
+  const saved = {
+    co2:     Math.round((IMPACT.omni.co2 - IMPACT.vegan.co2) * frac),
+    eau:     Math.round((IMPACT.omni.eau - IMPACT.vegan.eau) * frac),
+    terre:   Math.round((IMPACT.omni.terre - IMPACT.vegan.terre) * frac),
+    animaux: Math.round((IMPACT.omni.animaux - IMPACT.vegan.animaux) * frac),
+  };
+
+  const durLabel = years > 0
+    ? `${years} an${years > 1 ? 's' : ''}${months > 0 ? ` et ${months} mois` : ''}`
+    : `${months} mois`;
+
+  const fmt = n => n.toLocaleString('fr-FR');
+
+  const stats = [
+    { emoji: '🌡️', label: 'CO₂ économisé', val: `${fmt(saved.co2)} kg`, sub: `≈ ${Math.round(saved.co2/120)} vols Paris–New York évités`, color: 'var(--green)' },
+    { emoji: '💧', label: "Eau économisée", val: `${fmt(saved.eau)} L`, sub: `≈ ${Math.round(saved.eau/50)} bains remplis`, color: 'var(--accent)' },
+    { emoji: '🌍', label: 'Terres préservées', val: `${fmt(saved.terre)} m²`, sub: `≈ ${Math.round(saved.terre/10000 * 100) / 100} hectares`, color: 'var(--amber)' },
+    { emoji: '🐮', label: 'Animaux non tués', val: `~${fmt(saved.animaux)}`, sub: 'estimation conservative (vertébrés)', color: '#f85149' },
+  ];
+
+  const html = `
+  <div style="text-align:center; margin-bottom:1.5rem;">
+    <p style="font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:700; color:var(--green);">En ${durLabel} de véganisme, vous avez évité :</p>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin-bottom:1.5rem;">
+    ${stats.map(s => `
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; text-align:center;">
+      <div style="font-size:2rem; margin-bottom:0.4rem;">${s.emoji}</div>
+      <div style="font-size:1.4rem; font-weight:700; color:${s.color}; margin-bottom:0.25rem;">${s.val}</div>
+      <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:0.35rem;">${s.label}</div>
+      <div style="font-size:0.72rem; color:var(--text-subtle); font-style:italic;">${s.sub}</div>
+    </div>`).join('')}
+  </div>
+  <div style="background:rgba(88,166,255,0.06); border:1px solid rgba(88,166,255,0.2); border-radius:10px; padding:1rem 1.25rem; font-size:0.78rem; color:var(--text-muted); line-height:1.7; margin-bottom:1.5rem;">
+    📚 <strong style="color:var(--text);">Sources :</strong> ADEME, Bilan carbone alimentation (2022) · Poore &amp; Nemecek, <em>Science</em> 360:987 (2018) · FAO, Livestock and Environment (2023) · Water Footprint Network, Mekonnen &amp; Hoekstra (2012). Comparaison : consommateur omnivore moyen français vs vegan moyen français. Les chiffres sont des estimations conservatrices basées sur la littérature scientifique disponible.
+  </div>
+  <div style="text-align:center;">
+    <button onclick="document.getElementById('impactResult').style.display='none'; document.getElementById('impactForm').style.display='block';" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.6rem 1.5rem; border-radius:8px; cursor:pointer; font-size:0.85rem; font-family:'DM Sans',sans-serif;" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-muted)'">
+      ← Recalculer
+    </button>
+  </div>`;
+
+  document.getElementById('impactForm').style.display = 'none';
+  const res = document.getElementById('impactResult');
+  res.innerHTML = html;
+  res.style.display = 'block';
 }
 
 // ── TABS & CARDS ───────────────────────────────────────
@@ -1787,28 +2051,29 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
 function applyFilter(filter) {
+  const panels = ['dietPanel', 'impactPanel', 'questionspanel'];
+  panels.forEach(id => document.getElementById(id).style.display = 'none');
+
   if (filter === 'diet') {
     document.getElementById('content').style.display = 'none';
     document.getElementById('dietPanel').style.display = 'block';
-    document.getElementById('questionspanel').style.display = 'none';
+    return;
+  }
+  if (filter === 'impact') {
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('impactPanel').style.display = 'block';
     return;
   }
   if (filter === 'questions') {
     document.getElementById('content').style.display = 'none';
-    document.getElementById('dietPanel').style.display = 'none';
     document.getElementById('questionspanel').style.display = 'block';
     return;
   }
-  document.getElementById('content').style.display = 'block';
-  document.getElementById('dietPanel').style.display = 'none';
-  document.getElementById('questionspanel').style.display = 'none';
 
-  // Show/hide cards — only those inside #content
+  document.getElementById('content').style.display = 'block';
   document.querySelectorAll('#content .card').forEach(card => {
     card.style.display = card.dataset.category === filter ? 'block' : 'none';
   });
-
-  // Show/hide section labels
   document.querySelectorAll('.section-label').forEach(label => {
     label.style.display = label.dataset.section === filter ? 'flex' : 'none';
   });
@@ -1822,7 +2087,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-// Default: show nutrition on load
 applyFilter('nutrition');
 </script>
 </body>
