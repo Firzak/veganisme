@@ -368,6 +368,7 @@
   <div style="display:flex; justify-content:center; width:100%; margin-top:0.4rem; gap:0.5rem;">
     <button class="filter-btn" data-filter="diet" style="border-color:var(--green); color:var(--green); padding:0.65rem 2rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🥦 Quoi manger ?</button>
     <button class="filter-btn" data-filter="impact" style="border-color:var(--accent); color:var(--accent); padding:0.65rem 2rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🌍 Mon impact</button>
+    <button class="filter-btn" data-filter="quiz" style="border-color:var(--amber); color:var(--amber); padding:0.65rem 2rem; font-size:1rem; font-weight:600; border-radius:24px; letter-spacing:0.04em;">🎓 Quiz</button>
   </div>
 </div>
 
@@ -375,50 +376,6 @@
 <main id="content">
 
   <div class="section-label" data-section="nutrition">Nutrition & Carences</div>
-
-  <!-- CHOLINE -->
-  <div class="card" data-category="nutrition">
-    <div class="card-header" onclick="toggleCard(this)">
-      <div class="card-icon icon-amber">🧫</div>
-      <div class="card-meta">
-        <h2>"Les végans manquent de choline — un nutriment crucial souvent ignoré"</h2>
-        <p class="critique-text">« La choline est quasi absente des végétaux et indispensable au cerveau et au foie. »</p>
-      </div>
-      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <div class="card-body">
-      <div class="card-content">
-        <div class="verdict">
-          <strong>Verdict scientifique :</strong> La critique est partiellement fondée. La choline est effectivement plus difficile à obtenir dans un régime vegan — les œufs et abats en sont les meilleures sources animales. Cependant, le tofu, les légumineuses, le brocoli, le quinoa et les noix en contiennent des quantités significatives. L'EFSA recommande 400 mg/jour pour les adultes ; un régime vegan planifié peut y parvenir, mais cela nécessite une attention particulière que peu de végans ont.
-        </div>
-        <p class="studies-title">Études de référence</p>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.3390/nu12082396" target="_blank">
-              Choline Intake in Vegan and Vegetarian Diets — Cross-Sectional Study
-            </a>
-          </div>
-          <div class="study-meta">Wallace et al. · Nutrients · 2018 · DOI: 10.3390/nu12082396</div>
-          <div class="study-finding">Cette étude transversale sur des données NHANES montre que les végétariens et végans présentent des apports en choline significativement inférieurs aux recommandations (moins de 50% de l'apport adéquat pour beaucoup). Les auteurs identifient la choline comme le "talon d'Achille nutritionnel" le plus sous-estimé des régimes végétaux, avec des conséquences potentielles sur la santé hépatique et le développement neurologique fœtal.</div>
-        </div>
-        <div class="study">
-          <div class="study-title">
-            <a href="https://doi.org/10.1093/ajcn/nqaa019" target="_blank">
-              Dietary Choline and Brain Development — Systematic Review
-            </a>
-          </div>
-          <div class="study-meta">Wiedeman et al. · American Journal of Clinical Nutrition · 2018 · DOI: 10.1093/ajcn/nqaa019</div>
-          <div class="study-finding">Cette revue systématique confirme le rôle central de la choline dans le développement neurologique, la méthylation de l'ADN et la prévention des stéatoses hépatiques non alcooliques. Les sources véganes les plus riches : tofu ferme (107 mg/100g), graines de soja cuites (114 mg/100g), quinoa cuit (43 mg/100g), brocoli cuit (40 mg/100g), germe de blé (152 mg/100g). Un régime vegan varié peut atteindre les 400 mg/j recommandés, mais une surveillance est conseillée, notamment pendant la grossesse.</div>
-        </div>
-        <div class="nuance-box">
-          <strong>⚠️ Sources véganes de choline à privilégier</strong>
-          Tofu ferme · Soja et edamame · Germe de blé · Quinoa · Brocoli · Choux de Bruxelles · Noix · Graines de tournesol. Femmes enceintes veganes : apport recommandé à 480 mg/jour — un suivi diététique spécifique est conseillé.
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- SOLVANTS & ADDITIFS DANS LES COMPLÉMENTS -->
   <div class="card" data-category="nutrition">
@@ -1298,6 +1255,50 @@
     </div>
   </div>
 
+  <!-- COÛT VEGAN VS OMNIVORE -->
+  <div class="card" data-category="social">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">💸</div>
+      <div class="card-meta">
+        <h2>"Être vegan coûte plus cher que manger normalement"</h2>
+        <p class="critique-text">« Les produits végans sont hors de prix, c'est un régime de bobos. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> C'est faux pour un régime vegan à base d'aliments bruts. Les légumineuses sèches, les céréales complètes, les légumes de saison et les oléagineux en vrac sont parmi les aliments les moins chers par gramme de protéine et par calorie disponibles en France. Le coût élevé s'applique uniquement aux substituts ultra-transformés (steak végétal, fromage vegan industriel) — qui ne sont pas nécessaires à un régime vegan équilibré.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1371/journal.pone.0259701" target="_blank">
+              Cost and Affordability of Plant-Based Diets Compared to Omnivore Diets — Systematic Review & Meta-analysis
+            </a>
+          </div>
+          <div class="study-meta">Springmann et al. · PLOS ONE · 2021 · DOI: 10.1371/journal.pone.0259701</div>
+          <div class="study-finding">Cette méta-analyse de 25 études dans 13 pays conclut que les régimes à base végétale sont en moyenne 27% moins chers que les régimes omnivores dans les pays à revenus élevés. Les protéines végétales (lentilles, pois chiches, haricots) coûtent systématiquement moins cher par gramme que les protéines animales (viande rouge, volaille, poisson). Les auteurs soulignent que la confusion vient de la comparaison avec des produits végans transformés premium, non avec les aliments de base.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9823774/" target="_blank">
+              Five U.S. Dietary Patterns and Their Relationship to Diet Cost, Land Use, Water Use and GHG
+            </a>
+          </div>
+          <div class="study-meta">Nutrients · PMC · 2023 · DOI: 10.3390/nu15010127</div>
+          <div class="study-finding">Cette étude compare cinq schémas alimentaires sur leurs coûts et impacts environnementaux. Le régime vegan à base d'aliments entiers est le moins coûteux de tous les schémas étudiés, tout en étant le plus favorable à l'environnement. Les auteurs estiment qu'un régime vegan complet et nutritionnellement adéquat peut être maintenu pour 3 à 5 € par jour en France avec une planification basique.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📊 Comparaison des prix réels (France, 2024)</strong>
+          Lentilles sèches : ~1,80€/kg · Pois chiches secs : ~1,60€/kg · Haricots rouges secs : ~1,50€/kg · Riz complet : ~1,40€/kg · Flocons d'avoine : ~1,20€/kg — contre ~12–25€/kg pour la viande bovine, ~8–15€/kg pour le poisson. Par gramme de protéine, les légumineuses sont 5 à 10 fois moins chères que la viande.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- OMNIVORES NATURELS -->
   <div class="card" data-category="social">
     <div class="card-header" onclick="toggleCard(this)">
@@ -1356,6 +1357,41 @@
     </button>
   </div>
   <div id="impactResult" style="display:none; margin-top:2rem;"></div>
+</div>
+
+<!-- QUIZ PANEL -->
+<div id="quizPanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
+
+  <div style="text-align:center; margin-bottom:2rem;">
+    <p style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:700; color:var(--text); margin-bottom:0.5rem;">Quiz — Êtes-vous un expert du véganisme ?</p>
+    <p style="color:var(--text-muted); font-size:0.9rem;">20 questions · 15/20 pour décrocher votre diplôme 🎓</p>
+  </div>
+
+  <div id="quizContainer" style="display:flex; flex-direction:column; gap:1rem;"></div>
+  <div id="quizNav" style="display:none; text-align:center; margin-top:1.5rem;">
+    <button id="quizSubmitBtn" onclick="submitQuiz()" style="padding:0.9rem 2.5rem; background:var(--amber); color:#0d1117; border:none; border-radius:10px; font-size:1rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+      Valider mes réponses →
+    </button>
+  </div>
+  <div id="quizResult" style="display:none;"></div>
+
+  <!-- DIPLOME -->
+  <div id="diplomeSection" style="display:none; text-align:center; margin-top:2rem;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.5rem; margin-bottom:1rem;">
+      <label style="display:block; font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.6rem;">Votre prénom pour le diplôme</label>
+      <div style="display:flex; gap:0.75rem; max-width:400px; margin:0 auto;">
+        <input id="diplomePrenom" type="text" placeholder="ex : Marie" style="flex:1; padding:0.65rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.95rem; font-family:'DM Sans',sans-serif; outline:none;">
+        <button onclick="generateDiplome()" style="padding:0.65rem 1.25rem; background:var(--amber); color:#0d1117; border:none; border-radius:8px; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; white-space:nowrap;">Générer 🎓</button>
+      </div>
+    </div>
+    <canvas id="diplomeCanvas" style="display:none; max-width:100%; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.4);"></canvas>
+    <div id="diplomeActions" style="display:none; margin-top:1rem;">
+      <button onclick="saveDiplome()" style="padding:0.75rem 2rem; background:var(--amber); color:#0d1117; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        ⬇ Enregistrer mon diplôme
+      </button>
+    </div>
+  </div>
+
 </div>
 
 <!-- QUESTIONS CONS PANEL -->
@@ -1938,11 +1974,27 @@ function downloadList() {
   });
   if (rows.length === 0) { alert('Tous les ingrédients sont cochés !'); return; }
   const content = `LISTE DE COURSES VEGAN\n${'─'.repeat(40)}\n\n${rows.join('\n')}\n\n${'─'.repeat(40)}\nGénérée par Véganisme & Science`;
+
+  // iOS/Android : Web Share API
+  if (navigator.share && /iPhone|iPad|Android/i.test(navigator.userAgent)) {
+    const file = new File([content], 'liste-courses-vegan.txt', { type: 'text/plain' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: 'Liste de courses vegan' }).catch(() => {});
+      return;
+    }
+    // Fallback share texte
+    navigator.share({ title: 'Liste de courses vegan', text: content }).catch(() => {});
+    return;
+  }
+  // Desktop : téléchargement classique
   const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'liste-courses-vegan.txt';
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
 function resetDiet() {
@@ -2034,6 +2086,258 @@ function calcImpact() {
   res.style.display = 'block';
 }
 
+// ── QUIZ ──────────────────────────────────────────────
+const QUESTIONS = [
+  { q: "Quelle vitamine est OBLIGATOIREMENT à supplémenter dans un régime vegan ?", opts: ["Vitamine D", "Vitamine B12", "Vitamine C"], a: 1 },
+  { q: "Quelle part des terres agricoles mondiales est utilisée par l'élevage ?", opts: ["40%", "60%", "80%"], a: 2 },
+  { q: "Selon Poore & Nemecek (Science, 2018), un monde vegan réduirait les terres agricoles de :", opts: ["~30%", "~50%", "~75%"], a: 2 },
+  { q: "Quelle proportion du soja mondial sert à nourrir les animaux d'élevage ?", opts: ["Environ 20%", "Environ 45%", "Environ 70–75%"], a: 2 },
+  { q: "La vitamine B12 est produite par :", opts: ["Les animaux eux-mêmes", "Des bactéries du sol", "Le soleil"], a: 1 },
+  { q: "Quel acide gras oméga-3 est crucial pour le cerveau et absent des végétaux en quantité suffisante ?", opts: ["ALA", "DHA/EPA", "Acide linoléique"], a: 1 },
+  { q: "Quelle est la meilleure source végane de sélénium ?", opts: ["Les épinards", "2 noix du Brésil par jour", "Le tofu"], a: 1 },
+  { q: "Le fumier animal est-il indispensable à l'agriculture végétale ?", opts: ["Oui, sans alternative viable", "Non, les légumineuses et le compost peuvent le remplacer", "Seulement pour les céréales"], a: 1 },
+  { q: "Quel est l'impact de la réintroduction des loups sur les populations de cervidés à Yellowstone ?", opts: ["Aucun effet notable", "Augmentation des cervidés", "Régulation naturelle efficace sans chasse"], a: 2 },
+  { q: "Les abeilles domestiques (Apis mellifera) sont-elles les meilleures pollinisatrices pour toutes les cultures ?", opts: ["Oui, elles pollinisent mieux que toutes les autres espèces", "Non, les pollinisateurs sauvages sont souvent plus efficaces", "Seulement pour les fruits"], a: 1 },
+  { q: "Quelle est la principale cause de déforestation amazonienne ?", opts: ["L'exploitation forestière", "L'élevage et les cultures fourragères", "L'urbanisation"], a: 1 },
+  { q: "Un vegan doit-il refuser un médicament vital testé sur des animaux ?", opts: ["Oui, par cohérence éthique", "Non, la définition du véganisme inclut la clause 'autant que possible et praticable'", "Seulement les médicaments contenant des produits animaux"], a: 1 },
+  { q: "Les régimes végétaux sont associés à une réduction du risque de :", opts: ["Carences uniquement", "Maladies cardiovasculaires, diabète T2 et certains cancers", "Aucune maladie chronique"], a: 1 },
+  { q: "Qu'est-ce que les polymorphismes FADS1/FADS2 affectent chez les végans ?", opts: ["L'absorption du calcium", "La conversion des oméga-3 végétaux (ALA) en DHA/EPA", "La synthèse de la vitamine D"], a: 1 },
+  { q: "Si les plantes souffraient, manger vegan tuerait :", opts: ["Plus de plantes qu'un régime omnivore", "Autant de plantes", "Moins de plantes, car on évite l'intermédiaire animal inefficace"], a: 2 },
+  { q: "Selon l'étude Dinu et al. (2017), un régime vegan est associé à une réduction du risque de cancer total de :", opts: ["5%", "15%", "35%"], a: 1 },
+  { q: "Selon l'étude de Garibaldi et al. (Science, 2013), les pollinisateurs sauvages par rapport aux abeilles domestiques :", opts: ["Pollinisent moins efficacement les cultures", "Contribuent davantage à la fructification des cultures", "Ont le même impact"], a: 1 },
+  { q: "L'argument 'on a toujours mangé de la viande' est un exemple de :", opts: ["Raisonnement scientifique valide", "Sophisme naturaliste", "Appel à la tradition (argumentum ad antiquitatem)"], a: 2 },
+  { q: "Les végans sportifs peuvent-ils avoir des gains musculaires comparables aux omnivores ?", opts: ["Non, les protéines animales sont irremplaçables", "Oui, si l'apport protéique total est adéquat (≥1,6g/kg/jour)", "Seulement pour les sports d'endurance"], a: 1 },
+  { q: "Quelle organisation mondiale de diététiciens affirme qu'un régime vegan est adapté à tous les stades de la vie ?", opts: ["L'OMS", "L'Academy of Nutrition and Dietetics (AND)", "La Société française de nutrition"], a: 1 },
+];
+
+let quizAnswers = {};
+
+function initQuiz() {
+  quizAnswers = {};
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('diplomeSection').style.display = 'none';
+  document.getElementById('quizNav').style.display = 'none';
+
+  QUESTIONS.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.style.cssText = 'background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem;';
+    card.innerHTML = `
+      <div style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:0.5rem;">Question ${qi+1} / ${QUESTIONS.length}</div>
+      <div style="font-size:1rem; color:var(--text); font-weight:500; margin-bottom:1rem; line-height:1.5;">${q.q}</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        ${q.opts.map((opt, oi) => `
+          <label style="display:flex; align-items:center; gap:0.75rem; padding:0.6rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; cursor:pointer; transition:all .15s;" onmouseover="this.style.borderColor='var(--amber)'" onmouseout="this.style.borderColor='var(--border)'">
+            <input type="radio" name="q${qi}" value="${oi}" onchange="quizAnswers[${qi}]=${oi}; checkAllAnswered();" style="accent-color:var(--amber); width:16px; height:16px; flex-shrink:0;">
+            <span style="font-size:0.9rem; color:var(--text-muted);">${opt}</span>
+          </label>`).join('')}
+      </div>`;
+    container.appendChild(card);
+  });
+
+  document.getElementById('quizNav').style.display = 'block';
+  document.getElementById('quizSubmitBtn').disabled = true;
+  document.getElementById('quizSubmitBtn').style.opacity = '0.4';
+}
+
+function checkAllAnswered() {
+  if (Object.keys(quizAnswers).length === QUESTIONS.length) {
+    document.getElementById('quizSubmitBtn').disabled = false;
+    document.getElementById('quizSubmitBtn').style.opacity = '1';
+  }
+}
+
+function submitQuiz() {
+  let score = 0;
+  QUESTIONS.forEach((q, qi) => { if (quizAnswers[qi] === q.a) score++; });
+  const passed = score >= 15;
+
+  document.getElementById('quizContainer').style.display = 'none';
+  document.getElementById('quizNav').style.display = 'none';
+
+  const res = document.getElementById('quizResult');
+  res.style.display = 'block';
+
+  if (passed) {
+    res.innerHTML = `
+      <div style="text-align:center; background:rgba(63,185,80,0.08); border:1px solid rgba(63,185,80,0.3); border-radius:14px; padding:2rem; margin-bottom:1.5rem;">
+        <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
+        <p style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:var(--green); margin-bottom:0.5rem;">Félicitations !</p>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:0.5rem;">Vous avez obtenu <strong style="color:var(--green);">${score} / ${QUESTIONS.length}</strong> — vous êtes un expert du véganisme.</p>
+        <p style="color:var(--text-muted); font-size:0.85rem;">Entrez votre prénom pour recevoir votre diplôme officiel 👇</p>
+      </div>`;
+    document.getElementById('diplomeSection').style.display = 'block';
+  } else {
+    res.innerHTML = `
+      <div style="text-align:center; background:rgba(248,81,73,0.08); border:1px solid rgba(248,81,73,0.3); border-radius:14px; padding:2rem; margin-bottom:1.5rem;">
+        <div style="font-size:3rem; margin-bottom:0.5rem;">📚</div>
+        <p style="font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:700; color:#f85149; margin-bottom:0.5rem;">Pas encore expert…</p>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:1rem;">Vous avez obtenu <strong style="color:#f85149;">${score} / ${QUESTIONS.length}</strong> — il vous faut 15/20 pour le diplôme.</p>
+        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:1.5rem;">Continuez à explorer les fiches du site pour progresser !</p>
+        <button onclick="document.getElementById('quizContainer').style.display='flex'; initQuiz();" style="padding:0.75rem 2rem; background:var(--amber); color:#0d1117; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;">
+          🔄 Recommencer
+        </button>
+      </div>`;
+  }
+}
+
+// ── DIPLOME CANVAS ─────────────────────────────────────
+function generateDiplome() {
+  const prenom = document.getElementById('diplomePrenom').value.trim();
+  if (!prenom) { alert('Entrez votre prénom !'); return; }
+
+  const canvas = document.getElementById('diplomeCanvas');
+  const ctx = canvas.getContext('2d');
+  const W = 900, H = 636;
+  canvas.width = W; canvas.height = H;
+  canvas.style.display = 'block';
+
+  // Background
+  ctx.fillStyle = '#fdf8ed';
+  ctx.fillRect(0, 0, W, H);
+
+  // Outer border gold double
+  ctx.strokeStyle = '#c9a227';
+  ctx.lineWidth = 8;
+  ctx.strokeRect(14, 14, W-28, H-28);
+  ctx.lineWidth = 2;
+  ctx.strokeRect(24, 24, W-48, H-48);
+
+  // Corner ornaments
+  const corners = [[30,30],[W-30,30],[30,H-30],[W-30,H-30]];
+  corners.forEach(([cx,cy]) => {
+    ctx.fillStyle = '#c9a227';
+    ctx.beginPath();
+    ctx.arc(cx, cy, 8, 0, Math.PI*2);
+    ctx.fill();
+  });
+
+  // Top logo
+  ctx.font = 'bold 28px serif';
+  ctx.fillStyle = '#2d5a1b';
+  ctx.textAlign = 'center';
+  ctx.fillText('🌿 INSTITUT NATIONAL DU HOUMOUS 🌿', W/2, 80);
+
+  // Subtitle institution
+  ctx.font = '14px serif';
+  ctx.fillStyle = '#7a6230';
+  ctx.fillText('Fondé en 2024 · Siège social : quelque part entre un champ de pois chiches et une bibliothèque', W/2, 105);
+
+  // Separator
+  ctx.strokeStyle = '#c9a227';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(60, 120); ctx.lineTo(W-60, 120); ctx.stroke();
+
+  // DIPLÔME title
+  ctx.font = 'italic bold 52px Georgia, serif';
+  ctx.fillStyle = '#1a3a0e';
+  ctx.fillText('Diplôme d\'Expert en Véganisme', W/2, 185);
+
+  // Certifie que
+  ctx.font = '18px Georgia, serif';
+  ctx.fillStyle = '#5a4a1a';
+  ctx.fillText('Ce document atteste solennellement que', W/2, 230);
+
+  // Prenom
+  ctx.font = 'bold italic 58px Georgia, serif';
+  ctx.fillStyle = '#2d5a1b';
+  ctx.fillText(prenom, W/2, 300);
+
+  // Underline prenom
+  const pw = ctx.measureText(prenom).width;
+  ctx.strokeStyle = '#c9a227';
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(W/2-pw/2, 312); ctx.lineTo(W/2+pw/2, 312); ctx.stroke();
+
+  // Body text
+  ctx.font = '17px Georgia, serif';
+  ctx.fillStyle = '#3a2a0a';
+  ctx.fillText('a démontré une connaissance approfondie du véganisme,', W/2, 348);
+  ctx.fillText('de ses fondements scientifiques, éthiques et environnementaux.', W/2, 372);
+
+  // Fun seal
+  ctx.font = '13px sans-serif';
+  ctx.fillStyle = '#7a6230';
+  ctx.fillText('★ Aucun animal n\'a été blessé lors de la délivrance de ce diplôme ★', W/2, 400);
+
+  // Separator
+  ctx.strokeStyle = '#c9a227';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(60, 418); ctx.lineTo(W-60, 418); ctx.stroke();
+
+  // Date
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('fr-FR', { day:'numeric', month:'long', year:'numeric' });
+  ctx.font = '14px Georgia, serif';
+  ctx.fillStyle = '#7a6230';
+  ctx.textAlign = 'left';
+  ctx.fillText(`Délivré le ${dateStr}`, 80, 450);
+
+  // Signature block right
+  ctx.textAlign = 'right';
+  ctx.font = 'italic bold 20px Georgia, serif';
+  ctx.fillStyle = '#1a3a0e';
+  ctx.fillText('Bastien le Vegan King', W-80, 455);
+  ctx.font = '12px Georgia, serif';
+  ctx.fillStyle = '#7a6230';
+  ctx.fillText('Directeur Suprême de l\'Institut National du Houmous', W-80, 472);
+  ctx.fillText('& Ambassadeur Extraordinaire du Pois Chiche', W-80, 487);
+
+  // Fake signature squiggle
+  ctx.strokeStyle = '#1a3a0e';
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(W-260, 448);
+  ctx.bezierCurveTo(W-230, 435, W-200, 460, W-170, 445);
+  ctx.bezierCurveTo(W-140, 430, W-120, 455, W-100, 445);
+  ctx.stroke();
+
+  // Bottom seal circle
+  ctx.beginPath();
+  ctx.arc(W/2, 530, 50, 0, Math.PI*2);
+  ctx.strokeStyle = '#c9a227';
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  ctx.font = 'bold 28px serif';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#2d5a1b';
+  ctx.fillText('🌱', W/2, 540);
+  ctx.font = '10px sans-serif';
+  ctx.fillStyle = '#7a6230';
+  ctx.fillText('CERTIFIÉ EXPERT', W/2, 558);
+  ctx.fillText('VEGAN KING APPROVED', W/2, 570);
+
+  document.getElementById('diplomeActions').style.display = 'block';
+}
+
+function saveDiplome() {
+  const canvas = document.getElementById('diplomeCanvas');
+  const dataURL = canvas.toDataURL('image/png');
+  // iOS/Android : Web Share API avec fichier image
+  if (navigator.share && /iPhone|iPad|Android/i.test(navigator.userAgent)) {
+    canvas.toBlob(blob => {
+      const file = new File([blob], 'diplome-vegan.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: 'Mon diplôme vegan' }).catch(() => fallbackSave(dataURL));
+        return;
+      }
+      fallbackSave(dataURL);
+    }, 'image/png');
+    return;
+  }
+  fallbackSave(dataURL);
+}
+
+function fallbackSave(dataURL) {
+  const a = document.createElement('a');
+  a.href = dataURL;
+  a.download = 'diplome-expert-vegan.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
 // ── TABS & CARDS ───────────────────────────────────────
 function toggleCard(header) {
   const card = header.closest('.card');
@@ -2051,7 +2355,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.card').forEach(card => observer.observe(card));
 
 function applyFilter(filter) {
-  const panels = ['dietPanel', 'impactPanel', 'questionspanel'];
+  const panels = ['dietPanel', 'impactPanel', 'quizPanel', 'questionspanel'];
   panels.forEach(id => document.getElementById(id).style.display = 'none');
 
   if (filter === 'diet') {
@@ -2062,6 +2366,12 @@ function applyFilter(filter) {
   if (filter === 'impact') {
     document.getElementById('content').style.display = 'none';
     document.getElementById('impactPanel').style.display = 'block';
+    return;
+  }
+  if (filter === 'quiz') {
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('quizPanel').style.display = 'block';
+    if (!document.getElementById('quizContainer').children.length) initQuiz();
     return;
   }
   if (filter === 'questions') {
