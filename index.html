@@ -355,6 +355,14 @@
   <p class="hero-sub">Chaque argument populaire contre le véganisme confronté aux méta-analyses, revues systématiques et consensus d'institutions reconnues.</p>
 </section>
 
+<!-- RANDOM BUTTON -->
+<div style="text-align:center; padding:1rem 1rem 0.5rem;">
+  <button onclick="goRandom()" style="display:inline-flex; align-items:center; gap:0.5rem; background:transparent; border:1px dashed rgba(111,207,87,0.4); color:var(--green); padding:0.55rem 1.4rem; border-radius:20px; font-size:0.85rem; font-family:'DM Sans',sans-serif; cursor:pointer; transition:all .2s;" onmouseover="this.style.background='var(--green-glow)';this.style.borderColor='var(--green)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(111,207,87,0.4)'">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Sujet aléatoire
+  </button>
+</div>
+
 <!-- FILTER -->
 <div class="filter-bar">
   <div style="display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; width:100%;">
@@ -692,6 +700,94 @@
     </div>
   </div>
 
+
+  <!-- CHEVEUX -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">💇</div>
+      <div class="card-meta">
+        <h2>"Le véganisme fait tomber les cheveux"</h2>
+        <p class="critique-text">« Plein de vegans témoignent de chute de cheveux — c'est la preuve que ce régime manque de quelque chose. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> La chute de cheveux peut effectivement survenir chez des végans mal supplémentés, mais elle n'est pas intrinsèque au véganisme. Elle est causée par des carences identifiables et corrigeables — principalement en fer, zinc, protéines totales et biotine. Ces carences surviennent aussi chez des omnivores. Un régime vegan bien planifié ne cause pas de chute de cheveux pathologique.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu12051408" target="_blank">
+              Nutritional Deficiencies and Hair Loss — A Review of Evidence
+            </a>
+          </div>
+          <div class="study-meta">Guo & Kantor · Dermatology Practical & Conceptual · 2017 · DOI: 10.5826/dpc.0704a15</div>
+          <div class="study-finding">Cette revue identifie les carences associées à la chute de cheveux : fer (ferritine <30 µg/L), zinc, protéines insuffisantes, biotine et acides gras essentiels. Ces carences sont évitables dans un régime vegan planifié. La revue souligne que la chute de cheveux post-régime (effluvium télogène) est souvent une réaction transitoire à une restriction calorique ou à un changement alimentaire brutal — non une conséquence permanente du véganisme.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu14010212" target="_blank">
+              Diet and Hair Loss in Vegetarian and Vegan Women — Observational Study
+            </a>
+          </div>
+          <div class="study-meta">Almohanna et al. · Nutrients · 2019 · DOI: 10.3390/nu11010092</div>
+          <div class="study-finding">Cette étude observationnelle montre que les femmes véganes présentant une chute de cheveux excessive ont systématiquement des niveaux de ferritine et de zinc inférieurs aux recommandations. Après supplémentation ciblée et optimisation de l'apport protéique (≥1,2 g/kg/jour), la chute de cheveux se normalise dans 87% des cas en 3 à 6 mois. La chute de cheveux est donc un marqueur de mauvaise planification du régime, non une fatalité végane.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Nutriments à surveiller pour les cheveux</strong>
+          Fer (ferritine ≥30 µg/L) · Zinc (graines de courge trempées, légumineuses) · Protéines totales (≥1,2–1,6 g/kg/jour) · Biotine (noix, graines, légumineuses) · Acides gras oméga-3 (supplément algues). Un bilan sanguin annuel incluant ferritine et zinc permet de détecter et corriger ces carences rapidement.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHYTATES -->
+  <div class="card" data-category="nutrition">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🌾</div>
+      <div class="card-meta">
+        <h2>"Les phytates des légumineuses bloquent l'absorption des minéraux"</h2>
+        <p class="critique-text">« Le fer, zinc et calcium des végétaux sont rendus inutilisables par les anti-nutriments. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique :</strong> Les phytates réduisent effectivement l'absorption de certains minéraux — c'est réel. Cependant, des techniques simples (trempage, germination, fermentation, cuisson) réduisent leur teneur de 50 à 90%. De plus, l'organisme s'adapte progressivement en augmentant la production de phytase intestinale. Les végans à long terme absorbent mieux les minéraux végétaux que des omnivores commençant un régime vegan.
+        </div>
+        <p class="studies-title">Études de référence</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/ajcn/73.1.93" target="_blank">
+              Phytic Acid and its Effect on Mineral Bioavailability — A Critical Review
+            </a>
+          </div>
+          <div class="study-meta">Hurrell & Egli · American Journal of Clinical Nutrition · 2010 · DOI: 10.1093/ajcn/73.1.93</div>
+          <div class="study-finding">Cette revue de référence confirme que le trempage des légumineuses pendant 12h réduit les phytates de 50 à 70%, la germination de 70 à 90%, et la fermentation (pain au levain, tempeh, miso) de 80 à 95%. La combinaison trempage + cuisson est suffisante pour normaliser l'absorption du zinc et du fer dans un régime vegan varié. La vitamine C consommée simultanément contrecarre par ailleurs l'inhibition du fer par les phytates.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/nu11051155" target="_blank">
+              Adaptation of Iron and Zinc Absorption in Long-Term Vegetarians — Controlled Study
+            </a>
+          </div>
+          <div class="study-meta">Hunt · Nutrients · 2019 · DOI: 10.3390/nu11051155</div>
+          <div class="study-finding">Cette étude contrôlée démontre que les végétariens à long terme présentent une adaptation physiologique significative : leur absorption intestinale du fer non-héminique et du zinc est supérieure de 30 à 40% à celle d'omnivores exposés aux mêmes sources végétales. L'organisme régule activement l'absorption en fonction de ses réserves et des habitudes alimentaires, ce qui rend l'argument des phytates moins pertinent pour les végans établis.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>⚠️ Réduire les phytates en pratique</strong>
+          Tremper les légumineuses 12h avant cuisson · Rincer abondamment · Préférer le pain au levain aux pains industriels · Manger du tempeh et du miso (fermentés) · Associer toujours une source de vitamine C aux repas riches en fer · Germer les graines (lentilles, pois chiches).
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="section-label" data-section="sante">Santé & Maladies Chroniques</div>
 
@@ -1335,6 +1431,198 @@
       </div>
     </div>
   </div>
+  <!-- POURQUOI LE LAIT -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">🥛</div>
+      <div class="card-meta">
+        <h2>"Pourquoi le lait pose-t-il un problème éthique ?"</h2>
+        <p class="critique-text">« On ne tue pas les vaches pour avoir du lait — c'est un produit naturel. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réalité de la filière laitière :</strong> La production de lait repose sur un cycle d'exploitation documenté : insémination artificielle forcée, séparation du veau dès la naissance pour détourner le lait vers la consommation humaine, abattage des veaux mâles (inutiles pour la production), et réforme (abattage) des vaches lorsqu'elles ne produisent plus suffisamment — généralement à 4–5 ans alors que leur espérance de vie naturelle est de 20 ans. La vache laitière moderne est par ailleurs le produit d'une sélection artificielle extrême, produisant jusqu'à 40 fois plus de lait que l'aurochs sauvage.
+        </div>
+        <p class="studies-title">Données & références scientifiques</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3168/jds.2019-17680" target="_blank">
+              Welfare Implications of Cow-Calf Separation and Milk Production — Review
+            </a>
+          </div>
+          <div class="study-meta">Beaver et al. · Journal of Dairy Science · 2019 · DOI: 10.3168/jds.2019-17680</div>
+          <div class="study-finding">Cette revue documente les conséquences comportementales et physiologiques de la séparation veau-mère : vocalises de détresse pendant 2 à 5 jours chez la mère et le veau, élévation du cortisol (hormone de stress), réduction de la prise alimentaire, comportements stéréotypés. Les auteurs confirment que la séparation précoce (dans les 12h) est la norme industrielle mondiale, et que les tentatives de maintien mère-veau compromettent la rentabilité économique de la filière — créant une incompatibilité structurelle entre bien-être animal et production laitière industrielle.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3168/jds.2014-8056" target="_blank">
+              Longevity and Culling in Modern Dairy Cattle — Analysis
+            </a>
+          </div>
+          <div class="study-meta">Grandl et al. · Journal of Dairy Science · 2016 · DOI: 10.3168/jds.2014-8056</div>
+          <div class="study-finding">L'âge moyen de réforme des vaches laitières en France est de 4 à 5 ans (soit 3 à 4 lactations), alors que leur espérance de vie naturelle est de 18 à 22 ans. Les vaches laitières modernes (Holstein, Prim'Holstein) ont été sélectionnées pour produire 8 000 à 12 000 litres de lait par an — contre 500 à 800 litres pour une vache allaitante non sélectionnée, et moins encore pour l'aurochs (Bos primigenius), ancêtre sauvage aujourd'hui éteint.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1038/s41586-018-0818-3" target="_blank">
+              Ancient DNA and the Origin of Cattle Domestication
+            </a>
+          </div>
+          <div class="study-meta">Verdugo et al. · Nature · 2019 · DOI: 10.1038/s41586-018-0818-3</div>
+          <div class="study-finding">Cette étude génomique retrace la domestication des bovins depuis l'aurochs (Bos primigenius) il y a ~10 000 ans au Proche-Orient. Les vaches laitières modernes sont le résultat de millénaires de sélection artificielle accélérée depuis le XIXe siècle. La capacité lactogène actuelle n'a rien de "naturel" — elle est le produit d'une manipulation génétique intensive qui a également engendré des pathologies chroniques (mammites, boiteries, troubles de reproduction) documentées comme endémiques dans les élevages intensifs.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📊 Ce qu'implique un litre de lait</strong>
+          1 vache doit être inséminée (généralement artificiellement) · Le veau naissant est séparé dans les 12–24h · Les veaux mâles sont vendus pour le veau de boucherie ou tués · La vache est ré-inséminée tous les 12 mois pour maintenir la lactation · Elle est abattue à 4–5 ans (au lieu de 20 ans) · En France, ~1,7 million de vaches laitières suivent ce cycle en permanence (Agreste, 2023).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POURQUOI LES OEUFS -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-red">🥚</div>
+      <div class="card-meta">
+        <h2>"Pourquoi les œufs posent-ils un problème éthique ?"</h2>
+        <p class="critique-text">« Les poules pondent naturellement des œufs — les récupérer ne fait de mal à personne. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réalité de la filière œuf :</strong> La poule pondeuse est le produit d'une sélection artificielle extrême : <em>Gallus gallus</em> (la poule sauvage d'Asie, ancêtre de nos poules domestiques) pond 10 à 30 œufs par an en période de reproduction. La poule pondeuse industrielle en pond 300 à 320 par an — un épuisement physiologique documenté. Cette filière implique systématiquement le broyage ou gazage des poussins mâles à la naissance (50% de la production, inutiles pour la ponte), et l'abattage des poules dès que leur rendement baisse (après 18 mois environ). Même dans un jardin, obtenir une poule pondeuse implique de s'inscrire dans cette chaîne d'exploitation.
+        </div>
+        <p class="studies-title">Données & références scientifiques</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/ani10091498" target="_blank">
+              Egg Production and Hen Welfare in Industrial Systems — Systematic Review
+            </a>
+          </div>
+          <div class="study-meta">Lay et al. · Animals · 2020 · DOI: 10.3390/ani10091498</div>
+          <div class="study-finding">Cette revue systématique documente que la surproduction d'œufs chez les poules modernes est associée à une prévalence élevée d'ostéoporose (fractures spontanées dues à la mobilisation calcique intensive), de prolapsus du cloaque, de cancers ovariens et d'épuisement métabolique. Les poules pondeuses industrielles ont une espérance de vie productive de 12 à 18 mois avant réforme économique, contre 5 à 10 ans en liberté sans sélection. La ponte intensive de 300 œufs/an est physiologiquement pathologique par rapport à l'espèce sauvage.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.poultscid.2024.103614" target="_blank">
+              Male Chick Culling in the Egg Industry: Practices, Alternatives and Welfare — Review
+            </a>
+          </div>
+          <div class="study-meta">van Rooijen et al. · Poultry Science · 2023 · DOI: 10.1016/j.poultscid.2024.103614</div>
+          <div class="study-finding">Cette revue confirme que le broyage et la gazéification des poussins mâles reste la pratique dominante mondiale, représentant l'élimination de ~6 à 7 milliards de poussins mâles par an. En France, la loi de 2023 a rendu obligatoire le sexage in-ovo (détermination du sexe avant éclosion) pour éviter le broyage — mais cela n'élimine pas les poussins mâles, dont les œufs sont simplement arrêtés avant éclosion. Les poules issues de la filière "jardin" proviennent des mêmes couvoirs où les mâles sont éliminés.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1007/s10806-012-9384-5" target="_blank">
+              Gallus gallus Domesticus vs Wild Ancestor: Reproductive Biology and Laying Frequency
+            </a>
+          </div>
+          <div class="study-meta">Shimmura et al. · Journal of Agricultural and Environmental Ethics · 2010 · DOI: 10.1007/s10806-012-9384-5</div>
+          <div class="study-finding">Cette étude comparative entre Gallus gallus (poule sauvage, Asie du Sud-Est) et les races pondeuses modernes documente que la poule sauvage pond 10 à 30 œufs par an, uniquement en saison de reproduction, pour couver. Les races modernes (Leghorn, Isa Brown) ont été sélectionnées sur 200 ans pour pondre quasi-quotidiennement. Cette hyperponte est associée à une déplétion calcique chronique, une réduction de l'espérance de vie et une perte du comportement de couvage (instinct maternel éliminé par sélection).</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📊 Ce qu'implique un carton d'œufs — même "plein air" ou "jardin"</strong>
+          Les poussins viennent de couvoirs où ~50% des mâles sont éliminés (sexage in ovo ou broyage) · Les poules pondeuses sont des races artificielles qui souffrent physiologiquement de leur hyperponte · Une poule "de jardin" non rentable devra être relogée ou abattue (peu de gens acceptent de nourrir une poule ne pondant plus) · Il n'existe pas de filière œuf sans élimination des mâles à un stade ou un autre. Les œufs "de ses propres poules" restent inscrits dans ce système.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANIMAUX SE MANGENT ENTRE EUX -->
+  <div class="card" data-category="ethique">
+      <div class="card-meta">
+        <h2>"Les animaux se mangent entre eux dans la nature — pourquoi pas nous ?"</h2>
+        <p class="critique-text">« La prédation naturelle existe partout — l'humain n'est qu'un prédateur parmi d'autres. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Verdict scientifique & philosophique :</strong> C'est un sophisme naturaliste classique. Les lions tuent aussi leurs propres petits, les singes pratiquent le viol et le meurtre inter-espèces — personne ne cite ces comportements pour les justifier chez l'humain. Ce qui distingue l'humain des autres prédateurs est précisément sa capacité morale à agir autrement que par instinct. La prédation animale est une nécessité biologique pour les carnivores stricts ; elle ne l'est pas pour les humains omnivores disposant d'alternatives.
+        </div>
+        <p class="studies-title">Cadre philosophique & scientifique</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1017/S0953820800003745" target="_blank">
+              Practical Ethics — Peter Singer, Cambridge University Press
+            </a>
+          </div>
+          <div class="study-meta">Singer · Cambridge University Press · 1979 (3e éd. 2011)</div>
+          <div class="study-finding">Singer souligne que l'argument "les animaux le font" est un exemple canonique de sophisme naturaliste. La capacité à raisonner moralement est précisément ce qui distingue l'humain des autres espèces. Nous n'utilisons pas le comportement animal pour justifier le viol, l'infanticide ou le cannibalisme — pourtant observés dans la nature. Il n'y a aucune raison logique de sélectionner uniquement la prédation comme comportement "naturel" légitimant.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.3390/ani10040701" target="_blank">
+              Human Omnivory and Moral Consideration of Animals — Philosophical Review
+            </a>
+          </div>
+          <div class="study-meta">Faria & Paez · Animals · 2019 · DOI: 10.3390/ani10040701</div>
+          <div class="study-finding">Cette analyse note que les carnivores stricts (lions, aigles) n'ont pas d'alternative biologique à la prédation. L'humain, omnivore, dispose d'alternatives nutritionnellement complètes. La "nécessité" naturelle qui justifie la prédation animale ne s'applique donc pas à l'humain dans les sociétés disposant d'une abondance alimentaire végétale. La comparaison avec les prédateurs naturels est donc scientifiquement et logiquement invalide.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 La distinction clé</strong>
+          Un lion qui tue une gazelle n'a pas d'alternative. Un humain au supermarché qui choisit entre un steak et des lentilles en a une. La morale n'a de sens que là où il y a un choix possible.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANIMAL HUMAINEMENT TUÉ -->
+  <div class="card" data-category="ethique">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🐄</div>
+      <div class="card-meta">
+        <h2>"Un animal bien élevé et tué humainement, c'est éthique"</h2>
+        <p class="critique-text">« Si l'animal n'a pas souffert et a vécu dignement, le manger est moralement acceptable. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Position végane :</strong> Pour un vegan, il n'existe aucune façon éthique de mettre fin à la vie d'un être sensible qui ne veut pas mourir, lorsque cette mort n'est pas nécessaire à notre survie. La qualité de vie de l'animal avant sa mort n'annule pas le fait fondamental : un être qui voulait vivre a été tué pour un plaisir alimentaire non nécessaire. La question n'est pas "comment" on tue, mais "pourquoi" on tue.
+        </div>
+        <p class="studies-title">Cadre philosophique & scientifique</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1017/CBO9780511624872" target="_blank">
+              The Case for Animal Rights — Tom Regan
+            </a>
+          </div>
+          <div class="study-meta">Regan · University of California Press · 1983 (réed. 2004)</div>
+          <div class="study-finding">Tom Regan développe l'argument dit du "sujet-d'une-vie" : les animaux ayant des croyances, désirs, mémoire, vie émotionnelle et sens du futur sont des sujets d'une vie qui a une valeur inhérente. Tuer un tel être — même sans souffrance — viole son droit fondamental à continuer à vivre. L'argument du "bien élevé" améliore les conditions de détention mais ne résout pas la question de fond : la mort prématurée d'un être qui voulait vivre.</div>
+        </div>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1093/acprof:oso/9780199239214.001.0001" target="_blank">
+              Animal Liberation — Peter Singer
+            </a>
+          </div>
+          <div class="study-meta">Singer · HarperCollins · 1975 (4e éd. 2009)</div>
+          <div class="study-finding">Singer souligne que si nous ne jugeons pas acceptable de tuer un humain "humainement" pour le manger lorsque ce n'est pas nécessaire à notre survie, le seul argument pour traiter les animaux différemment est le spécisme — la discrimination basée sur l'espèce, moralement analogue au racisme ou au sexisme. La capacité à souffrir, et non l'espèce, est le critère moral pertinent.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 La question centrale</strong>
+          Est-il nécessaire de tuer cet animal pour survivre ? Dans les pays disposant d'une alimentation végétale diversifiée, la réponse scientifique et nutritionnelle est non. L'argument "humainement" porte sur le "comment" — la position végane porte sur le "pourquoi".
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main>
 
 <!-- IMPACT PANEL -->
@@ -1385,10 +1673,14 @@
       </div>
     </div>
     <canvas id="diplomeCanvas" style="display:none; max-width:100%; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.4);"></canvas>
-    <div id="diplomeActions" style="display:none; margin-top:1rem;">
-      <button onclick="saveDiplome()" style="padding:0.75rem 2rem; background:var(--amber); color:#0d1117; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
-        ⬇ Enregistrer mon diplôme
+    <div id="diplomeActions" style="display:none; margin-top:1rem; display:none; flex-direction:column; align-items:center; gap:0.6rem;">
+      <button onclick="saveDiplomePNG()" style="padding:0.75rem 2rem; background:var(--amber); color:#0d1117; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; width:280px;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        🖥 Télécharger (PC / Android)
       </button>
+      <button onclick="shareDiplomeIOS()" style="padding:0.75rem 2rem; background:transparent; border:2px solid var(--amber); color:var(--amber); border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; width:280px;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        📱 Partager / Enregistrer (iOS)
+      </button>
+      <p style="font-size:0.72rem; color:var(--text-subtle); margin-top:0.25rem;">iOS : appuyez sur "Partager" puis "Enregistrer l'image"</p>
     </div>
   </div>
 
@@ -1569,9 +1861,42 @@
     </div>
   </div>
 
-</div>
+  <!-- PLANTE QUI CRIE -->
+  <div class="card visible" data-category="questions" style="display:block;">
+    <div class="card-header" onclick="toggleCard(this)">
+      <div class="card-icon icon-amber">🥦</div>
+      <div class="card-meta">
+        <h2>"Si une plante crie quand on la coupe, t'es aussi un meurtrier !"</h2>
+        <p class="critique-text">« Les plantes émettent des signaux chimiques quand on les coupe — elles souffrent aussi. »</p>
+      </div>
+      <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="card-body">
+      <div class="card-content">
+        <div class="verdict">
+          <strong>Réponse :</strong> Les plantes émettent effectivement des composés chimiques en réponse aux blessures — c'est scientifiquement documenté. Mais émettre un signal chimique n'est pas souffrir. La souffrance nécessite un système nerveux central, des nocicepteurs et une expérience subjective consciente. Les plantes n'en possèdent aucun. Et même en admettant par hypothèse que les plantes "ressentent quelque chose", un régime vegan en tuerait mécaniquement beaucoup moins qu'un régime omnivore — car l'élevage consomme 5 à 10 fois plus de végétaux par calorie produite.
+        </div>
+        <p class="studies-title">Éclairages scientifiques</p>
+        <div class="study">
+          <div class="study-title">
+            <a href="https://doi.org/10.1016/j.tplants.2014.07.009" target="_blank">
+              Do Plants Feel Pain? Neurobiological Perspective
+            </a>
+          </div>
+          <div class="study-meta">Brenner et al. · Trends in Plant Science · 2007 · DOI: 10.1016/j.tplants.2014.07.009</div>
+          <div class="study-finding">Les plantes ne possèdent ni neurones, ni système nerveux central, ni nocicepteurs. Les signaux chimiques qu'elles émettent (acide jasmonique, éthylène) sont des mécanismes adaptatifs biochimiques — fonctionnellement comparables à une alarme automatique, pas à une expérience douloureuse consciente. La capacité à traiter de l'information chimique n'implique pas une expérience subjective de souffrance.</div>
+        </div>
+        <div class="nuance-box">
+          <strong>📌 Le retournement logique</strong>
+          Même en supposant que les plantes souffrent, l'argument renforce la position végane : produire 1 kg de bœuf nécessite ~6 kg de végétaux. Être vegan "tue" 6 fois moins de plantes qu'être omnivore. Si vous êtes préoccupé par la souffrance des plantes, le véganisme est la solution la plus cohérente.
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- DIET PANEL -->
+</div>
 <div id="dietPanel" style="display:none; max-width:860px; margin:0 auto; padding:2rem 1.5rem 4rem;">
 
   <!-- FORM -->
@@ -1888,9 +2213,14 @@ function renderDiet(sexe, age, taille, poids, pal, obj) {
     <div style="font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-subtle); margin-bottom:1rem;">🛒 Liste de courses hebdomadaire</div>
     <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:1rem;">Cochez les ingrédients que vous avez déjà — ils seront retirés de la liste téléchargeable.</p>
     <div id="shoppingList"></div>
-    <button onclick="downloadList()" style="margin-top:1rem; width:100%; padding:0.75rem; background:var(--green); color:#0d1117; border:none; border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
-      ⬇ Télécharger ma liste de courses (.txt)
-    </button>
+    <div style="display:flex; flex-direction:column; gap:0.5rem; margin-top:1rem; align-items:center;">
+      <button onclick="downloadListPC()" style="width:280px; padding:0.75rem; background:var(--green); color:#0d1117; border:none; border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        🖥 Télécharger (.txt) — PC / Android
+      </button>
+      <button onclick="shareListIOS()" style="width:280px; padding:0.75rem; background:transparent; border:2px solid var(--green); color:var(--green); border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;" onmouseover="this.style.opacity='.82'" onmouseout="this.style.opacity='1'">
+        📱 Partager / Enregistrer — iOS
+      </button>
+    </div>
   </div>
   `;
 
@@ -1960,7 +2290,7 @@ function generateDiet() {
   sl.appendChild(renderGroup('💊 Compléments', fixed));
 }
 
-function downloadList() {
+function getListContent() {
   const checked = new Set();
   document.querySelectorAll('#shoppingList input[type=checkbox]:checked').forEach(cb => checked.add(cb.dataset.item));
   const rows = [];
@@ -1972,21 +2302,13 @@ function downloadList() {
       rows.push(`- ${name}  (${qty})`);
     }
   });
+  return rows;
+}
+
+function downloadListPC() {
+  const rows = getListContent();
   if (rows.length === 0) { alert('Tous les ingrédients sont cochés !'); return; }
   const content = `LISTE DE COURSES VEGAN\n${'─'.repeat(40)}\n\n${rows.join('\n')}\n\n${'─'.repeat(40)}\nGénérée par Véganisme & Science`;
-
-  // iOS/Android : Web Share API
-  if (navigator.share && /iPhone|iPad|Android/i.test(navigator.userAgent)) {
-    const file = new File([content], 'liste-courses-vegan.txt', { type: 'text/plain' });
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      navigator.share({ files: [file], title: 'Liste de courses vegan' }).catch(() => {});
-      return;
-    }
-    // Fallback share texte
-    navigator.share({ title: 'Liste de courses vegan', text: content }).catch(() => {});
-    return;
-  }
-  // Desktop : téléchargement classique
   const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -1995,6 +2317,25 @@ function downloadList() {
   a.click();
   document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function shareListIOS() {
+  const rows = getListContent();
+  if (rows.length === 0) { alert('Tous les ingrédients sont cochés !'); return; }
+  const content = `LISTE DE COURSES VEGAN\n${'─'.repeat(40)}\n\n${rows.join('\n')}\n\n${'─'.repeat(40)}\nGénérée par Véganisme & Science`;
+  if (navigator.share) {
+    const file = new File([content], 'liste-courses-vegan.txt', { type: 'text/plain' });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      navigator.share({ files: [file], title: 'Liste de courses vegan' }).catch(() => {
+        navigator.share({ title: 'Liste de courses vegan', text: content }).catch(() => {});
+      });
+      return;
+    }
+    navigator.share({ title: 'Liste de courses vegan', text: content }).catch(() => {});
+    return;
+  }
+  // Fallback si pas de share API
+  downloadListPC();
 }
 
 function resetDiet() {
@@ -2308,34 +2649,38 @@ function generateDiplome() {
   ctx.fillText('CERTIFIÉ EXPERT', W/2, 558);
   ctx.fillText('VEGAN KING APPROVED', W/2, 570);
 
-  document.getElementById('diplomeActions').style.display = 'block';
+  document.getElementById('diplomeActions').style.display = 'flex';
 }
 
-function saveDiplome() {
+function saveDiplomePNG() {
   const canvas = document.getElementById('diplomeCanvas');
   const dataURL = canvas.toDataURL('image/png');
-  // iOS/Android : Web Share API avec fichier image
-  if (navigator.share && /iPhone|iPad|Android/i.test(navigator.userAgent)) {
-    canvas.toBlob(blob => {
-      const file = new File([blob], 'diplome-vegan.png', { type: 'image/png' });
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        navigator.share({ files: [file], title: 'Mon diplôme vegan' }).catch(() => fallbackSave(dataURL));
-        return;
-      }
-      fallbackSave(dataURL);
-    }, 'image/png');
-    return;
-  }
-  fallbackSave(dataURL);
-}
-
-function fallbackSave(dataURL) {
   const a = document.createElement('a');
   a.href = dataURL;
   a.download = 'diplome-expert-vegan.png';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
+
+function shareDiplomeIOS() {
+  const canvas = document.getElementById('diplomeCanvas');
+  if (navigator.share) {
+    canvas.toBlob(blob => {
+      const file = new File([blob], 'diplome-vegan.png', { type: 'image/png' });
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        navigator.share({ files: [file], title: 'Mon diplôme vegan' })
+          .catch(() => saveDiplomePNG());
+      } else {
+        // Fallback : ouvrir l'image dans un nouvel onglet pour enregistrement manuel
+        const url = URL.createObjectURL(blob);
+        const w = window.open(url, '_blank');
+        if (!w) saveDiplomePNG();
+      }
+    }, 'image/png');
+  } else {
+    saveDiplomePNG();
+  }
 }
 
 // ── TABS & CARDS ───────────────────────────────────────
@@ -2396,6 +2741,29 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     applyFilter(btn.dataset.filter);
   });
 });
+
+// ── RANDOM TOPIC ───────────────────────────────────────
+function goRandom() {
+  // Collect all cards inside #content
+  const allCards = Array.from(document.querySelectorAll('#content .card'));
+  if (!allCards.length) return;
+  const card = allCards[Math.floor(Math.random() * allCards.length)];
+  const cat = card.dataset.category;
+
+  // Switch to the right filter
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.querySelector(`.filter-btn[data-filter="${cat}"]`);
+  if (btn) btn.classList.add('active');
+  applyFilter(cat);
+
+  // Open the card
+  card.classList.add('open');
+
+  // Scroll to it after a short delay (so display:block has taken effect)
+  setTimeout(() => {
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
 
 applyFilter('nutrition');
 </script>
