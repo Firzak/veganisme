@@ -40,10 +40,25 @@ body {
   min-height: 100vh;
 }
 
+/* ── SCROLLBARS ───────────────────────────────── */
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 4px; }
+.sidebar::-webkit-scrollbar-thumb:hover { background: var(--text-subtle); }
+
+/* Page scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green-dim); }
+
+/* Firefox */
+* { scrollbar-width: thin; scrollbar-color: var(--border-bright) transparent; }
+
 /* ── SIDEBAR ──────────────────────────────── */
 .sidebar {
   width: var(--sidebar-w);
-  min-height: 100vh;
+  height: 100vh;
   background: var(--surface);
   border-right: 1px solid var(--border);
   position: fixed;
@@ -53,6 +68,7 @@ body {
   z-index: 200;
   transition: transform 0.3s ease;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidebar-logo {
@@ -156,7 +172,6 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin: 0.5rem 0.75rem 0.25rem;
   padding: 0.55rem 0.75rem;
   border-radius: 8px;
   border: 1px dashed var(--border-bright);
@@ -166,7 +181,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   transition: all 0.2s;
-  width: calc(100% - 1.5rem);
+  width: 100%;
 }
 .random-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-subtle); }
 
