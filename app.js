@@ -546,7 +546,11 @@ function checkAllAnswered() {
 
 function submitQuiz() {
   let score = 0;
-  QUESTIONS.forEach((q, qi) => { if (quizAnswers[qi] === q.a) score++; });
+  const wrongs = [];
+  QUESTIONS.forEach((q, qi) => {
+    if (quizAnswers[qi] === q.a) { score++; }
+    else { wrongs.push(qi); }
+  });
   const passed = score >= 15;
 
   document.getElementById('quizContainer').style.display = 'none';
@@ -564,6 +568,23 @@ function submitQuiz() {
     </div>`;
     document.getElementById('diplomeSection').style.display = 'block';
   } else {
+    let corrigeHtml = '';
+    if (wrongs.length > 0) {
+      corrigeHtml = '<div class="quiz-corrige"><div class="quiz-corrige-title">📝 Corrigé</div>';
+      wrongs.forEach(qi => {
+        const q = QUESTIONS[qi];
+        const userAns = quizAnswers[qi];
+        const userLabel = q.opts[userAns] || 'Pas de réponse';
+        const correctLabel = q.opts[q.a];
+        corrigeHtml += `
+        <div class="quiz-corrige-item">
+          <div class="quiz-corrige-q">${q.q}</div>
+          <div><span class="quiz-corrige-answer wrong">✗ ${userLabel}</span><span class="quiz-corrige-answer correct">✓ ${correctLabel}</span></div>
+        </div>`;
+      });
+      corrigeHtml += '</div>';
+    }
+
     res.innerHTML = `
     <div style="text-align:center; background:var(--red-dim); border:1px solid rgba(238,85,85,0.25); border-radius:14px; padding:2rem;">
       <div style="font-size:3rem; margin-bottom:0.5rem;">📚</div>
@@ -571,7 +592,8 @@ function submitQuiz() {
       <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:0.85rem;">Vous avez obtenu <strong style="color:var(--red);">${score} / ${QUESTIONS.length}</strong> — il vous faut 15/20 pour le diplôme.</p>
       <p style="color:var(--text-muted); font-size:0.82rem; margin-bottom:1.25rem;">Continuez à explorer les fiches du site pour progresser !</p>
       <button onclick="document.getElementById('quizContainer').style.display='flex'; initQuiz();" style="padding:0.7rem 1.75rem; background:var(--amber); color:#080e08; border:none; border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;">🔄 Recommencer</button>
-    </div>`;
+    </div>
+    ${corrigeHtml}`;
   }
 }
 

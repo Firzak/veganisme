@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 
 :root {
+  color-scheme: dark;
   --bg:           #080e08;
   --surface:      #0f170e;
   --surface2:     #141f13;
@@ -556,6 +557,49 @@ body {
 }
 .quiz-opt:hover { border-color: var(--border-bright); color: var(--text); }
 .quiz-opt input { accent-color: var(--amber); width: 15px; height: 15px; flex-shrink: 0; }
+
+.quiz-corrige {
+  margin-top: 1.5rem;
+}
+.quiz-corrige-title {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.quiz-corrige-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 0.6rem;
+}
+.quiz-corrige-q {
+  font-size: 0.85rem;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+.quiz-corrige-answer {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+.quiz-corrige-answer.wrong {
+  background: rgba(238,85,85,0.15);
+  color: #e55;
+  text-decoration: line-through;
+}
+.quiz-corrige-answer.correct {
+  background: rgba(94,201,90,0.12);
+  color: var(--green);
+}
 
 /* ── MEALS ────────────────────────────────── */
 .meal-card {
