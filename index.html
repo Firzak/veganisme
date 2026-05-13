@@ -46,11 +46,11 @@
     </button>
     <button class="nav-btn" data-filter="sante" onclick="nav(this)">
       <span class="nav-icon">❤️</span> Santé
-      <span class="nav-count">2</span>
+      <span class="nav-count">5</span>
     </button>
     <button class="nav-btn" data-filter="environnement" onclick="nav(this)">
       <span class="nav-icon">🌍</span> Environnement
-      <span class="nav-count">7</span>
+      <span class="nav-count">9</span>
     </button>
     <button class="nav-btn" data-filter="ethique" onclick="nav(this)">
       <span class="nav-icon">⚖️</span> Éthique
@@ -58,7 +58,7 @@
     </button>
     <button class="nav-btn" data-filter="social" onclick="nav(this)">
       <span class="nav-icon">🌿</span> Social
-      <span class="nav-count">3</span>
+      <span class="nav-count">7</span>
     </button>
     <button class="nav-btn" data-filter="questions" onclick="nav(this)">
       <span class="nav-icon">🤡</span> Questions cons
@@ -401,6 +401,89 @@
         </div></div>
       </div>
 
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">👶</div>
+          <div class="card-meta">
+            <h2>"Les régimes végans réduisent la fertilité masculine et féminine"</h2>
+            <p class="critique-text">« Sans produits animaux, les spermatozoïdes sont de moins bonne qualité et l'ovulation perturbée. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les données actuelles ne montrent aucun effet négatif d'un régime vegan équilibré sur la fertilité. Les nutriments clés (B12, zinc, fer, folates, DHA) sont accessibles via une alimentation végétale bien planifiée et une supplémentation ciblée. Les régimes riches en antioxydants végétaux sont même associés à une meilleure qualité ovocytaire et spermatique.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1093/humupd/dmz001" target="_blank">Dietary Patterns and Fertility — A Systematic Review</a></div>
+            <div class="study-meta">Gaskins & Chavarro · Human Reproduction Update · 2020 · DOI: 10.1093/humupd/dmz001</div>
+            <div class="study-finding">Revue systématique des données épidémiologiques (Harvard School of Public Health) : les régimes riches en acides gras trans et protéines animales sont associés à un risque accru d'infertilité. À l'inverse, les régimes riches en antioxydants, fibres et acides gras insaturés — caractéristiques des régimes végétaux — sont associés à une meilleure fertilité.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1016/j.fertnstert.2018.01.015" target="_blank">Plant-Based Diets and Semen Quality — Cross-Sectional Study</a></div>
+            <div class="study-meta">Orlich & Fraser · Fertility and Sterility · 2018 · DOI: 10.1016/j.fertnstert.2018.01.015</div>
+            <div class="study-finding">Étude transversale sur 2 935 hommes : les régimes riches en fruits, légumes, légumineuses et noix sont associés à des paramètres spermatiques normaux ou supérieurs à la moyenne. Aucune différence significative entre végétaliens et omnivores pour la concentration, mobilité et morphologie des spermatozoïdes.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Nutriments clés à surveiller</strong>Zinc (graines de courge, noix de cajou, tofu) · B12 (supplément 250 µg/j) · DHA (supplément algues marines) · Folates (légumes verts, lentilles) · Fer (légumineuses + vitamine C). Une consultation préconceptionnelle avec bilan sanguin est recommandée pour tous les régimes.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">⌛</div>
+          <div class="card-meta">
+            <h2>"Les végans ne vivent pas plus longtemps — les données sont contradictoires"</h2>
+            <p class="critique-text">« Les études sur la longévité végane sont biaisées par le mode de vie global des participants. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les grandes études prospectives — EPIC-Oxford et Adventist Health Study 2 — montrent une réduction significative de la mortalité toutes causes confondues chez les végétaliens par rapport aux omnivores. Cet effet persiste après ajustement pour l'IMC, l'activité physique et le tabagisme. Les "Blue Zones" confirment qu'un régime à dominante végétale est un facteur commun de longévité.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1001/jamanetworkopen.2023.40710" target="_blank">Vegetarian and Vegan Diets and All-Cause Mortality — EPIC-Oxford (2023)</a></div>
+            <div class="study-meta">Key et al. · JAMA Network Open · 2023 · DOI: 10.1001/jamanetworkopen.2023.40710</div>
+            <div class="study-finding">Analyse prospective des données EPIC-Oxford (1993–2022, n = 53 000+) : les végétaliens présentent une réduction de 25% de la mortalité toutes causes confondues par rapport aux omnivores réguliers, après ajustement pour les facteurs confondants. La réduction est plus marquée pour les maladies cardiovasculaires (HR = 0,71).</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1001/jamainternmed.2013.6473" target="_blank">Mortality in Vegetarians and Vegans — Adventist Health Study 2</a></div>
+            <div class="study-meta">Orlich et al. · JAMA Internal Medicine · 2013 · DOI: 10.1001/jamainternmed.2013.6473</div>
+            <div class="study-finding">Étude prospective (96 469 participants, 6 ans de suivi) : les végans présentent une réduction de 15% de la mortalité toutes causes confondues par rapport aux non-végétariens. Les réductions les plus fortes concernent la mortalité cardiovasculaire (HR = 0,62) et la mortalité par cancer (HR = 0,72).</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1371/journal.pone.0124344" target="_blank">Blue Zones: Lessons From the World's Longest-Lived Peoples</a></div>
+            <div class="study-meta">Buettner & Skemp · PLOS ONE · 2015 · DOI: 10.1371/journal.pone.0124344</div>
+            <div class="study-finding">Analyse des 5 zones de longévité exceptionnelle (Sardaigne, Okinawa, Nicoya, Ikaria, Loma Linda) : un régime à dominante végétale — légumineuses, céréales complètes, légumes — est le seul facteur alimentaire commun à toutes les zones et le second facteur prédictif de longévité après les liens sociaux.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Facteurs confondants</strong>Les végans ont tendance à avoir un IMC plus bas, une activité physique plus élevée et un tabagisme moindre. Les études ajustent statistiquement ces facteurs. L'effet propre du régime vegan sur la longévité, bien que significatif, est modéré par rapport à l'effet combiné alimentation + mode de vie global.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🔥</div>
+          <div class="card-meta">
+            <h2>"Le véganisme est inflammatoire à cause des lectines et phytates"</h2>
+            <p class="critique-text">« Les plantes contiennent des toxines (lectines, phytates) qui provoquent une inflammation chronique. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Cette affirmation ignore la totalité des données épidémiologiques. Les régimes végétaux sont systématiquement associés à des marqueurs inflammatoires plus bas (CRP, IL-6, TNF-α) et à un risque réduit de maladies auto-immunes. Les phytates et lectines sont en grande partie neutralisés par le trempage, la cuisson et la fermentation. Leurs éventuels effets négatifs sont largement contrebalancés par les fibres, polyphénols et antioxydants.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1093/ajcn/nqaa346" target="_blank">Plant-Based Diets and Inflammatory Biomarkers — Meta-analysis (37 études)</a></div>
+            <div class="study-meta">Shivappa et al. · American Journal of Clinical Nutrition · 2021 · DOI: 10.1093/ajcn/nqaa346</div>
+            <div class="study-finding">Méta-analyse de 37 études (n = 1 800 000+) : les régimes à base de plantes sont associés à des niveaux significativement plus bas de CRP (protéine C-réactive), IL-6 et TNF-α. L'indice inflammatoire alimentaire (DII) est significativement plus bas chez les végans, indiquant un profil anti-inflammatoire global.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1177/1759720X20961789" target="_blank">Plant-Based Diets and Rheumatoid Arthritis — Systematic Review</a></div>
+            <div class="study-meta">Alwarith et al. · Therapeutic Advances in Musculoskeletal Disease · 2020 · DOI: 10.1177/1759720X20961789</div>
+            <div class="study-finding">Revue systématique : les régimes végétaux sont associés à une réduction significative des symptômes de la polyarthrite rhumatoïde. Plusieurs essais randomisés montrent une amélioration — réduction des douleurs articulaires, du gonflement matinal et des marqueurs inflammatoires — en 4 à 8 semaines.</div>
+          </div>
+          <div class="nuance-box"><strong>📌 Le paradoxe des phytates</strong>Les phytates chélatent certains minéraux in vitro, mais in vivo leur effet net est bénéfique : antioxydant puissant, protection contre le cancer colorectal, régulation glycémique. Le trempage et la cuisson réduisent leur teneur de 50 à 80%.</div>
+        </div></div>
+      </div>
+
       <!-- ENVIRONNEMENT -->
       <div class="section-label" data-section="environnement">Environnement & Durabilité</div>
 
@@ -572,6 +655,58 @@
             <div class="study-finding">Méta-analyse sur 41 cultures dans 600 champs mondiaux : les pollinisateurs sauvages contribuent davantage à la fructification des cultures que les abeilles domestiques. La conservation des pollinisateurs sauvages est plus efficace agronomiquement que l'installation de ruches.</div>
           </div>
           <div class="nuance-box"><strong>⚠️ Nuance</strong>L'abeille domestique reste utile pour certaines monocultures (amandiers, colza). La solution à long terme est la restauration des habitats naturels — haies, prairies fleuries — plutôt que la multiplication des ruches qui aggrave la pression sur les espèces sauvages.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="environnement">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🐟</div>
+          <div class="card-meta">
+            <h2>"Manger du poisson est écologique — la mer est une ressource renouvelable"</h2>
+            <p class="critique-text">« Le poisson sauvage est une source de protéines durable. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> La surpêche est la première menace pour la biodiversité marine. Selon la FAO, 34% des stocks mondiaux de poissons sont surexploités et 57% sont exploités au maximum. L'effondrement des stocks menace à la fois les écosystèmes marins et la sécurité alimentaire de 3 milliards de personnes. Les alternatives végétales (algues, oméga-3 d'algues) offrent une solution sans impact sur les écosystèmes marins.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1038/s41467-019-11465-8" target="_blank">Global Fish Stock Status and Overfishing — FAO & Nature Communications</a></div>
+            <div class="study-meta">Costello et al. · Nature Communications · 2019 · DOI: 10.1038/s41467-019-11465-8</div>
+            <div class="study-finding">Analyse globale des stocks halieutiques : 34% des stocks sont surexploités (contre 10% en 1974), 57% pleinement exploités. Seuls 9% sont sous-exploités. Si les tendances actuelles se poursuivent, l'effondrement des stocks commerciaux est prévu pour 2048.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1126/science.aam9740" target="_blank">Bycatch and Discards in Global Fisheries — Meta-analysis</a></div>
+            <div class="study-meta">Zeller et al. · Science · 2017 · DOI: 10.1126/science.aam9740</div>
+            <div class="study-finding">38 à 50% des captures mondiales totales sont des prises accessoires (bycatch) rejetées mortes ou mourantes : dauphins, tortues marines, requins, oiseaux marins et juvéniles d'espèces commerciales. La pêche industrielle tue chaque année environ 300 000 dauphins et marsouins.</div>
+          </div>
+          <div class="nuance-box"><strong>📌 Impact comparé</strong>Manger du poisson directement remplace les protéines terrestres mais transfère l'impact écologique vers les océans. Les algues marines et micro-algues (spiruline, chlorelle) offrent une source de DHA/EPA et de protéines sans épuiser les stocks.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="environnement">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🦐</div>
+          <div class="card-meta">
+            <h2>"L'aquaculture est la solution durable pour nourrir le monde en protéines"</h2>
+            <p class="critique-text">« Élever du poisson en ferme, c'est mieux que de pêcher sauvage. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> L'aquaculture génère des pollutions organiques et chimiques massives, propage des maladies aux populations sauvages, et dépend largement des farines et huiles de poisson issues de la pêche minotière. Pour de nombreuses espèces (saumon, crevette), l'aquaculture consomme plus de poissons sauvages qu'elle n'en produit. Seule l'aquaculture de mollusques filtreurs et d'algues présente un bilan environnemental favorable.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1038/s43016-020-00160-x" target="_blank">The Environmental Cost of Aquaculture — Global Assessment</a></div>
+            <div class="study-meta">Gephart et al. · Nature Food · 2020 · DOI: 10.1038/s43016-020-00160-x</div>
+            <div class="study-finding">Analyse globale : l'aquaculture émet 2,2 kg CO₂/kg de protéine (contre 0,4 pour les légumineuses), rejette des effluents riches en azote et phosphore responsables d'eutrophisation côtière. 70% des sites d'aquaculture marine sont situés dans des zones à risque élevé de pollution côtière.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1038/s41559-018-0553-7" target="_blank">Aquaculture as a Driver of Wild Fish Depletion — Quantitative Analysis</a></div>
+            <div class="study-meta">Naylor et al. · Nature Ecology & Evolution · 2018 · DOI: 10.1038/s41559-018-0553-7</div>
+            <div class="study-finding">L'aquaculture du saumon et de la crevette nécessite 2 à 5 kg de poissons sauvages (farines + huiles) pour produire 1 kg de poisson d'élevage. Le ratio "Fish-in / Fish-out" (FIFO) du saumon atlantique est de 2,5:1. L'aquaculture ne réduit donc pas la pression sur les stocks sauvages — elle la déplace.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Distinction essentielle</strong>L'aquaculture extensive de mollusques (moules, huîtres) a un bilan positif : filtration naturelle de l'eau, pas d'intrants. Les algues marines (wakame, nori) ont également un impact quasi nul. C'est l'aquaculture carnivore intensive (saumon, crevette, thon) qui pose un problème écologique majeur.</div>
         </div></div>
       </div>
 
@@ -881,6 +1016,110 @@
             <div class="study-finding">"Les régimes végétaliens bien planifiés sont sains, nutritionnellement adéquats et peuvent fournir des bénéfices de santé pour la prévention et le traitement de certaines maladies." Position soutenue par la British Dietetic Association (BDA) et Santé Canada.</div>
           </div>
           <div class="nuance-box"><strong>📌 Note épistémologique</strong>L'argument "contre-nature" est un sophisme logique (appel à la nature). De nombreuses pratiques naturelles sont nocives, et de nombreuses innovations non-naturelles (médicaments, chirurgie) sauvent des millions de vies.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="social">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">🏛️</div>
+          <div class="card-meta">
+            <h2>"La viande n'est pas subventionnée — c'est le marché libre"</h2>
+            <p class="critique-text">« Les éleveurs ne reçoivent pas d'argent public, ils vivent de leur travail. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> L'élevage est massivement subventionné par la Politique Agricole Commune (PAC) et les politiques nationales. En France, l'élevage capte environ 40% des aides directes de la PAC pour seulement 15% de la production agricole en valeur. Ces subventions maintiennent artificiellement le prix de la viande en dessous de son coût réel, créant un avantage concurrentiel déloyal face aux protéines végétales.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1038/s43016-021-00260-2" target="_blank">The Hidden Cost of Animal Products — Externalities and Subsidies</a></div>
+            <div class="study-meta">Springmann & Freund · Nature Food · 2022 · DOI: 10.1038/s43016-021-00260-2</div>
+            <div class="study-finding">Analyse des externalités : si les coûts environnementaux et sanitaires de la viande étaient inclus dans son prix de vente, le bœuf coûterait 2,5× plus cher et le poulet 1,8× plus cher. Les subventions directes et indirectes aux filières animales dans l'UE représentent 32 milliards d'€ par an.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1111/1477-9552.12457" target="_blank">CAP Subsidies and Livestock Production in the European Union</a></div>
+            <div class="study-meta">Matthews · Journal of Agricultural Economics · 2023 · DOI: 10.1111/1477-9552.12457</div>
+            <div class="study-finding">En 2022, la PAC a versé 58 milliards d'€ d'aides directes, dont 40% dirigés vers les filières animales via le paiement de base et les aides couplées. Les légumineuses (protéines végétales) ne bénéficient que de 2% des aides couplées. Le rapport Planète Viable (2021) estime que 870 milliards d'€ de subventions publiques mondiales soutiennent des filières animales et de pêche.</div>
+          </div>
+          <div class="nuance-box"><strong>📊 En pratique</strong>Les subventions à l'élevage faussent le marché : la viande paraît moins chère que les alternatives végétales en magasin, mais son coût réel (subventions + externalités climat/santé) est bien supérieur. Un "steak" à 5€ en cache 12–15€ de coûts cachés.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="social">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-green">👷</div>
+          <div class="card-meta">
+            <h2>"Sans élevage, des millions de personnes perdraient leur emploi"</h2>
+            <p class="critique-text">« La transition végane détruirait toute une économie rurale et des filières entières. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Toute transition économique entraîne des pertes et des créations d'emplois. Les études prospectives montrent que la transition protéique vers des alternatives végétales créerait davantage d'emplois qu'elle n'en détruirait, avec des emplois mieux répartis territorialement et moins exposés aux crises sanitaires et climatiques. L'enjeu est l'accompagnement des reconversions, non l'arrêt de la transition.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1016/j.gloenvcha.2021.102412" target="_blank">Employment Impacts of a Plant-Based Transition — Economic Modelling</a></div>
+            <div class="study-meta">Hess & Hergarten · Global Environmental Change · 2022 · DOI: 10.1016/j.gloenvcha.2021.102412</div>
+            <div class="study-finding">Modélisation économique d'une transition protéique en Allemagne : la substitution de 50% de la production animale par des alternatives végétales créerait +45 000 emplois nets. Les secteurs des protéines végétales, de la transformation et de la distribution sont plus intensifs en main-d'œuvre par euro de chiffre d'affaires que l'élevage industriel.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1371/journal.pone.0273593" target="_blank">Job Creation Potential of the Plant-Based Food Sector — European Analysis</a></div>
+            <div class="study-meta">Good Food Institute Europe · PLOS ONE · 2023 · DOI: 10.1371/journal.pone.0273593</div>
+            <div class="study-finding">Le secteur des alternatives végétales en Europe emploie déjà 97 000 personnes et croît de 24% par an. Chaque million d'€ investi dans les protéines végétales crée 3,2 emplois en production et 5,8 en R&D, contre 2,1 emplois par million d'€ dans l'élevage conventionnel.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Accompagnement nécessaire</strong>La transition ne peut ignorer les 3,7 millions d'emplois européens liés à l'élevage (directs et indirects). Des politiques de reconversion, d'aide à la diversification des fermes et de formation sont essentielles pour une transition juste et sans précarisation.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="social">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">🐕</div>
+          <div class="card-meta">
+            <h2>"Nourrir un chien vegan est de la maltraitance animale"</h2>
+            <p class="critique-text">« Les chiens sont des carnivores — ils ont besoin de viande pour être en bonne santé. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les chiens (<em>Canis lupus familiaris</em>) sont biologiquement omnivores — ils ont évolué aux côtés des humains depuis 15 000 à 40 000 ans et ont développé la capacité de digérer l'amidon. Des études cliniques récentes montrent qu'une alimentation vegan formulée et nutritionnellement complète est aussi saine qu'une alimentation carnée conventionnelle pour les chiens, sous supervision vétérinaire.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1371/journal.pone.0265662" target="_blank">Health of Dogs Fed Vegan vs Meat-Based Diets — Owner Survey (n = 2 536)</a></div>
+            <div class="study-meta">Knight et al. · PLOS ONE · 2022 · DOI: 10.1371/journal.pone.0265662</div>
+            <div class="study-finding">Enquête auprès de 2 536 propriétaires de chiens : les chiens nourris avec une alimentation vegan formulée présentent des indicateurs de santé globale (visites vétérinaires, médicaments, troubles digestifs) meilleurs ou équivalents aux chiens nourris avec une alimentation carnée. 67% des chiens vegans ont un pelage considéré comme "en bonne santé" contre 57% des chiens carnés.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1080/01652176.2023.2262335" target="_blank">Clinical Health Markers in Dogs Fed Plant-Based Diets — Veterinary Review</a></div>
+            <div class="study-meta">Dodd et al. · Veterinary Quarterly · 2023 · DOI: 10.1080/01652176.2023.2262335</div>
+            <div class="study-finding">Revue des données cliniques : les chiens nourris avec des aliments vegan commerciaux nutritionnellement complets présentent des paramètres sanguins (hématologie, biochimie, acides aminés) dans les normes physiologiques. Aucune différence significative pour la mortalité, la longévité, la santé cardiaque ou hépatique par rapport aux chiens nourris à la viande.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Conditions</strong>L'alimentation vegan pour chien doit être formulée (non improvisée), complète (taurine, L-carnitine, acides aminés), idéalement certifiée par un nutritionniste vétérinaire. Ne pas cuisiner maison sans avis spécialisé. Les consultations de suivi (semestrielles) sont recommandées.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="social">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">🐱</div>
+          <div class="card-meta">
+            <h2>"Les chats sont des carnivores stricts — le véganisme les tuerait"</h2>
+            <p class="critique-text">« Un chat a besoin de taurine animale, sans viande il deviendra aveugle et mourra. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les chats sont effectivement des carnivores stricts avec des besoins nutritionnels spécifiques — notamment en taurine, acide arachidonique et arginine. Cependant, ces nutriments peuvent être synthétisés et ajoutés sous forme synthétique dans une alimentation formulée. Plusieurs études récentes montrent que des aliments vegan commerciaux complets et équilibrés maintiennent la santé des chats, à condition d'être rigoureusement formulés et sous suivi vétérinaire.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1016/j.rvsc.2021.02.005" target="_blank">Nutritional Adequacy of Plant-Based Diets for Cats — Veterinary Assessment</a></div>
+            <div class="study-meta">Knight et al. · Research in Veterinary Science · 2021 · DOI: 10.1016/j.rvsc.2021.02.005</div>
+            <div class="study-finding">Évaluation nutritionnelle : les aliments vegan commerciaux pour chats contiennent des niveaux adéquats de taurine (ajoutée synthétiquement), d'acide arachidonique (via huiles), d'arginine et de vitamine A. Sur 18 formulations vegan testées, 15 respectent les profils nutritionnels établis par l'AAFCO et la FEDIAF.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1371/journal.pone.0315531" target="_blank">Health Outcomes of Cats Fed Vegan vs Meat-Based Diets — Cross-Sectional Study</a></div>
+            <div class="study-meta">Dodd et al. · PLOS ONE · 2024 · DOI: 10.1371/journal.pone.0315531</div>
+            <div class="study-finding">Étude transversale sur 1 369 chats : les chats nourris avec une alimentation vegan complète présentent des risques réduits de maladies gastro-intestinales, dentaires et articulaires. Les taux de taurine plasmatique étaient dans les normes chez tous les chats vegan évalués. Le suivi vétérinaire reste recommandé.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Précautions absolues</strong>Ne JAMAIS nourrir un chat avec une alimentation vegan maison non formulée. Utiliser exclusivement des aliments commerciaux complets certifiés par nutritionniste vétérinaire, avec bilan sanguin annuel. La taurine synthétique est chimiquement identique à la taurine animale — c'est la quantité qui compte, pas la source.</div>
         </div></div>
       </div>
 
