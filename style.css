@@ -426,8 +426,13 @@ body {
   color: #818cf8;
   margin-bottom: 0.2rem;
 }
-.study-title a { color: inherit; text-decoration: none; }
-.study-title a:hover { text-decoration: underline; }
+.study-title a {
+  color: inherit;
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+.study-title a:hover { text-decoration: none; }
 .study-meta {
   font-size: 0.7rem;
   color: var(--text-subtle);

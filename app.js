@@ -115,6 +115,13 @@ function goRandom() {
   closeSidebar();
 }
 
+function stripStudyLinks() {
+  document.querySelectorAll('.study-title a').forEach((link) => {
+    const textNode = document.createTextNode(link.textContent);
+    link.replaceWith(textNode);
+  });
+}
+
 // ── DIET STATE ────────────────────────────────
 let currentSex = 'homme';
 let currentObj = 'equilibre';
@@ -683,4 +690,5 @@ function generateDiplome() {
 }
 
 // ── INIT ──────────────────────────────────────
+stripStudyLinks();
 applyFilter('nutrition');
