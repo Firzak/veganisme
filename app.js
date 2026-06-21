@@ -9,6 +9,7 @@ const PANELS = {
   environnement:'content',
   ethique:      'content',
   social:       'content',
+  guide:        'guide-panel',
   diet:         'diet-panel',
   impact:       'impact-panel',
   quiz:         'quiz-panel',
@@ -34,7 +35,7 @@ function applyFilter(filter) {
   if (activeBtn) activeBtn.classList.add('active');
 
   // Hide all panels
-  const allPanels = ['content', 'diet-panel', 'impact-panel', 'quiz-panel', 'questions-panel'];
+  const allPanels = ['content', 'guide-panel', 'diet-panel', 'impact-panel', 'quiz-panel', 'questions-panel'];
   allPanels.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.remove('active');

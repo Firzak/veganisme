@@ -70,6 +70,9 @@
 
   <div class="sidebar-section">
     <div class="sidebar-section-label">Outils</div>
+    <button class="nav-tool orange" data-filter="guide" onclick="nav(this)">
+      <span class="nav-icon">🧭</span> Guide
+    </button>
     <button class="nav-tool green" data-filter="diet" onclick="nav(this)">
       <span class="nav-icon">🥦</span> Quoi manger ?
     </button>
@@ -1219,6 +1222,59 @@
         <button class="btn-primary" style="background:var(--accent); color:#080e08;" onclick="calcImpact()">Calculer mon impact →</button>
       </div>
       <div id="impactResult" style="display:none; margin-top:1.5rem;"></div>
+    </div>
+
+    <!-- ═══ PANEL: GUIDE ═══ -->
+    <div id="guide-panel" class="panel">
+      <div class="panel-header">
+        <h2>Le guide parfait pour devenir un bon petit vegan</h2>
+        <p>Quatre étapes simples pour avancer sans pression, construire des habitudes durables et rester solide dans le temps.</p>
+      </div>
+
+      <ol class="guide-steps">
+        <li class="guide-step">
+          <div class="guide-step-index">1</div>
+          <div class="guide-step-body">
+            <h3>Commencez par rendre la transition facile</h3>
+            <p>Renseignez-vous sur ce qu'il faut manger pour préparer des repas vegan équilibrés, savoureux et rassasiants. Ensuite, avancez progressivement : un repas vegan par semaine, puis deux, puis trois, jusqu'à ce que le rythme vous paraisse naturel.</p>
+            <p>Pour les autres choix de cohérence, comme éviter le cuir ou les sorties au zoo, il n'existe pas de protocole unique. Faites simplement des choix en accord avec vos valeurs et votre contexte.</p>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-step-index">2</div>
+          <div class="guide-step-body">
+            <h3>Armez-vous de sources avant d'en avoir besoin</h3>
+            <p>En devenant vegan, vous allez forcément devoir expliquer, justifier ou défendre vos choix. Les questions viennent parfois d'une inquiétude sincère, parfois d'une simple résistance au changement.</p>
+            <p>Quand vous ne savez pas répondre, dites-le sans honte et revenez plus tard avec une réponse fiable. La meilleure méthode consiste souvent à demander à votre interlocuteur sur quelle source il s'appuie. Dans la plupart des cas, le débat devient déjà beaucoup plus court à partir de là.</p>
+            <p>Gardez en tête que, sur la santé, l'environnement et l'économie, la littérature sérieuse est généralement de votre côté. Ne pas avoir la réponse au moment T ne change rien à la solidité du fond.</p>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-step-index">3</div>
+          <div class="guide-step-body">
+            <h3>Convainquez sans vous épuiser</h3>
+            <p>Si vous souhaitez convaincre d'autres personnes, votre manière de le faire dépendra de votre tempérament et du contexte. Le même message ne se dit pas de la même façon à un ami, à un collègue ou à un inconnu croisé en ligne.</p>
+            <p>Avec vos proches, mieux vaut souvent privilégier la patience et la stabilité plutôt que le bras de fer. Vous n'êtes pas obligé de transformer chaque repas en tribunal, ni de répondre à chaque provocation pour rester cohérent.</p>
+            <p>Conservez votre énergie pour les échanges qui ont une vraie chance d'aboutir. Parfois, le meilleur choix est simplement de ne pas insister.</p>
+          </div>
+        </li>
+
+        <li class="guide-step">
+          <div class="guide-step-index">4</div>
+          <div class="guide-step-body">
+            <h3>Restez solide et évitez les dérives</h3>
+            <p>Les premières années, vous aurez peut-être des doutes et vous entendrez des remarques qui vous toucheront. Répondez avec calme, posez vos limites, et rappelez que votre choix n'est pas un caprice passager.</p>
+            <p>Au fil du temps, ce qui semblait compliqué devient simplement votre nouvelle normalité. Le temps et la constance font souvent plus que les longs débats.</p>
+            <p>Restez aussi vigilant face aux modes extrêmes : crudivorisme, frugivorisme, pranisme et autres dérives n'ont rien d'obligatoire. Un véganisme sérieux repose sur des bases alimentaires suffisantes, des recommandations scientifiques à jour et une pratique simple.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="guide-outro">
+        <strong>Le bon objectif :</strong> pas la perfection immédiate, mais une pratique cohérente, nourrissante et durable.
+      </div>
     </div>
 
     <!-- ═══ PANEL: QUIZ ═══ -->
