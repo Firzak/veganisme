@@ -16,6 +16,21 @@ const PANELS = {
   questions:    'questions-panel',
 };
 
+const CATEGORY_LABELS = {
+  nutrition: 'Nutrition',
+  sante: 'Santé',
+  environnement: 'Environnement',
+  ethique: 'Éthique',
+  social: 'Social',
+  questions: 'Questions',
+};
+
+const topicSearchState = {
+  input: null,
+  results: null,
+  entries: [],
+};
+
 let currentFilter = 'nutrition';
 
 function nav(btn) {
@@ -120,6 +135,204 @@ function stripStudyLinks() {
   document.querySelectorAll('.study-title a').forEach((link) => {
     const textNode = document.createTextNode(link.textContent);
     link.replaceWith(textNode);
+  });
+}
+
+function normalizeSearchText(value) {
+  return (value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+}
+
+function buildSearchEntries() {
+  topicSearchState.entries = [];
+
+  document.querySelectorAll('#content .section-label').forEach((label) => {
+    const filter = label.dataset.section || '';
+    const title = label.textContent.trim();
+    topicSearchState.entries.push({
+      kind: 'section',
+      filter,
+      title,
+      titleNorm: normalizeSearchText(title),
+      searchable: normalizeSearchText(`${title} ${filter}`),
+      node: label,
+      meta: `${CATEGORY_LABELS[filter] || filter} · Section`,
+    });
+  });
+
+  document.querySelectorAll('.card[data-category]').forEach((card) => {
+    const filter = card.dataset.category || '';
+    const title = card.querySelector('.card-meta h2')?.textContent.trim() || '';
+    const summary = card.querySelector('.critique-text')?.textContent.trim() || '';
+    topicSearchState.entries.push({
+      kind: 'card',
+      filter,
+      title,
+      titleNorm: normalizeSearchText(title),
+      searchable: normalizeSearchText(`${title} ${summary} ${card.textContent} ${filter} ${CATEGORY_LABELS[filter] || ''}`),
+      node: card,
+      meta: `${CATEGORY_LABELS[filter] || filter} · Sujet`,
+    });
+  });
+
+  document.querySelectorAll('#guide-panel, #diet-panel, #impact-panel, #quiz-panel, #questions-panel').forEach((panel) => {
+    const title = panel.querySelector('.panel-header h2')?.textContent.trim() || '';
+    if (!title) return;
+    const filter = panel.id.replace('-panel', '');
+    topicSearchState.entries.push({
+      kind: 'panel',
+      filter,
+      title,
+      titleNorm: normalizeSearchText(title),
+      searchable: normalizeSearchText(`${title} ${panel.textContent} ${filter}`),
+      node: panel,
+      meta: filter === 'guide' ? 'Guide' : 'Outil',
+    });
+  });
+}
+
+function scoreSearchEntry(entry, queryNorm, queryTokens) {
+  let score = 0;
+  if (entry.titleNorm.includes(queryNorm)) score += 120;
+  if (entry.searchable.includes(queryNorm)) score += 50;
+
+  let matchedTokens = 0;
+  let titleMatches = 0;
+  queryTokens.forEach((token) => {
+    if (entry.titleNorm.includes(token)) {
+      score += 18;
+      matchedTokens += 1;
+      titleMatches += 1;
+      return;
+    }
+    if (entry.searchable.includes(token)) {
+      score += 8;
+      matchedTokens += 1;
+    }
+  });
+
+  if (!matchedTokens) return 0;
+  if (titleMatches === queryTokens.length) score += 20;
+  if (entry.kind === 'panel') score += 2;
+  return score;
+}
+
+function searchTopicEntries(query) {
+  const queryNorm = normalizeSearchText(query);
+  if (!queryNorm) return [];
+  const queryTokens = queryNorm.split(' ').filter(Boolean);
+
+  return topicSearchState.entries
+    .map((entry) => ({ entry, score: scoreSearchEntry(entry, queryNorm, queryTokens) }))
+    .filter(({ score }) => score > 0)
+    .sort((left, right) => right.score - left.score || left.entry.title.localeCompare(right.entry.title, 'fr'))
+    .slice(0, 8);
+}
+
+function clearTopicSearch() {
+  if (!topicSearchState.input || !topicSearchState.results) return;
+  topicSearchState.input.value = '';
+  renderTopicSearchResults('');
+}
+
+function openSearchEntry(entry) {
+  applyFilter(entry.filter);
+
+  setTimeout(() => {
+    if (entry.kind === 'panel') {
+      if (entry.node) {
+        entry.node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
+    if (entry.kind === 'section') {
+      if (entry.node) {
+        entry.node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    if (entry.node) {
+      entry.node.classList.add('open', 'visible');
+      entry.node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 120);
+
+  clearTopicSearch();
+  closeSidebar();
+}
+
+function renderTopicSearchResults(query) {
+  const resultsContainer = topicSearchState.results;
+  if (!resultsContainer) return;
+
+  const queryNorm = normalizeSearchText(query);
+  resultsContainer.innerHTML = '';
+
+  if (!queryNorm) {
+    resultsContainer.hidden = true;
+    return;
+  }
+
+  const matches = searchTopicEntries(query);
+  resultsContainer.hidden = false;
+
+  if (!matches.length) {
+    const emptyState = document.createElement('div');
+    emptyState.className = 'sidebar-search-empty';
+    emptyState.textContent = 'Aucun sujet trouvé.';
+    resultsContainer.appendChild(emptyState);
+    return;
+  }
+
+  matches.forEach(({ entry }) => {
+    const resultButton = document.createElement('button');
+    resultButton.type = 'button';
+    resultButton.className = 'sidebar-search-item';
+
+    const resultTitle = document.createElement('div');
+    resultTitle.className = 'sidebar-search-item-title';
+    resultTitle.textContent = entry.title;
+
+    const resultMeta = document.createElement('div');
+    resultMeta.className = 'sidebar-search-item-meta';
+    resultMeta.textContent = entry.meta;
+
+    resultButton.appendChild(resultTitle);
+    resultButton.appendChild(resultMeta);
+    resultButton.addEventListener('click', () => openSearchEntry(entry));
+    resultsContainer.appendChild(resultButton);
+  });
+}
+
+function initTopicSearch() {
+  topicSearchState.input = document.getElementById('topicSearch');
+  topicSearchState.results = document.getElementById('topicSearchResults');
+
+  if (!topicSearchState.input || !topicSearchState.results) return;
+
+  buildSearchEntries();
+  renderTopicSearchResults('');
+
+  topicSearchState.input.addEventListener('input', () => {
+    renderTopicSearchResults(topicSearchState.input.value);
+  });
+
+  topicSearchState.input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      const firstResult = topicSearchState.results.querySelector('.sidebar-search-item');
+      if (firstResult) firstResult.click();
+    }
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      clearTopicSearch();
+    }
   });
 }
 
@@ -692,4 +905,5 @@ function generateDiplome() {
 
 // ── INIT ──────────────────────────────────────
 stripStudyLinks();
+initTopicSearch();
 applyFilter('nutrition');
