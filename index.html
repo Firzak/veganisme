@@ -48,7 +48,7 @@
     <div class="sidebar-section-label">Critiques & Réponses</div>
     <button class="nav-btn active" data-filter="nutrition" onclick="nav(this)">
       <span class="nav-icon">🥗</span> Nutrition
-      <span class="nav-count">10</span>
+      <span class="nav-count">9</span>
     </button>
     <button class="nav-btn" data-filter="sante" onclick="nav(this)">
       <span class="nav-icon">❤️</span> Santé
@@ -56,7 +56,7 @@
     </button>
     <button class="nav-btn" data-filter="environnement" onclick="nav(this)">
       <span class="nav-icon">🌍</span> Environnement
-      <span class="nav-count">9</span>
+      <span class="nav-count">10</span>
     </button>
     <button class="nav-btn" data-filter="ethique" onclick="nav(this)">
       <span class="nav-icon">⚖️</span> Éthique
@@ -351,25 +351,7 @@
         </div></div>
       </div>
 
-      <div class="card" data-category="nutrition">
-        <div class="card-header" onclick="toggleCard(this)">
-          <div class="card-icon icon-amber">🌱</div>
-          <div class="card-meta">
-            <h2>"Le tourteau de soja est un déchet de l'industrie humaine qu'on donne aux animaux"</h2>
-            <p class="critique-text">« Le soja est cultivé pour l'alimentation humaine (tofu, lait) ; le tourteau n'est qu'un sous-produit donné aux animaux. »</p>
-          </div>
-          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <div class="card-body"><div class="card-content">
-          <div class="verdict"><strong>Verdict scientifique :</strong> Le tourteau n'est pas un déchet mais le produit principal du soja (~80% du poids, ~66% de la valeur économique). C'est l'aliment protéique pour animaux le plus recherché au monde. L'huile est le coproduit. 77% du soja mondial est destiné à l'élevage — sans demande en viande, lait et œufs, ~75% de la production disparaîtrait.</div>
-          <p class="studies-title">Sources de référence</p>
-          <div class="study">
-            <div class="study-title"><a href="https://ourworldindata.org/drivers-of-deforestation#more-than-three-quarters-of-global-soy-is-fed-to-animals" target="_blank">Soja : consommation humaine, alimentation animale et déforestation</a></div>
-            <div class="study-meta">Ritchie · Our World in Data · 2021 (données USDA / FCRN Oxford)</div>
-            <div class="study-finding">Analyse détaillée de l'utilisation mondiale du soja : ~77% pour l'alimentation animale (37% volailles, 20% porcs, 6% aquaculture, 2% bovins/lait), ~20% usage humain dont seulement 7% pour les produits directs (tofu, tempeh, edamame) et le reste en huile. La croissance de la production de soja depuis 1990 est quasi-exclusivement due à l'élevage.</div>
-          </div>
-        </div></div>
-      </div>
+
 
       <!-- SANTE -->
       <div class="section-label" data-section="sante">Santé & Maladies Chroniques</div>
@@ -736,6 +718,26 @@
             <div class="study-finding">L'aquaculture du saumon et de la crevette nécessite 2 à 5 kg de poissons sauvages (farines + huiles) pour produire 1 kg de poisson d'élevage. Le ratio "Fish-in / Fish-out" (FIFO) du saumon atlantique est de 2,5:1. L'aquaculture ne réduit donc pas la pression sur les stocks sauvages — elle la déplace.</div>
           </div>
           <div class="nuance-box"><strong>⚠️ Distinction essentielle</strong>L'aquaculture extensive de mollusques (moules, huîtres) a un bilan positif : filtration naturelle de l'eau, pas d'intrants. Les algues marines (wakame, nori) ont également un impact quasi nul. C'est l'aquaculture carnivore intensive (saumon, crevette, thon) qui pose un problème écologique majeur.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="environnement">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🌾</div>
+          <div class="card-meta">
+            <h2>"Le tourteau de soja est un déchet de l'industrie humaine qu'on donne aux animaux"</h2>
+            <p class="critique-text">« Le soja est cultivé pour l'alimentation humaine (tofu, lait) ; le tourteau n'est qu'un sous-produit donné aux animaux. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Le tourteau n'est pas un déchet mais le produit principal du soja (~80% du poids, ~66% de la valeur économique). C'est l'aliment protéique pour animaux le plus recherché au monde. L'huile est le coproduit. 77% du soja mondial est destiné à l'élevage — sans demande en viande, lait et œufs, ~75% de la production disparaîtrait.</div>
+          <p class="studies-title">Sources de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://ourworldindata.org/drivers-of-deforestation#more-than-three-quarters-of-global-soy-is-fed-to-animals" target="_blank">Soja : consommation humaine, alimentation animale et déforestation</a></div>
+            <div class="study-meta">Ritchie · Our World in Data · 2021 (données USDA / FCRN Oxford)</div>
+            <div class="study-finding">Analyse détaillée de l'utilisation mondiale du soja : ~77% pour l'alimentation animale (37% volailles, 20% porcs, 6% aquaculture, 2% bovins/lait), ~20% usage humain dont seulement 7% pour les produits directs (tofu, tempeh, edamame) et le reste en huile. La croissance de la production de soja depuis 1990 est quasi-exclusivement due à l'élevage.</div>
+          </div>
         </div></div>
       </div>
 
