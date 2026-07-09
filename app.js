@@ -573,6 +573,15 @@ function generateDiet() {
     </div>
   </div>
 
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; margin-bottom:1rem;">
+    <div class="studies-title" style="margin-bottom:0.75rem;">🍽️ Recettes suggérées</div>
+    <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">Cliquez sur un repas pour générer une recette aléatoire à partir des ingrédients de votre plan.</p>
+    <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
+      ${meals.map(m => `<button onclick="showRecipe('${m.time}')" style="padding:0.5rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.78rem; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer;">${m.emoji} ${m.time}</button>`).join('')}
+    </div>
+    <div id="recipeDisplay"></div>
+  </div>
+
   <div style="text-align:center; margin-bottom:0.5rem;">
     <button onclick="resetDiet()" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.55rem 1.25rem; border-radius:8px; cursor:pointer; font-size:0.82rem; font-family:'DM Sans',sans-serif;">← Modifier mon profil</button>
   </div>`;
@@ -643,6 +652,162 @@ function resetDiet() {
   document.getElementById('dietResult').style.display = 'none';
   document.getElementById('dietResult').innerHTML = '';
   document.getElementById('dietForm').style.display = 'block';
+}
+
+// ── RECIPES DATABASE ──────────────────────────
+const RECIPES = {
+  'Petit-déjeuner': [
+    {
+      name: 'Porridge protéiné aux fruits et graines',
+      prep: '5 min', cook: '8 min',
+      instructions: [
+        'Faire chauffer le lait de soja dans une casserole.',
+        'Ajouter les flocons d\'avoine et cuire 5 min à feu doux en remuant.',
+        'Verser dans un bol, ajouter la banane coupée, les graines de lin moulues, le beurre d\'amande et les graines de courge.',
+        'Saupoudrer de cannelle si désiré. Servir chaud.'
+      ]
+    },
+    {
+      name: 'Smoothie bowl banane-soja-cajou',
+      prep: '8 min', cook: '0 min',
+      instructions: [
+        'Mixer la banane avec le lait de soja, le beurre d\'amande et les flocons d\'avoine jusqu\'à consistance lisse.',
+        'Verser dans un bol. Garnir avec les graines de courge, les graines de lin et quelques noix de cajou concassées.',
+        'Ajouter quelques fruits frais si désiré. Déguster immédiatement.'
+      ]
+    },
+    {
+      name: 'Overnight oats aux fruits secs',
+      prep: '10 min + repos', cook: '0 min',
+      instructions: [
+        'Mélanger les flocons d\'avoine avec le lait de soja dans un bol. Bien remuer.',
+        'Ajouter les graines de lin moulues, le beurre d\'amande, et mélanger.',
+        'Couvrir et placer au réfrigérateur toute la nuit (minimum 4h).',
+        'Au matin, garnir de banane coupée, graines de courge et d\'une pincée de cannelle. Servir froid.'
+      ]
+    }
+  ],
+  'Déjeuner': [
+    {
+      name: 'Buddha bowl lentilles-tofu-légumes verts',
+      prep: '15 min', cook: '20 min',
+      instructions: [
+        'Cuire les lentilles vertes dans une casserole d\'eau bouillante 15-20 min. Égoutter.',
+        'Couper le tofu en cubes. Le faire revenir dans un peu d\'huile d\'olive jusqu\'à ce qu\'il soit doré.',
+        'Cuire le riz complet selon les instructions.',
+        'Faire sauter les épinards et le brocoli 3-4 min à la poêle avec un filet d\'huile d\'olive.',
+        'Dresser dans un bol : riz, lentilles, tofu, légumes. Arroser de jus de citron, curcuma et poivre.',
+        'Astuce : le citron triple l\'absorption du fer des lentilles et épinards.'
+      ]
+    },
+    {
+      name: 'Curry de lentilles au riz complet',
+      prep: '10 min', cook: '25 min',
+      instructions: [
+        'Faire revenir un oignon émincé dans l\'huile d\'olive. Ajouter du curcuma, du cumin et du gingembre.',
+        'Ajouter les lentilles vertes cuites, du lait de soja (~100ml) et laisser mijoter 10 min.',
+        'Cuire le riz complet séparément.',
+        'Ajouter les épinards dans le curry et laisser fondre 2 min.',
+        'Servir le curry sur le riz, arroser de jus de citron. Ajouter les dés de tofu grillés sur le dessus.'
+      ]
+    }
+  ],
+  'Collation': [
+    {
+      name: 'Houmous express aux légumes croquants',
+      prep: '5 min', cook: '0 min',
+      instructions: [
+        'Mixer les pois chiches rôtis avec 1 c.à.s de tahini, un filet de citron et un peu d\'eau jusqu\'à consistance onctueuse.',
+        'Ajouter une pincée de cumin et de sel.',
+        'Servir avec des bâtonnets de carotte, concombre et poivron en trempette.',
+        'Accompagner de quelques noix de cajou et d\'un fruit frais.'
+      ]
+    },
+    {
+      name: 'Energy balls aux noix et fruits secs',
+      prep: '10 min', cook: '0 min',
+      instructions: [
+        'Mixer les noix de cajou ou amandes avec les flocons d\'avoine (pris sur le petit-déjeuner) jusqu\'à obtenir une poudre.',
+        'Ajouter une banane écrasée et une cuillère de beurre d\'amande. Bien mélanger.',
+        'Former des petites boules à la main.',
+        'Rouler dans les graines de lin ou les graines de courge. Placer au frais 15 min avant de déguster.'
+      ]
+    }
+  ],
+  'Dîner': [
+    {
+      name: 'Bowl patate douce, tempeh et kale sauce tahini',
+      prep: '15 min', cook: '25 min',
+      instructions: [
+        'Préchauffer le four à 200°C. Couper la patate douce en cubes et enfourner 25 min avec un filet d\'huile d\'olive.',
+        'Couper le tempeh en tranches. Le faire revenir à la poêle 5 min de chaque côté avec un peu de sauce soja.',
+        'Laver et couper le chou kale. Le masser avec un peu d\'huile d\'olive et de jus de citron.',
+        'Préparer la sauce : mélanger le tahini avec du jus de citron, un peu d\'eau et de l\'ail écrasé.',
+        'Dresser le bowl : patate douce, tempeh, kale, quinoa cuit. Napper de sauce tahini.',
+        'Parsemer de graines de sésame. Servir chaud ou tiède.'
+      ]
+    },
+    {
+      name: 'Wraps au tempeh mariné et patate douce',
+      prep: '15 min', cook: '20 min',
+      instructions: [
+        'Couper le tempeh en lamelles. Le mariner 10 min dans un mélange sauce soja + citron + gingembre.',
+        'Cuire le tempeh à la poêle 5-7 min jusqu\'à ce qu\'il soit caramélisé.',
+        'Couper la patate douce cuite en purée grossière à la fourchette.',
+        'Étaler la purée de patate douce sur une tortilla (ou feuille de salade). Ajouter le tempeh, le kale cru, un filet de sauce tahini.',
+        'Refermer le wrap et déguster immédiatement.'
+      ]
+    }
+  ],
+  'Encas soir': [
+    {
+      name: 'Tartines de houmous avocat-graines',
+      prep: '5 min', cook: '0 min',
+      instructions: [
+        'Toaster les tranches de pain complet.',
+        'Tartiner généreusement de houmous maison.',
+        'Ajouter des tranches d\'avocat si disponible, saupoudrer de graines de courge et d\'un filet de citron.',
+        'Poivrer et déguster immédiatement.'
+      ]
+    },
+    {
+      name: 'Bowl de houmous aux épices et légumes',
+      prep: '5 min', cook: '0 min',
+      instructions: [
+        'Étaler le houmous dans un bol.',
+        'Ajouter un filet d\'huile d\'olive, du paprika fumé et des graines de courge.',
+        'Accompagner de bâtonnets de carotte, concombre et de pain complet coupé en morceaux.',
+        'Parsemer de persil frais si disponible.'
+      ]
+    }
+  ]
+};
+
+function showRecipe(mealTime) {
+  const recipes = RECIPES[mealTime];
+  if (!recipes || !recipes.length) return;
+  const recipe = recipes[Math.floor(Math.random() * recipes.length)];
+  const container = document.getElementById('recipeDisplay');
+  if (!container) return;
+  container.innerHTML = `
+    <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:1.1rem; margin-top:0.75rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:0.4rem;">
+        <div style="font-weight:700; font-size:0.95rem; color:var(--text);">${recipe.name}</div>
+        <div style="font-size:0.7rem; color:var(--text-subtle); background:var(--surface); padding:0.2rem 0.6rem; border-radius:6px;">
+          Prépa ${recipe.prep} · Cuisson ${recipe.cook}
+        </div>
+      </div>
+      <ol style="margin:0; padding-left:1.1rem; font-size:0.8rem; line-height:1.6; color:var(--text-muted);">
+        ${recipe.instructions.map(i => `<li>${i}</li>`).join('')}
+      </ol>
+      <div style="margin-top:0.6rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
+        ${['Générer une autre', 'close'].map((label, idx) =>
+          idx === 0
+            ? `<button onclick="showRecipe('${mealTime}')" style="padding:0.35rem 0.75rem; background:var(--green); color:#080e08; border:none; border-radius:6px; font-size:0.72rem; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer;">↻ Générer une autre</button>`
+            : ''
+        ).join('')}
+      </div>
+    </div>`;
 }
 
 // ── IMPACT CALCULATOR ─────────────────────────
