@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="100" y2="100">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#16a34a"/>
-    </linearGradient>
-  </defs>
-  <path d="M50 12 C50 12 8 38 8 64 C8 80 20 92 36 92 C44 92 48 88 50 84 C52 88 56 92 64 92 C80 92 92 80 92 64 C92 38 50 12 50 12Z" fill="url(#g)"/>
-  <path d="M50 30 L32 75 L40 75 L50 50 L60 75 L68 75 Z" fill="white"/>
+  <rect x="4" y="4" width="92" height="92" rx="18" fill="#F7F4E9"/>
+  <rect x="4" y="4" width="92" height="92" rx="18" fill="none" stroke="#D9D0B4" stroke-width="2"/>
+  <path d="M50 20 C50 20 24 38 24 60 C24 74 35 84 48 84 C54 84 58 80 58 74 L58 55" fill="none" stroke="#2E5232" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M50 20 C50 20 76 38 76 58" fill="none" stroke="#A15C22" stroke-width="6.5" stroke-linecap="round"/>
+  <circle cx="50" cy="20" r="6" fill="#2E5232"/>
 </svg>

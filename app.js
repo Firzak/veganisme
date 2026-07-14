@@ -467,7 +467,7 @@ function generateDiet() {
   // Macros summary
   let html = `
   <div style="text-align:center; margin-bottom:1.5rem;">
-    <p style="font-family:'Lora',serif; font-size:1.3rem; font-weight:700; color:var(--text); margin-bottom:0.3rem;">Votre plan alimentaire</p>
+    <p style="font-family:var(--font-display); font-size:1.3rem; font-weight:700; color:var(--text); margin-bottom:0.3rem;">Votre plan alimentaire</p>
     <p style="color:var(--text-muted); font-size:0.82rem;">${currentSex === 'homme' ? '♂' : '♀'} ${age} ans · ${taille} cm · ${poids} kg · ${objLabel}</p>
   </div>
   <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.6rem; margin-bottom:1.5rem;">
@@ -476,7 +476,7 @@ function generateDiet() {
       { label: 'Protéines cible', val: prot + 'g/jour', color: 'var(--green)' },
       { label: 'Objectif', val: objLabel, color: objColor },
     ].map(s => `
-    <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:0.85rem; text-align:center;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:0.85rem; text-align:center;">
       <div style="font-size:1.05rem; font-weight:700; color:${s.color}; margin-bottom:0.2rem;">${s.val}</div>
       <div style="font-size:0.65rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em;">${s.label}</div>
     </div>`).join('')}
@@ -530,7 +530,7 @@ function generateDiet() {
     : 'Bilan sanguin annuel recommandé : B12 (holotranscobalamine), 25-OH-D3, ferritine, zinc.';
 
   html += `
-  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; margin-top:1.25rem; margin-bottom:1rem;">
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; margin-top:1.25rem; margin-bottom:1rem;">
     <div class="studies-title" style="margin-bottom:0.85rem;">💊 Suppléments obligatoires</div>
     ${[
       { name: 'Vitamine B12',          dose: '250 µg/jour',        note: 'Cyanocobalamine ou méthylcobalamine — seul supplément strictement obligatoire' },
@@ -559,31 +559,31 @@ function generateDiet() {
   ];
 
   html += `
-  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; margin-bottom:1rem;">
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; margin-bottom:1rem;">
     <div class="studies-title" style="margin-bottom:0.5rem;">🛒 Liste de courses</div>
     <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.85rem;">Cochez ce que vous avez déjà, puis générez la liste texte à copier-coller.</p>
     <div id="shoppingList"></div>
     <div style="margin-top:0.85rem; display:flex; flex-direction:column; gap:0.5rem;">
-      <button onclick="generateShoppingText()" style="padding:0.65rem; background:var(--green); color:#080e08; border:none; border-radius:8px; font-size:0.85rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;">Générer ma liste →</button>
+      <button onclick="generateShoppingText()" style="padding:0.65rem; background:var(--green); color:var(--surface); border:none; border-radius:var(--radius-md); font-size:0.85rem; font-weight:700; font-family:var(--font-body); cursor:pointer;">Générer ma liste →</button>
       <div id="shoppingTextBox" style="display:none;">
         <div style="font-size:0.65rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-subtle); margin-bottom:0.4rem; margin-top:0.6rem;">📋 Copiez-collez où vous voulez</div>
-        <textarea id="shoppingTextArea" readonly onclick="this.select()" style="width:100%; min-height:160px; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.8rem; font-family:'DM Mono',monospace; padding:0.65rem; resize:vertical; outline:none; line-height:1.7; cursor:text;"></textarea>
-        <button onclick="copyList(event)" style="margin-top:0.4rem; width:100%; padding:0.55rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text-muted); font-size:0.8rem; font-family:'DM Sans',sans-serif; cursor:pointer;">📋 Copier la liste</button>
+        <textarea id="shoppingTextArea" readonly onclick="this.select()" style="width:100%; min-height:160px; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-md); color:var(--text); font-size:0.8rem; font-family:var(--font-mono); padding:0.65rem; resize:vertical; outline:none; line-height:1.7; cursor:text;"></textarea>
+        <button onclick="copyList(event)" style="margin-top:0.4rem; width:100%; padding:0.55rem; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-md); color:var(--text-muted); font-size:0.8rem; font-family:var(--font-body); cursor:pointer;">📋 Copier la liste</button>
       </div>
     </div>
   </div>
 
-  <div style="background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.25rem; margin-bottom:1rem;">
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:1.25rem; margin-bottom:1rem;">
     <div class="studies-title" style="margin-bottom:0.75rem;">🍽️ Recettes suggérées</div>
     <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">Cliquez sur un repas pour générer une recette aléatoire à partir des ingrédients de votre plan.</p>
     <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.5rem;">
-      ${meals.map(m => `<button onclick="showRecipe('${m.time}')" style="padding:0.5rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:8px; color:var(--text); font-size:0.78rem; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer;">${m.emoji} ${m.time}</button>`).join('')}
+      ${meals.map(m => `<button onclick="showRecipe('${m.time}')" style="padding:0.5rem 0.9rem; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-md); color:var(--text); font-size:0.78rem; font-weight:600; font-family:var(--font-body); cursor:pointer;">${m.emoji} ${m.time}</button>`).join('')}
     </div>
     <div id="recipeDisplay"></div>
   </div>
 
   <div style="text-align:center; margin-bottom:0.5rem;">
-    <button onclick="resetDiet()" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.55rem 1.25rem; border-radius:8px; cursor:pointer; font-size:0.82rem; font-family:'DM Sans',sans-serif;">← Modifier mon profil</button>
+    <button onclick="resetDiet()" style="background:transparent; border:1px solid var(--border); color:var(--text-muted); padding:0.55rem 1.25rem; border-radius:var(--radius-md); cursor:pointer; font-size:0.82rem; font-family:var(--font-body);">← Modifier mon profil</button>
   </div>`;
 
   result.innerHTML = html;
@@ -790,10 +790,10 @@ function showRecipe(mealTime) {
   const container = document.getElementById('recipeDisplay');
   if (!container) return;
   container.innerHTML = `
-    <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:1.1rem; margin-top:0.75rem;">
+    <div style="background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-md); padding:1.1rem; margin-top:0.75rem;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem; flex-wrap:wrap; gap:0.4rem;">
         <div style="font-weight:700; font-size:0.95rem; color:var(--text);">${recipe.name}</div>
-        <div style="font-size:0.7rem; color:var(--text-subtle); background:var(--surface); padding:0.2rem 0.6rem; border-radius:6px;">
+        <div style="font-size:0.7rem; color:var(--text-subtle); background:var(--surface); padding:0.2rem 0.6rem; border-radius:var(--radius-sm);">
           Prépa ${recipe.prep} · Cuisson ${recipe.cook}
         </div>
       </div>
@@ -803,7 +803,7 @@ function showRecipe(mealTime) {
       <div style="margin-top:0.6rem; display:flex; gap:0.4rem; flex-wrap:wrap;">
         ${['Générer une autre', 'close'].map((label, idx) =>
           idx === 0
-            ? `<button onclick="showRecipe('${mealTime}')" style="padding:0.35rem 0.75rem; background:var(--green); color:#080e08; border:none; border-radius:6px; font-size:0.72rem; font-weight:600; font-family:'DM Sans',sans-serif; cursor:pointer;">↻ Générer une autre</button>`
+            ? `<button onclick="showRecipe('${mealTime}')" style="padding:0.35rem 0.75rem; background:var(--green); color:var(--surface); border:none; border-radius:var(--radius-sm); font-size:0.72rem; font-weight:600; font-family:var(--font-body); cursor:pointer;">↻ Générer une autre</button>`
             : ''
         ).join('')}
       </div>
@@ -845,14 +845,14 @@ function calcImpact() {
     { emoji: '🌡️', label: 'CO₂ économisé',    val: `${fmt(saved.co2)} kg`,    sub: `≈ ${Math.round(saved.co2 / 120)} vols Paris–New York`,   color: 'var(--green)' },
     { emoji: '💧', label: 'Eau économisée',    val: `${fmt(saved.eau)} L`,     sub: `≈ ${Math.round(saved.eau / 50)} bains remplis`,          color: 'var(--accent)' },
     { emoji: '🌍', label: 'Terres préservées', val: `${fmt(saved.terre)} m²`,  sub: `≈ ${(saved.terre / 10000).toFixed(2)} hectares`,         color: 'var(--amber)' },
-    { emoji: '🐮', label: 'Animaux non tués',  val: `~${fmt(saved.animaux)}`,  sub: 'estimation conservative (vertébrés)',                    color: '#e55' },
+    { emoji: '🐮', label: 'Animaux non tués',  val: `~${fmt(saved.animaux)}`,  sub: 'estimation conservative (vertébrés)',                    color: '#8B3526' },
   ];
 
   document.getElementById('impactForm').style.display = 'none';
   const res = document.getElementById('impactResult');
   res.innerHTML = `
   <div style="text-align:center; margin-bottom:1.25rem;">
-    <p style="font-family:'Lora',serif; font-size:1.2rem; font-weight:700; color:var(--green);">En ${durLabel} de véganisme, vous avez évité :</p>
+    <p style="font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--green);">En ${durLabel} de véganisme, vous avez évité :</p>
   </div>
   <div class="stats-grid">
     ${stats.map(s => `
@@ -946,9 +946,9 @@ function submitQuiz() {
 
   if (passed) {
     res.innerHTML = `
-    <div style="text-align:center; background:var(--green-subtle); border:1px solid rgba(94,201,90,0.25); border-radius:14px; padding:2rem; margin-bottom:1.5rem;">
+    <div style="text-align:center; background:var(--green-subtle); border:1px solid rgba(76,107,63,0.35); border-radius:var(--radius-lg); padding:2rem; margin-bottom:1.5rem;">
       <div style="font-size:3rem; margin-bottom:0.5rem;">🎉</div>
-      <p style="font-family:'Lora',serif; font-size:1.4rem; font-weight:700; color:var(--green); margin-bottom:0.4rem;">Félicitations !</p>
+      <p style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--green); margin-bottom:0.4rem;">Félicitations !</p>
       <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:0.4rem;">Vous avez obtenu <strong style="color:var(--green);">${score} / ${QUESTIONS.length}</strong> — vous êtes un expert du véganisme.</p>
       <p style="color:var(--text-muted); font-size:0.82rem;">Entrez votre prénom pour recevoir votre diplôme officiel 👇</p>
     </div>`;
@@ -972,12 +972,12 @@ function submitQuiz() {
     }
 
     res.innerHTML = `
-    <div style="text-align:center; background:var(--red-dim); border:1px solid rgba(238,85,85,0.25); border-radius:14px; padding:2rem;">
+    <div style="text-align:center; background:var(--red-dim); border:1px solid rgba(139,53,38,0.32); border-radius:var(--radius-lg); padding:2rem;">
       <div style="font-size:3rem; margin-bottom:0.5rem;">📚</div>
-      <p style="font-family:'Lora',serif; font-size:1.4rem; font-weight:700; color:var(--red); margin-bottom:0.4rem;">Pas encore expert…</p>
+      <p style="font-family:var(--font-display); font-size:1.4rem; font-weight:700; color:var(--red); margin-bottom:0.4rem;">Pas encore expert…</p>
       <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:0.85rem;">Vous avez obtenu <strong style="color:var(--red);">${score} / ${QUESTIONS.length}</strong> — il vous faut 15/20 pour le diplôme.</p>
       <p style="color:var(--text-muted); font-size:0.82rem; margin-bottom:1.25rem;">Continuez à explorer les fiches du site pour progresser !</p>
-      <button onclick="document.getElementById('quizContainer').style.display='flex'; initQuiz();" style="padding:0.7rem 1.75rem; background:var(--amber); color:#080e08; border:none; border-radius:8px; font-size:0.9rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;">🔄 Recommencer</button>
+      <button onclick="document.getElementById('quizContainer').style.display='flex'; initQuiz();" style="padding:0.7rem 1.75rem; background:var(--amber); color:var(--surface); border:none; border-radius:var(--radius-md); font-size:0.9rem; font-weight:700; font-family:var(--font-body); cursor:pointer;">🔄 Recommencer</button>
     </div>
     ${corrigeHtml}`;
   }

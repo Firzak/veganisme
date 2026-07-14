@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light">
 <title>Véganisme & Science</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="style.css">
@@ -17,7 +17,7 @@
       <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </button>
-  <span class="mobile-title">🌱 Véganisme &amp; <span style="color:#818cf8;">Science</span></span>
+  <span class="mobile-title">🌱 Véganisme &amp; <span style="color:var(--accent); font-style:italic;">Science</span></span>
 </div>
 <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -107,6 +107,7 @@
     <div class="hero-eyebrow">Véganisme & Science</div>
     <h1>Les critiques du véganisme<br>face à la <em>science</em></h1>
     <p class="hero-sub">Chaque argument populaire confronté aux méta-analyses, revues systématiques et consensus d'institutions reconnues.</p>
+    <div class="hero-scale" aria-hidden="true"></div>
   </div>
 
   <!-- CONTENT -->
@@ -1278,7 +1279,7 @@
           </div>
         </div>
         <div id="impactError" class="error-msg"></div>
-        <button class="btn-primary" style="background:var(--accent); color:#080e08;" onclick="calcImpact()">Calculer mon impact →</button>
+        <button class="btn-primary" onclick="calcImpact()">Calculer mon impact →</button>
       </div>
       <div id="impactResult" style="display:none; margin-top:1.5rem;"></div>
     </div>
@@ -1344,7 +1345,7 @@
       </div>
       <div id="quizContainer" style="display:flex; flex-direction:column; gap:0.75rem;"></div>
       <div id="quizNav" style="display:none; text-align:center; margin-top:1.25rem;">
-        <button id="quizSubmitBtn" onclick="submitQuiz()" style="padding:0.85rem 2rem; background:var(--amber); color:#080e08; border:none; border-radius:10px; font-size:0.95rem; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer;">
+        <button id="quizSubmitBtn" onclick="submitQuiz()" style="padding:0.85rem 2rem; background:var(--amber); color:var(--surface); border:none; border-radius:var(--radius-md); font-size:0.95rem; font-weight:700; font-family:var(--font-body); cursor:pointer;">
           Valider mes réponses →
         </button>
       </div>
@@ -1354,7 +1355,7 @@
           <label class="form-label">Votre prénom pour le diplôme</label>
           <div style="display:flex; gap:0.6rem; max-width:380px; margin:0 auto;">
             <input class="form-input" id="diplomePrenom" type="text" placeholder="ex : Marie">
-            <button onclick="generateDiplome()" style="padding:0.6rem 1rem; background:var(--amber); color:#080e08; border:none; border-radius:8px; font-weight:700; font-family:'DM Sans',sans-serif; cursor:pointer; white-space:nowrap;">Générer 🎓</button>
+            <button onclick="generateDiplome()" style="padding:0.6rem 1rem; background:var(--amber); color:var(--surface); border:none; border-radius:var(--radius-md); font-weight:700; font-family:var(--font-body); cursor:pointer; white-space:nowrap;">Générer 🎓</button>
           </div>
         </div>
         <div style="text-align:center; margin-top:1.25rem;">
