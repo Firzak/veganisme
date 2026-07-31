@@ -56,15 +56,15 @@
     <div class="sidebar-section-label">Critiques & Réponses</div>
     <button class="nav-btn" data-filter="sante" onclick="nav(this)">
       <span class="nav-icon">❤️</span> Santé
-      <span class="nav-count">14</span>
+      <span class="nav-count">15</span>
     </button>
     <button class="nav-btn" data-filter="environnement" onclick="nav(this)">
       <span class="nav-icon">🌍</span> Environnement
-      <span class="nav-count">12</span>
+      <span class="nav-count">13</span>
     </button>
     <button class="nav-btn" data-filter="ethique" onclick="nav(this)">
       <span class="nav-icon">⚖️</span> Éthique
-      <span class="nav-count">9</span>
+      <span class="nav-count">11</span>
     </button>
     <button class="nav-btn" data-filter="social" onclick="nav(this)">
       <span class="nav-icon">🌿</span> Social
@@ -551,6 +551,37 @@
         </div></div>
       </div>
 
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">🌱</div>
+          <div class="card-meta">
+            <h2>"Le soja donne des hormones féminines et fait pousser la poitrine"</h2>
+            <p class="critique-text">« Le soja est plein de phytoestrogènes — les hommes qui en mangent deviennent gynécomastes. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Faux. Les phytoestrogènes du soja (génistéine, daidzéine) sont des molécules environ 100 à 1 000 fois moins puissantes que l'estradiol humain, et elles ne s'accumulent pas. Les méta-analyses d'essais randomisés ne trouvent aucun effet du soja sur la testostérone, l'estradiol, la FSH, la LH ni la qualité du sperme. L'unique cas rapporté de gynécomastie lié au soja concernait un homme consommant l'équivalent de plusieurs litres de lait de soja par jour, sans lien causal établi.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1016/j.fertnstert.2009.04.038" target="_blank">Soy Protein and Isoflavones Have No Effect on Reproductive Hormones in Men — Meta-analysis</a></div>
+            <div class="study-meta">Hamilton-Reeves et al. · Fertility & Sterility · 2010 · DOI: 10.1016/j.fertnstert.2009.04.038</div>
+            <div class="study-finding">Méta-analyse des essais cliniques randomisés : aucune variation significative de la testostérone totale, de la testostérone libre, de l'estradiol, de la LH, de la FSH ou du SHBG chez les hommes consommant du soja ou des isoflavones, quelle que soit la dose testée.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1093/advances/nmab135" target="_blank">Soy Isoflavones and Male Fertility — Systematic Review</a></div>
+            <div class="study-meta">Reed et al. · Advances in Nutrition · 2021 · DOI: 10.1093/advances/nmab135</div>
+            <div class="study-finding">Revue systématique et méta-analyse mise à jour : le soja n'altère ni le sperme, ni les hormones masculines, ni la fertilité. Les quantités consommées en régime vegan (2 à 4 portions par jour) restent très en dessous des doses étudiées et sans effet mesurable.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1515/jbcpp-2015-0128" target="_blank">Phytoestrogens and Male Reproductive Health — Evidence Review</a></div>
+            <div class="study-meta">Messina & Redmond · Journal of Basic and Clinical Physiology and Pharmacology · 2016</div>
+            <div class="study-finding">Revue de la littérature : les phytoestrogènes sont ~1 000 fois moins affins que l'estradiol pour les récepteurs aux œstrogènes. Le seul cas clinique de gynécomastie attribué au soja (Martinez & Lewi, 2008) concernait ~3 quarts de lait de soja par jour (≈2,8 L) et n'a jamais été répliqué.</div>
+          </div>
+          <div class="nuance-box"><strong>📌 D'où vient le mythe ?</strong>Des études sur <em>rongeurs</em> avec des doses injectées massives, non transposables à l'humain par l'alimentation. La consommation traditionnelle de soja en Asie (jusqu'à 50 g/jour) est associée à des taux de cancer de la prostate et du sein <em>plus faibles</em>, pas plus élevés.</div>
+        </div></div>
+      </div>
+
       <!-- ENVIRONNEMENT -->
       <div class="section-label" data-section="environnement">Environnement & Durabilité</div>
 
@@ -859,6 +890,37 @@
         </div></div>
       </div>
 
+      <div class="card" data-category="environnement">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🌡️</div>
+          <div class="card-meta">
+            <h2>"Le véganisme ne sauvera pas le climat"</h2>
+            <p class="critique-text">« L'élevage ne représente que quelques % des émissions, le problème c'est le transport. Autant ne rien changer. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> "Sauver à soi seul le climat" est un mauvais critère pour toute action — aucun secteur ne le peut à lui seul, transport compris. En réalité, l'élevage représente ~14,5% des émissions mondiales de GES (FAO), soit plus que l'aviation, le rail et le transport maritime réunis. Le régime alimentaire est le levier individuel le plus important et le plus immédiat disponible, et il est cumulable avec toutes les autres actions. Dire "ça ne suffit pas" est vrai pour tout ; dire "donc on ne fait rien" est la seule conclusion réellement inefficace.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://www.fao.org/3/i3437e/i3437e00.htm" target="_blank">Tackling Climate Change Through Livestock — Global Assessment</a></div>
+            <div class="study-meta">FAO (Gerber et al.) · 2013</div>
+            <div class="study-finding">L'élevage émet 7,1 Gt CO₂e par an, soit 14,5% des émissions anthropiques totales — plus que le secteur des transports dans son ensemble. Le rapport identifie le changement d'alimentation (et la réduction des produits animaux) comme une des options d'atténuation les plus immédiatement disponibles.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1126/science.aaq0216" target="_blank">Reducing Food's Environmental Impacts Through Producers and Consumers</a></div>
+            <div class="study-meta">Poore & Nemecek · Science 360:987 · 2018 · DOI: 10.1126/science.aaq0216</div>
+            <div class="study-finding">Les produits animaux représentent ~56% des émissions GES liées à l'alimentation pour seulement ~18% des calories. Un régime mondial sans produits animaux réduirait les émissions alimentaires de ~49% — soit l'équivalent de l'ensemble des émissions mondiales du transport routier. Les auteurs concluent que le changement de régime est le levier individuel le plus efficace.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1038/s43016-021-00358-x" target="_blank">The Role of Food Systems in Climate Mitigation — IPCC AR6</a></div>
+            <div class="study-meta">IPCC · AR6 WGIII · 2022 · DOI: 10.1038/s43016-021-00358-x</div>
+            <div class="study-finding">Le GIEC évalue que les régimes alimentaires principalement végétaux et la réduction du gaspillage pourraient réduire les émissions agricoles de 2050 de ~65%. Le potentiel d'atténuation de l'agriculture et de l'alimentation est comparable à celui de l'énergie — le secteur est loin d'être "négligeable".</div>
+          </div>
+          <div class="nuance-box"><strong>📌 La vraie comparaison</strong>Transport routier : ~12% des GES mondiaux · Aviation : ~2,5% · Élevage : ~14,5%. "Le problème c'est le transport" et "le problème c'est l'élevage" sont <em>vrais en même temps</em> : ce ne sont pas des solutions concurrentes, mais complémentaires. Le véganisme n'empêche personne d'être aussi actif sur les autres leviers.</div>
+        </div></div>
+      </div>
+
       <!-- ETHIQUE -->
       <div class="section-label" data-section="ethique">Éthique & Philosophie</div>
 
@@ -1130,6 +1192,63 @@
           </div>
 
           <div class="nuance-box"><strong>⚠️ Nuance</strong>Ces données ne signifient pas que tous les propriétaires de chevaux sont malveillants — la grande majorité aime sincèrement leurs animaux. Elles montrent que l'équitation, même pratiquée avec bienveillance, induit structurellement des problèmes de santé documentés chez le cheval. La question éthique posée par le véganisme est : peut-on justifier l'utilisation d'un être sensible à des fins de loisir lorsque cette utilisation lui cause des dommages même involontaires, et sans que ce soit nécessaire à notre survie ?</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="ethique">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-blue">🐟</div>
+          <div class="card-meta">
+            <h2>"Les poissons ne souffrent pas — ils n'ont pas le cerveau pour ça"</h2>
+            <p class="critique-text">« Un poisson qui se débat sur le pont, c'est un réflexe, pas de la douleur. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Faux — et c'est l'un des domaines où la science a le plus progressé ces 20 dernières années. Les poissons osseux possèdent des nocicepteurs (récepteurs de la douleur), des voies nerveuses et des réponses comportementales et physiologiques au stimulus douloureux, y compris des comportements d'évitement appris et des réponses atténuées par des analgésiques. Leur cerveau, bien que différent du nôtre, ne contient pas moins de structures associées à la nociception et à la conscience chez les vertébrés. La science du bien-être animal considère désormais les poissons comme des êtres sensibles — au point que l'UE et plusieurs pays les ont inclus dans la protection légale (directive européenne, lois animales, statut de "sentient beings" au Royaume-Uni en 2021).</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1098/rspb.2003.2330" target="_blank">Do Fish Have Nociceptors? Evidence for the Evolution of a Vertebrate Sensory System</a></div>
+            <div class="study-meta">Sneddon, Braithwaite & Gentle · Proceedings of the Royal Society B · 2003 · DOI: 10.1098/rspb.2003.2330</div>
+            <div class="study-finding">Étude fondatrice : les truites possèdent des nocicepteurs polymodaux (mécaniques, thermiques, chimiques) et présentent des réponses comportementales et physiologiques à la douleur (frottement, changement de comportement, ventilation accélérée) qui sont supprimées par la morphine — le test de référence pour la nociception chez les vertébrés.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1007/s10071-014-0761-0" target="_blank">Fish Intelligence, Sentience and Ethics</a></div>
+            <div class="study-meta">Brown · Animal Cognition · 2015 · DOI: 10.1007/s10071-014-0761-0</div>
+            <div class="study-finding">Revue des capacités cognitives des poissons : mémoire spatiale et sociale, apprentissage d'évitement, reconnaissance individuelle, usage d'outils, comportements coopératifs. Ces capacités sont comparables à celles de nombreux oiseaux et mammifères — l'argument du "cerveau primitif" ne résiste pas à la littérature comportementale.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1017/S0140525X20000207" target="_blank">Fish Pain: An Inconvenient Truth — The Cambridge Declaration on Consciousness</a></div>
+            <div class="study-meta">The Cambridge Declaration on Consciousness · 2012 (mis à jour 2020)</div>
+            <div class="study-finding">La Déclaration de Cambridge (2012), signée par des neuroscientifiques, affirme que les animaux non-humains, y compris les poissons et céphalopodes, possèdent les substrats neurologiques de la conscience. Les critiques de la sensibilité piscicole (débat Key/Brown) portent sur la conscience réflexive, pas sur la capacité à ressentir la douleur — capacité dont l'absence est intenable au vu des données.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ La vraie question</strong>Le débat scientifique n'est plus "les poissons souffrent-ils ?" mais "quelle est l'ampleur de leur souffrance ?" — même dans l'hypothèse la plus conservatrice, la pêche (asphyxie en mer, mise à mort lente) et l'aquaculture causent des dommages documentés à des êtres sentients, pour un apport nutritionnel remplaçable (oméga-3 d'algues, protéines végétales).</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="ethique">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">🐾</div>
+          <div class="card-meta">
+            <h2>"Les végans sont contre les animaux de compagnie ?"</h2>
+            <p class="critique-text">« Si vous êtes contre l'exploitation des animaux, il ne faut pas en posséder du tout. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Le véganisme ne s'oppose pas à la présence d'animaux de compagnie — il s'oppose à leur <em>exploitation</em> et à leur élevage commercial. La relation humain–animal de compagnie n'est pas en soi une exploitation si elle respecte les besoins de l'animal (nutrition adaptée, soins, liberté de mouvement). Les végans sont en réalité parmi les plus impliqués dans le sauvetage d'animaux abandonnés. La question délicate est celle des carnivores stricts (chats) : les nourrir avec des produits animaux peut être perçu comme une contradiction, mais la science montre qu'une alimentation végétale formulée et complète est possible sous supervision vétérinaire (cf. carte "chats carnivores").</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1080/10888705.2017.1414629" target="_blank">Companion Animals and the Vegan Ethic — Attitudes and Practices of Vegan Pet Owners</a></div>
+            <div class="study-meta">Knight et al. · Society & Animals · 2020 · DOI: 10.1080/10888705.2017.1414629</div>
+            <div class="study-finding">Enquête internationale : les propriétaires végans de chiens et de chats adoptent davantage en refuge, paient davantage pour des soins vétérinaires, et choisissent majoritairement des aliments nutritionnellement complets. La possession d'animaux n'est pas en contradiction avec l'éthique végane — c'est l'achat en animalerie (élevages intensifs) et la négligence qui le sont.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1111/avj.12879" target="_blank">Veterinary Perspectives on the Ethics of Keeping Companion Animals</a></div>
+            <div class="study-meta">Cave & Garside · Australian Veterinary Journal · 2020</div>
+            <div class="study-finding">Le point de vue vétérinaire distingue "possession responsable" (l'animal est un être dont on a la charge) et "exploitation" (l'animal est un moyen). Un véganisme cohérent impose de veiller à la santé et au bien-être de ses animaux — ce qui inclut des choix nutritionnels éclairés et un suivi vétérinaire, pas l'interdiction d'en avoir.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ La tension réelle</strong>La difficulté éthique authentique concerne le <em>choix de posséder</em> des carnivores stricts (chats) : chaque adoption perpétue une population qui dépend de protéines animales. Les positions végans honnêtes assument cette tension et recommandent l'adoption responsable, la stérilisation et, quand c'est possible, des régimes végétaux complets validés — plutôt que la reproduction d'animaux de compagnie.</div>
         </div></div>
       </div>
 
