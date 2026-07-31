@@ -4,7 +4,6 @@
 
 // ── NAVIGATION ────────────────────────────────
 const PANELS = {
-  nutrition:    'content',
   sante:        'content',
   environnement:'content',
   ethique:      'content',
@@ -17,7 +16,6 @@ const PANELS = {
 };
 
 const CATEGORY_LABELS = {
-  nutrition: 'Nutrition',
   sante: 'Santé',
   environnement: 'Environnement',
   ethique: 'Éthique',
@@ -31,7 +29,7 @@ const topicSearchState = {
   entries: [],
 };
 
-let currentFilter = 'nutrition';
+let currentFilter = 'sante';
 
 function nav(btn) {
   const filter = btn.dataset.filter;
@@ -115,7 +113,7 @@ document.querySelectorAll('#content .card').forEach(card => observer.observe(car
 
 // ── RANDOM TOPIC ──────────────────────────────
 function goRandom() {
-  const categories = ['nutrition', 'sante', 'environnement', 'ethique', 'social'];
+  const categories = ['sante', 'environnement', 'ethique', 'social'];
   const filter = categories[Math.floor(Math.random() * categories.length)];
   applyFilter(filter);
 
@@ -1071,4 +1069,4 @@ function generateDiplome() {
 // ── INIT ──────────────────────────────────────
 stripStudyLinks();
 initTopicSearch();
-applyFilter('nutrition');
+applyFilter('sante');
