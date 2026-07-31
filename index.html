@@ -45,8 +45,16 @@
   <div class="nav-divider"></div>
 
   <div class="sidebar-section">
+    <button class="nav-btn active" data-filter="home" onclick="nav(this)">
+      <span class="nav-icon">🏠</span> Accueil
+    </button>
+  </div>
+
+  <div class="nav-divider"></div>
+
+  <div class="sidebar-section">
     <div class="sidebar-section-label">Critiques & Réponses</div>
-    <button class="nav-btn active" data-filter="sante" onclick="nav(this)">
+    <button class="nav-btn" data-filter="sante" onclick="nav(this)">
       <span class="nav-icon">❤️</span> Santé
       <span class="nav-count">14</span>
     </button>
@@ -109,8 +117,63 @@
   <!-- CONTENT -->
   <div class="content-area">
 
+    <!-- ═══ PANEL: HOME ═══ -->
+    <div id="home-panel" class="panel active">
+      <div class="panel-header">
+        <h2>🌱 Bienvenue !</h2>
+        <p>Un site pour répondre aux critiques du véganisme avec des arguments solides, des sources fiables et des outils pratiques.</p>
+      </div>
+
+      <div class="info-box green"><strong>🎯 L'objectif du site</strong>Chaque critique populaire du véganisme est confrontée à la littérature scientifique réelle : méta-analyses, revues systématiques, consensus d'institutions reconnues (OMS, FAO, Académies nationales, EFSA). Vous trouverez ici de quoi répondre calmement, avec les études en main.</div>
+
+      <div class="section-label">Comment ça marche</div>
+      <div class="card visible" style="display:block; opacity:1; transform:none;">
+        <div class="card-body" style="max-height:none; overflow:visible;"><div class="card-content" style="border-top:none; padding-top:1rem;">
+          <p style="margin-bottom:0.9rem;"><strong>1 · Parcourir les réponses.</strong> Les critiques sont classées en quatre catégories dans le menu : <strong>Santé</strong>, <strong>Environnement</strong>, <strong>Éthique</strong> et <strong>Social</strong>. Chaque carte contient le verdict scientifique, les études de référence et les nuances importantes.</p>
+          <p style="margin-bottom:0.9rem;"><strong>2 · Rechercher un sujet.</strong> Utilisez la barre de recherche ou le bouton « Sujet aléatoire » pour tomber sur un argument précis.</p>
+          <p><strong>3 · Passer à l'action.</strong> La rubrique <strong>Outils</strong> vous accompagne au quotidien : un guide pour devenir vegan sereinement, un calculateur de diète personnalisée, un estimateur d'impact environnemental et un quiz pour tester vos connaissances.</p>
+        </div></div>
+      </div>
+
+      <div class="section-label">Qu'est-ce que le véganisme ?</div>
+      <div class="info-box blue"><strong>Définition officielle — The Vegan Society (1979)</strong>« Le véganisme est une philosophie et un mode de vie qui cherchent à exclure — autant que possible et de manière praticable — toute forme d'exploitation et de cruauté envers les animaux, que ce soit pour l'alimentation, l'habillement ou toute autre fin. Par extension, il encourage le développement et l'utilisation d'alternatives sans animaux au bénéfice des humains, des animaux et de l'environnement. »</div>
+      <p style="font-size:0.84rem; color:var(--text-muted);">Le mot « vegan » a été créé en 1944 par Donald Watson, cofondateur de la première Vegan Society, comme contraction de « <em>vege</em>tarian » pour désigner un végétarisme qui exclut <em>tous</em> les produits d'origine animale (œufs, lait, miel), et pas seulement la chair.</p>
+
+      <div class="section-label">Une brève histoire du véganisme</div>
+      <p style="font-size:0.84rem; color:var(--text-muted);">La question éthique envers les animaux ne date pas d'hier. Voici quelques repères.</p>
+
+      <div class="guide-steps" style="margin-top:1rem;">
+        <div class="guide-step">
+          <div class="guide-step-index">≈ -600</div>
+          <div class="guide-step-body"><h3>L'Antiquité : le refus de tuer</h3><p>Pythagore (Grèce, VIᵉ siècle av. J.-C.) recommande une alimentation sans chair par respect pour la vie animale et la réincarnation. En Inde, le jaïnisme et le bouddhisme prônent l'<em>ahimsā</em> (non-violence envers tous les êtres sensibles). Plutarque (Iᵉʳ–IIᵉ siècle) écrit son célèbre « De l'ingestion des aliments animaux », premier texte argumenté contre la consommation de viande.</p></div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-index">1780</div>
+          <div class="guide-step-body"><h3>Bentham : la capacité à souffrir</h3><p>Le philosophe utilitariste Jeremy Bentham pose la question devenue fondatrice : « La question n'est pas <em>peuvent-ils raisonner ?</em> ni <em>peuvent-ils parler ?</em> mais <em>peuvent-ils souffrir ?</em> ». Ce critère de la sensibilité devient la pierre angulaire de l'éthique animale moderne.</p></div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-index">1847</div>
+          <div class="guide-step-body"><h3>Naissance du végétarisme organisé</h3><p>La première Vegetarian Society est fondée en Angleterre. Des figures comme Percy Shelley, George Bernard Shaw ou Léon Tolstoï défendent publiquement l'abstention de chair.</p></div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-index">1944</div>
+          <div class="guide-step-body"><h3>Le véganisme prend son nom</h3><p>Donald Watson et un groupe d'adhérents de la Vegetarian Society de Leicester fondent la Vegan Society et créent le mot « vegan » : un végétarisme strict, excluant œufs, lait et miel, par cohérence éthique.</p></div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-index">1975</div>
+          <div class="guide-step-body"><h3>La libération animale</h3><p>Peter Singer publie « Animal Liberation », considéré comme le texte fondateur du mouvement animaliste contemporain. Tom Regan (1983) apporte une perspective déontologique (« Les Droits des animaux ») : les animaux ont une valeur intrinsèque.</p></div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-index">2010+</div>
+          <div class="guide-step-body"><h3>La science rejoint le débat</h3><p>Des institutions de référence publient des rapports majeurs : l'OMS/FCRN (2019) recommande des régimes principalement végétaux pour la santé et le climat, la revue <em>The Lancet</em> (EAT-Lancet, 2019) promeut une « grande transition alimentaire », et l'AND (Académie de nutrition diététique américaine, 2016) valide le caractère adapté des régimes végétaliens à tous les âges.</p></div>
+        </div>
+      </div>
+
+      <div class="info-box amber"><strong>💡 Pour aller plus loin</strong>Ce site ne prétend pas remplacer une lecture critique des sources : chaque étude citée est accessible via son DOI. Si vous souhaitez creuser, commencez par les cartes <strong>Éthique</strong> et <strong>Environnement</strong>, puis testez vos connaissances avec le quiz !</div>
+    </div>
+
     <!-- ═══ PANEL: CONTENT CARDS ═══ -->
-    <div id="content" class="panel active">
+    <div id="content" class="panel">
 
       <div class="card" data-category="sante">
         <div class="card-header" onclick="toggleCard(this)">

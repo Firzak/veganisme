@@ -4,6 +4,7 @@
 
 // ── NAVIGATION ────────────────────────────────
 const PANELS = {
+  home:         'home-panel',
   sante:        'content',
   environnement:'content',
   ethique:      'content',
@@ -16,6 +17,7 @@ const PANELS = {
 };
 
 const CATEGORY_LABELS = {
+  home: 'Accueil',
   sante: 'Santé',
   environnement: 'Environnement',
   ethique: 'Éthique',
@@ -29,7 +31,7 @@ const topicSearchState = {
   entries: [],
 };
 
-let currentFilter = 'sante';
+let currentFilter = 'home';
 
 function nav(btn) {
   const filter = btn.dataset.filter;
@@ -48,7 +50,7 @@ function applyFilter(filter) {
   if (activeBtn) activeBtn.classList.add('active');
 
   // Hide all panels
-  const allPanels = ['content', 'guide-panel', 'diet-panel', 'impact-panel', 'quiz-panel', 'questions-panel'];
+  const allPanels = ['content', 'home-panel', 'guide-panel', 'diet-panel', 'impact-panel', 'quiz-panel', 'questions-panel'];
   allPanels.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.classList.remove('active');
@@ -1069,4 +1071,4 @@ function generateDiplome() {
 // ── INIT ──────────────────────────────────────
 stripStudyLinks();
 initTopicSearch();
-applyFilter('sante');
+applyFilter('home');
