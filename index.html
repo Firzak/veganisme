@@ -56,7 +56,7 @@
     <div class="sidebar-section-label">Critiques & Réponses</div>
     <button class="nav-btn" data-filter="sante" onclick="nav(this)">
       <span class="nav-icon">❤️</span> Santé
-      <span class="nav-count">15</span>
+      <span class="nav-count">17</span>
     </button>
     <button class="nav-btn" data-filter="environnement" onclick="nav(this)">
       <span class="nav-icon">🌍</span> Environnement
@@ -579,6 +579,68 @@
             <div class="study-finding">Revue de la littérature : les phytoestrogènes sont ~1 000 fois moins affins que l'estradiol pour les récepteurs aux œstrogènes. Le seul cas clinique de gynécomastie attribué au soja (Martinez & Lewi, 2008) concernait ~3 quarts de lait de soja par jour (≈2,8 L) et n'a jamais été répliqué.</div>
           </div>
           <div class="nuance-box"><strong>📌 D'où vient le mythe ?</strong>Des études sur <em>rongeurs</em> avec des doses injectées massives, non transposables à l'humain par l'alimentation. La consommation traditionnelle de soja en Asie (jusqu'à 50 g/jour) est associée à des taux de cancer de la prostate et du sein <em>plus faibles</em>, pas plus élevés.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-amber">⚡</div>
+          <div class="card-meta">
+            <h2>« Les végans manquent de créatine »</h2>
+            <p class="critique-text">« Sans viande, le corps ne reçoit pas assez de créatine et les muscles en manquent. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les végans ne consomment pratiquement pas de créatine alimentaire, car elle se trouve surtout dans les tissus animaux. Cela ne signifie pas qu’ils sont en carence : l’organisme fabrique lui-même de la créatine à partir des acides aminés glycine, arginine et méthionine. En revanche, les personnes végétariennes et véganes ont souvent des réserves musculaires moyennes plus faibles que les omnivores. Il faut donc distinguer une réserve plus basse d’une carence clinique ou d’un dysfonctionnement. La supplémentation peut être une option pour optimiser les réserves ou les performances sportives, mais elle n’est pas nécessaire pour corriger une prétendue carence universelle.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://pubmed.ncbi.nlm.nih.gov/32349356/" target="_blank">Benefits of Creatine Supplementation for Vegetarians Compared to Omnivorous Athletes — Systematic Review</a></div>
+            <div class="study-meta">Dempsey et al. · Nutrients · 2020 · PMID: 32349356</div>
+            <div class="study-finding">Revue systématique de neuf études : la supplémentation augmente les réserves de créatine chez les végétariens, parfois au-delà des niveaux des omnivores. Les résultats sur la performance étaient hétérogènes ; cette revue ne permet donc pas d’affirmer qu’un supplément est nécessaire à toutes les personnes véganes.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://pubmed.ncbi.nlm.nih.gov/40939139/" target="_blank">Muscle Creatine Levels and Sprint Performance in Young Adult Vegans and Vegetarians After 7 Days of Creatine Monohydrate Supplementation</a></div>
+            <div class="study-meta">Essai contrôlé · 2025 · PMID: 40939139</div>
+            <div class="study-finding">Étude chez de jeunes adultes véganes et végétariens mesurant directement la créatine musculaire après supplémentation. Elle porte sur une intervention courte et sur des marqueurs de muscle et de sprint : elle renseigne sur la réponse à un supplément, pas sur l’existence d’une carence clinique chez les véganes.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://pubmed.ncbi.nlm.nih.gov/41689538/" target="_blank">Establishing Dietary Reference Intakes for Creatine in Adults</a></div>
+            <div class="study-meta">Ostojic · Nutrition Reviews · 2026 · PMID: 41689538</div>
+            <div class="study-finding">Cette analyse propose des apports adéquats alimentaires calculés à partir des pertes quotidiennes et de la masse corporelle. Elle souligne le rôle de l’apport alimentaire et de la synthèse endogène, mais une valeur de référence n’est pas un diagnostic de carence et ne démontre pas que les personnes véganes saines ont un déficit pathologique.</div>
+          </div>
+          <div class="nuance-box"><strong>📌 À retenir</strong>« Moins de créatine apportée par les aliments » et « carence en créatine » ne sont pas synonymes. Les rares déficits médicaux reconnus sont généralement liés à des troubles génétiques de synthèse ou de transport. La créatine monohydrate est généralement fabriquée sans matière animale, mais vérifier l’étiquette reste utile.</div>
+        </div></div>
+      </div>
+
+      <div class="card" data-category="sante">
+        <div class="card-header" onclick="toggleCard(this)">
+          <div class="card-icon icon-red">🧬</div>
+          <div class="card-meta">
+            <h2>« Les végans ont moins de testostérone »</h2>
+            <p class="critique-text">« Une alimentation végétale ferait chuter la testostérone et déréglerait les hormones masculines. »</p>
+          </div>
+          <svg class="toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-body"><div class="card-content">
+          <div class="verdict"><strong>Verdict scientifique :</strong> Les données ne montrent pas que le véganisme empêche d’avoir une testostérone normale. Une comparaison publiée en 2021 entre hommes véganes et omnivores a observé une testostérone totale et une SHBG plus élevées chez les véganes, mais pas de différence significative de testostérone libre calculée. Cela ne prouve pas que le régime augmente la testostérone : l’étude est observationnelle et les groupes peuvent différer sur d’autres facteurs. La SHBG transporte la testostérone dans le sang ; quand elle varie, la testostérone totale peut varier sans changement équivalent de la fraction libre. Il n’est pas justifié d’en déduire que les testicules « compensent » en produisant davantage. Le diagnostic hormonal repose sur les symptômes et des dosages médicaux répétés, pas sur l’étiquette alimentaire.</div>
+          <p class="studies-title">Études de référence</p>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1017/S0007114520000552" target="_blank">Vegan and Vegetarian Diets Are Not Associated with Higher Testosterone Levels in Men</a></div>
+            <div class="study-meta">Meldrum et al. · British Journal of Nutrition · 2021 · DOI: 10.1017/S0007114520000552</div>
+            <div class="study-finding">Analyse transversale de 191 hommes en bonne santé (menée dans le cadre de l’étude EPIC-Oxford) : les hommes véganes avaient une testostérone totale et une SHBG plus élevées que les omnivores, mais la testostérone libre calculée ne différait pas significativement. L’étude ne mettait pas en évidence de déficit chez les véganes et ne permet pas d’établir la causalité.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1080/09637486.2026.2731397" target="_blank">Associations of Dietary Proteins with Serum Total Testosterone and SHBG in Middle-Aged Men</a></div>
+            <div class="study-meta">Wynne-Ellis et al. · International Journal of Food Sciences and Nutrition · 2026 · DOI: 10.1080/09637486.2026.2731397</div>
+            <div class="study-finding">Étude transversale de 2 546 hommes finlandais âgés de 42 à 60 ans, et non méta-analyse de végans. Le quartile de consommation de protéines végétales le plus élevé était associé à 1,1 nmol/L de testostérone totale et 3,0 nmol/L de SHBG de plus que le quartile le plus bas ; les protéines animales montraient des associations inverses. Ces différences entre quartiles ne correspondent pas à une hausse de 7–8 % chez les véganes et ne démontrent pas qu’un changement alimentaire cause ces écarts.</div>
+          </div>
+          <div class="study">
+            <div class="study-title"><a href="https://doi.org/10.1080/14656566.2021.189710 ಬೈ" target="_blank">The Relationship Between Soy and Testosterone in Men — Meta-analysis</a></div>
+            <div class="study-meta">Reed et al. · Reproductive Toxicology · 2021 · DOI: 10.1016/j.reprotox.2021.02.006</div>
+            <div class="study-finding">Méta-analyse d’essais cliniques : ni les aliments au soja ni les isoflavones n’ont d’effet significatif sur la testostérone totale ou libre chez les hommes. Le soja, souvent consommé dans les régimes végétaux, n’étaye donc pas l’affirmation d’une baisse hormonale.</div>
+          </div>
+          <div class="nuance-box"><strong>⚠️ Nuance importante</strong>La méta-analyse de 2026 parfois citée avec un chiffre proche de 7–8 % semble confondue avec l’étude transversale finlandaise de 2 546 hommes sur les sources de protéines. Cette étude rapporte des différences en nmol/L entre quartiles, et non une comparaison végans/omnivores en pourcentage. Les données disponibles sont rassurantes sur l’absence de preuve d’un déficit propre au véganisme, mais elles ne prouvent pas que chaque régime végétal améliore les hormones.</div>
         </div></div>
       </div>
 
